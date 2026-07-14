@@ -1,5 +1,34 @@
-!**/*.tex
-!**/*.bib
-!**/*.cls
-!**/*.jpg
-!**/*.png
+# =====================================================================
+# LATEX TEMPORARY & AUXILIARY FILES (FILE SAMPAH HASIL COMPILE)
+# =====================================================================
+
+# File pembantu utama LaTeX di folder root maupun subfolder
+*.aux
+*.log
+*.toc
+*.lof
+*.lot
+*.out
+*.bcf
+*.blg
+*.bbl
+*.run.xml
+
+# File pelacak otomatis milik Latexmk
+*.fdb_latexmk
+*.fls
+
+# File sinkronisasi kursor antara VS Code dan PDF Viewer
+*.synctex.gz
+*.synctex(busy)
+
+# File format DVI/XDV sebelum jadi PDF
+*.dvi
+*.xdv
+
+# =====================================================================
+# OUTPUT FILES
+# =====================================================================
+# Abaikan PDF karena ukurannya besar dan selalu berubah setiap compile.
+# Hapus baris di bawah ini JIKA Anda memang ingin menyimpan riwayat PDF di Git.
+main.pdf

@@ -5,6 +5,7 @@
 \LoadClass[12pt, a4paper, oneside]{report}
 \usepackage{fontspec}
 \usepackage[top=4cm, left=4cm, bottom=3cm, right=3cm]{geometry}
+\usepackage{url}
 \usepackage[pdfauthor={Qoqokoi}, bookmarksnumbered, pdfborder={0 0 0}]{hyperref}
 
 %===================== CHAPTER & SECTION CONFIGURATION ===============
@@ -16,47 +17,46 @@
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 
 \AtBeginDocument{
-    \titleformat{name=\chapter,numberless}[display]
-    {\normalfont\bfseries\centering\fontsize{14pt}{16pt}\selectfont}
-    {}
-    {0pt}
-    {\MakeUppercase}
-    \titlespacing{name=\chapter,numberless}{0pt}{-38pt}{10pt}
-    
-    \titleformat{\chapter}[display]
-    {\normalfont\bfseries\centering\fontsize{14pt}{16pt}\selectfont}
-    {\MakeUppercase{\chaptertitlename}\ \thechapter}
-    {5pt}
-    {}
-    \titlespacing{\chapter}{0pt}{-15pt}{10pt}
-    
-    \titleformat{\section}[hang]
-    {\normalfont\bfseries}
-    {\thesection}
-    {0.5em}
-    {}
-    \titlespacing{\section}{0.7cm}{10pt}{7pt}
-    
-    \titleformat{\subsection}[hang]
-    {\normalfont\bfseries}
-    {\thesubsection}
-    {0.5em}
-    {}
-    \titlespacing{\subsection}{1.4cm}{10pt}{7pt}
-    
-    % =================== TOC CONFIGURATION ===================
-    \contentsmargin{2.5em}
-    
-    \titlecontents{chapter}[1.5em]
-    {\bfseries}{\MakeUppercase{\chaptername~\thecontentslabel:}\hspace{1em}}{}{\dotfill\contentspage}
-    
-    \titlecontents{section}[3em]
-    {}{\thecontentslabel\enspace}{}{\dotfill\contentspage}
-    
-    \titlecontents{subsection}[4.5em]
-    {}{\thecontentslabel\enspace}{}{\dotfill\contentspage}
+	\titleformat{name=\chapter,numberless}[display]
+	{\normalfont\bfseries\centering\fontsize{14pt}{16pt}\selectfont}
+	{}
+	{0pt}
+	{\MakeUppercase}
+	\titlespacing{name=\chapter,numberless}{0pt}{-38pt}{10pt}
+	
+	\titleformat{\chapter}[display]
+	{\normalfont\bfseries\centering\fontsize{14pt}{16pt}\selectfont}
+	{\MakeUppercase{\chaptertitlename}\ \thechapter}
+	{5pt}
+	{}
+	\titlespacing{\chapter}{0pt}{-15pt}{10pt}
+	
+	\titleformat{\section}[hang]
+	{\normalfont\bfseries}
+	{\thesection}
+	{0.5em}
+	{}
+	\titlespacing{\section}{0.7cm}{10pt}{7pt}
+	
+	\titleformat{\subsection}[hang]
+	{\normalfont\bfseries}
+	{\thesubsection}
+	{0.5em}
+	{}
+	\titlespacing{\subsection}{1.4cm}{10pt}{7pt}
+	
+	% =================== TOC CONFIGURATION ===================
+	\contentsmargin{2.5em}
+	
+	\titlecontents{chapter}[1.5em]
+	{\bfseries}{\MakeUppercase{\chaptername~\thecontentslabel:}\hspace{1em}}{}{\dotfill\contentspage}
+	
+	\titlecontents{section}[3em]
+	{}{\thecontentslabel\enspace}{}{\dotfill\contentspage}
+	
+	\titlecontents{subsection}[4.5em]
+	{}{\thecontentslabel\enspace}{}{\dotfill\contentspage}
 }
-
 % =================== VISUAL CONTENT ===================
 \usepackage{setspace}
 \usepackage{graphicx}
@@ -71,7 +71,13 @@
 \usepackage{indentfirst}
 \usepackage{lipsum}
 \usepackage{xstring}
-
+% =================== LANGUAGE & FONTS CONFIG ===================
+\usepackage{polyglossia}
+\setmainlanguage{indonesian}
+\setotherlanguage{english}
+\setotherlanguage{arabic}
+\setmainfont{Times New Roman}
+\newfontfamily\arabicfont[Script=Arabic, Scale=1.2]{Amiri}
 %==================== ENUMERATE ====================
 \usepackage{enumitem}
 
@@ -88,30 +94,21 @@
 \setlist[sysenumerate,2]{label=\thesysenumeratei\arabic*,leftmargin=*}
 \setlist[sysenumerate,3]{label=\thesysenumerateii.\arabic*,leftmargin=*}
 
-% =================== LANGUAGE & FONTS CONFIG (DI-PINDAH KE SINI) ===================
-% Dipindah ke bawah agar bidi/polyglossia dimuat SETELAH amsmath, xcolor, dll.
-\usepackage{polyglossia}
-\setmainlanguage{english}
-\setotherlanguage{arabic}
-\setmainfont{Times New Roman}
-\newfontfamily\arabicfont[Script=Arabic, Scale=1.2]{Amiri}
-
 % =================== PREFERENCES ===================
 \usepackage{csquotes}
 \usepackage[style=chicago-notes, backend=biber]{biblatex}
 
 %=================== COSTUMIZATION ==========================
 \addto\captionsenglish{
-    \renewcommand{\chaptername}{Chapter}
-    \renewcommand{\bibname}{BIBLIOGRAPHY}
-    \renewcommand{\contentsname}{Table of Contents}
-    \renewcommand{\listfigurename}{List of Figures}
-    \renewcommand{\listtablename}{List of Tables}
+	\renewcommand{\chaptername}{Chapter}
+	\renewcommand{\bibname}{BIBLIOGRAPHY}
+	\renewcommand{\contentsname}{Table of Contents}
+	\renewcommand{\listfigurename}{List of Figures}
+	\renewcommand{\listtablename}{List of Tables}
 }
 
 \justifying
 \setlength{\parindent}{1.27cm}
 
 \endinput
-
-%made by: Muhammad Dafi Al Haq
+%made by: Muhammad Dafi Al Haq												

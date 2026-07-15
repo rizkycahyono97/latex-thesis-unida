@@ -1,121 +1,137 @@
-\chapter{INTRODUCTION}
-	\section{Background of the Study}
+\chapter{PENDAHULUAN}
+	\section{Latar Belakang Penelitian}
 	\setlength{\leftskip}{0.7cm}
-	The Qur'an is often considered a book that contains a lot of knowledge, both in the spiritual and scientific fields. One aspect of its miracle is the ability of the Qur'an to provide guidance regarding scientific phenomena that are relevant throughout time.\footcite{bakir2016}.\\
-	in \textbf{Q.S. Fussilat (41:53),} Allah said:\\	%edited
-	
-\begin{otherlanguage*}{arabic}
-	\noindent
-سَنُرِيهِمْ آيَاتِنَا فِي الْآفَاقِ وَفِي أَنْفُسِهِمْ حَتَّى يَتَبَيَّنَ لَهُمْ أَنَّهُ الْحَقُّ ۗ أَوَلَمْ يَكْفِ بِرَبِّكَ أَنَّهُ عَلَىٰ كُلِّ شَيْءٍ شَهِيدٌ
-\end{otherlanguage*}
-	\vspace{0.5cm}
+	Pemalsuan dokumen akademik seperti ijazah, transkip nilai, surat-menyurat dan sertifikasi kompetensi telah menjadi isu sangat krusial yang mengancam kredibilitas institusi pendidikan tinggi. Di Universitas Darussalam Gontor (UNIDA) Gontor, pengelolaan dokumen akademik memerlukan standar kemanan tinggi untuk memastikan setiap dokumen tercatat dengan baik dan benar dan tidak dapat dimanipulasi. 
 
-	\textit{\textbf{Meaning:}"We will show them Our signs in the horizons and within themselves until it becomes clear to them that it (the Qur'an) is the truth. Is it not enough (for you) that your Lord is a witness over all things?'" (Q.S. Fuṣṣilat 41:53)}\\
+	Sistem verifikasi konvensional yang umum digunakan saat ini, termasuk di lingkungan UNIDA Gontor masih bergantung pada database terpusat dan proses manual,  yang memiliki kelemahan fundamental dalam hal keamanan data dan memerlukan waktu yang relatif lama. Database terpusat juga bertindak sebagai \textit{Single Point of Failure} (SPoF), yang mana jika server database terkena serangan siber atau mengalami kegagalan, maka seluruh proses akan terhenti, selain itu administrator juga memiliki akses penuh terhadap database sehingga memiliki kemampuan untuk mengubah atau memanipulasi data secara sepihak, sehingga integritas data tidak dapat dijamin sepenuhnya.
+
+	Teknologi blockchain muncul sebagai paradigma baru yang menawarkan sifat \textit{immutability} (tidak dapat diubah) dan  transparansi melalui mekanisme penyimpanan data yang tersebar pada banyak node dalam jaringan \footcite{zheng2018}. Namun, implementasi pada skala institusi pendidikan seringkali terbentur oleh hambatan ekonomi dan kompleksitas teknis. Pada blockchain publik, setiap interaksi data ke blockchain memerlukan biaya transaksi  atau disebut \textit{gas-fee} yang fluktuatif, yang menjadi beban finansial yang signifikan bagi universitas jika harus memverifikasi ribuan dokumen setiap tahunnya. Selain itu kurva pembelajaran yang terjal bagi para staf UNIDA Gontor seringkali menghambat untuk pengelolaan dompet kripto dan kunci kriptografi seringkali menghambat adopsi teknologi ini secara luas. 
+
+	Dari sisi pengguna, tanda tangan digital pada umumnya seringkali direpresentasikan dalam bentuk deretan kode heksadesimal yang tidak dapat dibaca atau dipahami manusia (\textit{non-human readable}). Hal ini menimbulkan resiko keamanan di mana bagian arsip di UNIDA Gontor yang akan melakukan tanda tangan tidak mengetahui secara pasti data apa yang sedang mereka otorisasi tersebut. Implementasi protokol EIP-712 (\textit{Ethereum Typed Structured Data}) menjadi solusi krusial dalam penelitian ini karena memungkinkan penyajian data yang akan ditandatangani dalam format terstruktur yang mudah dibaca dan dipahami oleh manusia (\textit{human readable})\footcite{bloemen2017eip712}. Dengan protokol EIP-712, biro dapat memverifikasi Nama, NIM dan Nomor Surat secara visual sebelum memberikan tanda tangan kriptografis, sehingga menjamin keakuratan otorisasi.
+
+	Guna mengatasi hambatan biaya transaksi, penelitian ini mengusulkan penggunaan \textit{Hyperledger Besu} sebagai infrastruktur private blockchain. Melalui konfigurasi pada pada jaringan privat blockchain, sistem dapat diatur untuk menjalankan mekanisme \textit{zero-gas}, dimana transaksi masih bisa berjalan dan dapat divalidasi oleh jaringan privat blockchain tanpa memerlukan biaya (gas) bagi pengirim. Dengan mengintegrasikan mekanisme \textit{zero-gas} dan manajemen kunci privat yang aman berdasarkan standar penelitian Pal dkk\footcite{pal2021}. Prototipe ini diharapkan dapat menjadi solusi verifikasi dokumen yang tidak hanya aman dan transparan,  tetapi juga mudah diimplementasikan di lingkungan akademik. Mengacu pada Pal dkk., yang menekankan keamanan blockchain bergantung pada pengelolaan kunci, pendekatan \textit{local key management} (\textit{env/storage}) dalam sistem diimplementasikan sebagai tahap awal yang praktis, sambil menjaga prinsip keamanan, kerahasiaan, dan otentikasi.
+
+	Dalam perspektif keislaman, pengembangan sistem ini dapat dipandang sebagai implementasi dari prinsip maqashid syariah, khususnya dalam hal \textit{hifz al-‘aql} (menjaga akal). Konsep  \textit{hifz al-‘aql} tidak hanya sebatas berkaitan dengan perlindungan terhadap fungsi akal secara biologis, tetapi konsep ini juga mencangkup penjagaan keaslian, kebenaran, dan integritas ilmu pengetahuan yang dihasilkan oleh akal manusia. Tindakan pemalsuan dokumen akademik dapat dikategorikan sebagai bentuk penipuan (\textit{tadlis}) yang merusak nilai kebenaran  dan mencederai kehormatan ilmu itu sendiri. 
+
+	Dengan demikian , prototipe ini hadir sebagai bentuk implementasi nilai-nilai kejujuran (\textit{As-Siddiq}) dan persaksian yang adil dalam ekosistem digital akademik. Sistem ini dirancang untuk memastikan bahwa setiap dokumen akademik yang diterbitkan dan diverifikasi memiliki keabsahan yang dapat dipertanggungjawabkan serta terhindar dari manipulasi data internal. Melalui penerapan mekanisme verifikasi yang aman, prototipe ini tidak hanya meningkatkan kepercayaan antar pihak, tetapi juga memperkuat transparansi dan akuntabilitas dalam pengelolaan dokumen akademik. Selain itu sistem ini diharapkan menjadi solusi yang relevan dalam menjawab tantangan digitalisasi, khususnya dalam menjaga integritas dan kredibilitas informasi akademik di UNIDA Gontor.
+
+	\section{Rumusan Masalah}
+	Berdasarkan permasalahan yang sudah di jelaskan di latar belakang, maka rumusan masalah dalam peneletian ini adalah:
+
+	\begin{secenumerate}
+		\item Sistem verifikasi dokumen akademik di UNIDA Gontor saat ini masih menggunakan database terpusat (\textit{centralized}), sehingga memiliki resiko \textit{Single Point of Failure} (SPoF) dan memungkinkan terjadinya manipulasi data internal. Selain itu, sistem yang ada belum menerapkan protokol penandatanganan data terstruktur seperti \textit{EIP-712} yang dapat meningkatkan keamanan sekaligus keterbacaan (human-readable) tanda tangan digital. 
+
+	\end{secenumerate}
 	
-	\section{Problem Statement}
-	\lipsum
-	
-	\section{Objectives of the Study}
-	\lipsum
-	
-	\section{Significance of the Study}
-		\begin{secenumerate}
-			\item Significance for Practitioners
-				\begin{secenumerate}
-					\item Significance 1
-					\item Significance 2
-					\item Significance 3
-				\end{secenumerate}
-			\item Significance for Researcher
-				\begin{secenumerate}
-					\item Significance 1
-					\item Significance 2
-					\item Significance 3
-				\end{secenumerate}
-			\item Significance for University
-				\begin{secenumerate}
-					\item Significance 1
-					\item Significance 2
-					\item Significance 3
-				\end{secenumerate}
-		\end{secenumerate}
+	\section{Tujuan Penelitian}
+	Berdasarkan rumusan masalah yang sudah diuraikan, maka tujuan penelitian ini sebagai berikut:
+
+	\begin{secenumerate}
+		\item Merancang sebuah prototype API middleware sistem verifikasi dokumen menggunakan standar EIP-712 yang  mampu membuktikan keaslian sebuah dokumen akademik UNIDA Gontor dan keabsahan tanda tangan pihak yang bersangkutan secara on-chain di private blockchain. Serta, mengimplementasikan mekanisme transaksi gratis (gasless) pada jaringan Hyperledger Besu guna meniadakan biaya (gas) saat transaksi berlangsung, sekaligus menerapkan skema manajemen kunci dengan memisahkan antara pemberi otoritas (signer) dan juga pelaksana transaksi (relayer) untuk menjamin keamanan dan integritas transaksi dokumen di lingkungan UNIDA Gontor.
+
+	\end{secenumerate}
+
+	\section{Batasan Masalah}
+	Agar permasalahan yang sudah dirumuskan dapat terlaksana, maka penelitian ini memiliki batasan:
+
+	\begin{secenumerate}
+		\item Implementasi protokol fokus pada standar penandatanganan data terstruktur EIP-712.
+		\item Jaringan blockchain yang digunakan adalah Hyperledger Besu dengan konsensus QBFT.
+		\item Smart contract dikembangkan menggunakan bahasa Solidity 0.8.19 dan library OpenZeppelin v4.9.
+		\item Sistem yang dikembangkan dalam penelitian ini masih berupa prototype yang berfokus pada API Middleware dan belum diimplementasikan secara langsung pada lingkungan operasional UNIDA Gontor, melainkan hanya digunakan sebagai model simulasi untuk menguji konsep dan fungsionalitas sistem.
+		\item Penelitian ini tidak berfokus pada klasifikasi maupun pengelolaan seluruh jenis dokumen akademik di UNIDA Gontor, melainkan pada pengembangan mekanisme verifikasi berbasis parameter data yang bersifat generik sehingga dapat diadaptasikan pada berbagai jenis dokumen. 
+
+	\end{secenumerate}
 		
-	\section{Scope of Study}
+	\section{Manfaat Penelitian}
+	Peneliti berharap adanya beberapa manfaat dari hasil penelitian ini, diantaranya sebagai berikut:
 		\begin{secenumerate}
-			\item scope 1
-			\item scope 2
-			\item scope 3
+			\item Bagi Mahasiswa
+			
+			Penelitian ini memberikan referensi bagi mahasiswa dalam memahami dan mengimplementasikan protokol EIP-712 dalam jaringan private blockchain seperti Hyperledger besu untuk menciptakan sistem verifikasi data yang aman dan transparan.
+
+			\item Bagi Universitas
+			
+			Penelitian ini menjadi kontribusi akademik dan pengembangan riset terapan di bidang teknologi blockchain, serta meningkatkan kualitas penelitian yang berorientasi pada integritas data akademik.
+
+			\item Bagi Masyarakat
+			
+			Penelitian ini menargetkan luaran prototype sistem verifikasi bagi masyarakat dalam memvalidasi dokumen akademik.
+
+			\item Bagi Peneliti
+			
+			Penelitian ini menjadi dasar dan referensi bagi peneliti selanjutnya dalam pengembangan manajemen identitas digital berbasis blockchain, serta penerapan  zero-gas pada jaringan privat untuk kebutuhan skala luas.
 		\end{secenumerate}
 	
-	\section{systematic discussion}
-	The systematics of writing in this research consists of five parts as follows:\\
+	\section{Pembahasan Studi}
+	Sistematika penulisan dalam penelitian ini terdiri dari lima bagian sebagai berikut:
 	
 	\noindent 
-	\textbf{CHAPTER 1: INTRODUCTION}
+	\textbf{BAB 1: PENDAHULUAN}
 	\begin{sysenumerate}
 		\setcounter{sysenumeratei}{1}
 		\item[] 
 		\begin{sysenumerate}
-			\item Background of the Study      
-			\item Problem Statement          
-			\item Objectives of the Study
-			\item Significance of the Study
-			\item Scope of Study
-			\item systematic discussion
+			\item Latar Belakang Penelitian 
+			\item Rumusan Masalah        
+			\item Tujuan Penelitian 
+			\item Batasan Masalah
+			\item Manfaat Penelitian
+			\item Pembahasan Studi
 		\end{sysenumerate}
 	\end{sysenumerate}
 	
 	\vspace{1em}
 
 	\noindent 
-	\textbf{CHAPTER 2: LITERATURE REVIEW}
+	\textbf{BAB 2: TINJAUAN PUSTAKA}
 	\begin{sysenumerate}
 		\setcounter{sysenumeratei}{2}
 		\item[] 
 		\begin{sysenumerate}
-			\item Previous Studies          
-			\item Theoretical Foundation    
+			\item Penelitian Terdahulu         
+			\item Landasan Teori
 		\end{sysenumerate}
 	\end{sysenumerate}
 	
 	\vspace{1em}
 	
 	\noindent 
-	\textbf{CHAPTER 3: RESEARCH METHODOLOGY}
+	\textbf{BAB 3: METODOLOGI PENELITIAN}
 	\begin{sysenumerate}
 		\setcounter{sysenumeratei}{3} 
 		\item[] 
 		\begin{sysenumerate}
-			\item title
-			\item title
-			\item title
-			\item title
+			\item Rencana Kegiatan 
+			\item Alat dan Bahan Penelitian
+			\item Tahapan Penelitian 
+			\item Perancangan Sistem
+			\item Sistematika Pembahasan
 		\end{sysenumerate}
 	\end{sysenumerate}
 	
 	\vspace{1em}
 	
 	\noindent 
-	\textbf{CHAPTER 4: RESULTS AND DISCUSSION}
+	\textbf{BAB 4: HASIL DAN PEMBAHASAN}
 	\begin{sysenumerate}
 		\setcounter{sysenumeratei}{4}
 		\item[] 
 		\begin{sysenumerate}
-			\item Result
-			\item Application Testing Results
-			\item Discussion
+			\item Hasil
+			\item Pembahasan
 		\end{sysenumerate}
 	\end{sysenumerate}
 		
 	\vspace{1em}
 		
 	\noindent 
-	\textbf{CHAPTER 5: CONCLUSION}
+	\textbf{BAB 5: PENUTUP}
 	\begin{sysenumerate}
 	\setcounter{sysenumeratei}{5}
 	\item[] 
 		\begin{sysenumerate}
-			\item Conclusion
-			\item Suggestions
+			\item Kesimpulan
+			\item Saran
 		\end{sysenumerate}
 	\end{sysenumerate}

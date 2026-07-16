@@ -111,7 +111,7 @@
 	\end{secenumerate}
 	
 	\section{Tahapan Penelitian}
-	 Penelitian ini menggunakan metode Scrum, yang merupakan salah satu pendekatan dalam \textit{Agile Software Development} yang bersifat iteratif dan incremental. Metode ini dipilih karena mampu mengakomodasi perubahan kebutuhan serta memungkinkan pengembangan sistem dilakukan secara bertahap melalui siklus yang berulang (\textit{Sprint}). Berikut adalah tampilan model Scrum yang tertera pada Gambar \ref{fig:contoh-f}:
+	Penelitian ini menggunakan metode Scrum, yang merupakan salah satu pendekatan dalam \textit{Agile Software Development} yang bersifat iteratif dan incremental. Metode ini dipilih karena mampu mengakomodasi perubahan kebutuhan serta memungkinkan pengembangan sistem dilakukan secara bertahap melalui siklus yang berulang (\textit{Sprint}). Berikut adalah tampilan model Scrum yang tertera pada Gambar \ref{fig:contoh-f}:
 	
 	\begin{figure}[h!]
 		\centering
@@ -120,142 +120,142 @@
 		\label{fig:contoh-f}
 	\end{figure}
 
-	\subsection{Product Backlog}
-	\setlength{\leftskip}{1.4cm}
-	\textit{Product Backlog} merupakan daftar kebutuhan sistem yang disusun secara terstruktur dan diprioritaskan berdasarkan tingkat kepentingan serta urgensi pengembangan. Daftar ini berisi seluruh fitur dan fungsi yang akan diimplementasikan kedalam sistem, sehingga menjadi acuan dalam pengembangan menggunakan metode Scrum. Penyusunan \textit{Product Backlog} pada penelitian ini dilakukan dengan mempertimbangkan kebutuhan sistem verifikasi berbasis blockchain secara menyeluruh.
+		\subsection{Product Backlog}
+		\setlength{\leftskip}{1.4cm}
+		\textit{Product Backlog} merupakan daftar kebutuhan sistem yang disusun secara terstruktur dan diprioritaskan berdasarkan tingkat kepentingan serta urgensi pengembangan. Daftar ini berisi seluruh fitur dan fungsi yang akan diimplementasikan kedalam sistem, sehingga menjadi acuan dalam pengembangan menggunakan metode Scrum. Penyusunan \textit{Product Backlog} pada penelitian ini dilakukan dengan mempertimbangkan kebutuhan sistem verifikasi berbasis blockchain secara menyeluruh.
 
-	Berdasarkan hasil identifikasi kebutuhan sistem, \textit{Product Backlog} mencakup pembangunan infrastruktur blockchain menggunakan \textit{Hyperledger Besu} dengan mekanisme konsensus QBFT yang mendukung transaksi tanpa biaya (zero gas), konfigurasi node, serta proses deployment smart contract untuk penyimpanan dan verifikasi data dokumen dalam bentuk hash. Selain itu, dirancang struktur metadata dokumen untuk merepresentasikan data akademik secara unik. Tahap selanjutnya meliputi pengembangan smart contract verifikasi, implementasi tanda tangan digital menggunakan EIP-712, serta pembangunan API middleware yang berfungsi sebagai penghubung antara sistem frontend dan jaringan blockchain.
+		Berdasarkan hasil identifikasi kebutuhan sistem, \textit{Product Backlog} mencakup pembangunan infrastruktur blockchain menggunakan \textit{Hyperledger Besu} dengan mekanisme konsensus QBFT yang mendukung transaksi tanpa biaya (zero gas), konfigurasi node, serta proses deployment smart contract untuk penyimpanan dan verifikasi data dokumen dalam bentuk hash. Selain itu, dirancang struktur metadata dokumen untuk merepresentasikan data akademik secara unik. Tahap selanjutnya meliputi pengembangan smart contract verifikasi, implementasi tanda tangan digital menggunakan EIP-712, serta pembangunan API middleware yang berfungsi sebagai penghubung antara sistem frontend dan jaringan blockchain.
 
-	Selanjutnya, dilakukan integrasi antara middleware dengan blockchain serta pengembangan frontend berbasis Laravel untuk merepresentasikan sistem informasi kampus (SIAKAD Unida). Fitur verifikasi publik juga diimplementasikan agar pengguna eksternal dapat melakukan validasi dokumen tanpa proses autentikasi, namun tetap menjamin keabsahan data. Selain itu, dilakukan pengujian sistem secara menyeluruh, optimasi performa untuk mendukung efisiensi sistem, serta penyusunan dokumentasi sebagai bagian akhir dari pengembangan. Rincian lengkap \textit{Product Backlog} disajikan pada \colorbox{yellow}{tabel 7 2.}
+		Selanjutnya, dilakukan integrasi antara middleware dengan blockchain serta pengembangan frontend berbasis Laravel untuk merepresentasikan sistem informasi kampus (SIAKAD Unida). Fitur verifikasi publik juga diimplementasikan agar pengguna eksternal dapat melakukan validasi dokumen tanpa proses autentikasi, namun tetap menjamin keabsahan data. Selain itu, dilakukan pengujian sistem secara menyeluruh, optimasi performa untuk mendukung efisiensi sistem, serta penyusunan dokumentasi sebagai bagian akhir dari pengembangan. Rincian lengkap \textit{Product Backlog} disajikan pada \colorbox{yellow}{tabel 7 2.}
 
-	% TABLE
-	\begin{landscape}
-		\renewcommand{\arraystretch}{1.3}
-		\begin{longtable}{|
-        >{\centering\arraybackslash}p{0.8cm}|
-        >{\raggedright\arraybackslash}p{4cm}|
-        p{8.5cm}|
-        >{\centering\arraybackslash}p{2cm}|
-        p{5cm}|}
+		% TABLE
+		\begin{landscape}
+			\renewcommand{\arraystretch}{1.3}
+			\begin{longtable}{|
+			>{\centering\arraybackslash}p{0.8cm}|
+			>{\raggedright\arraybackslash}p{4cm}|
+			p{8.5cm}|
+			>{\centering\arraybackslash}p{2cm}|
+			p{5cm}|}
 
-		\caption{Produk Backlog}
-		\label{tab:produk_backlog} \\
+			\caption{Produk Backlog}
+			\label{tab:produk_backlog} \\
 
-		\hline
-		\textbf{No} &
-        \textbf{Product Backlog Item} &
-        \textbf{Deskripsi} &
-        \textbf{Prioritas} &
-        \textbf{Output (Increment)} \\ \hline
-        \endfirsthead
+			\hline
+			\textbf{No} &
+			\textbf{Product Backlog Item} &
+			\textbf{Deskripsi} &
+			\textbf{Prioritas} &
+			\textbf{Output (Increment)} \\ \hline
+			\endfirsthead
 
-        \hline
-        \endfoot
+			\hline
+			\endfoot
 
-        \hline
-        \endlastfoot
+			\hline
+			\endlastfoot
 
-		% baris
-		1 &
-        Setup jaringan blockchain (Hyperledger Besu - QBFT) &
-        Membangun jaringan blockchain privat menggunakan Hyperledger Besu dengan mekanisme konsensus QBFT untuk mendukung transaksi tanpa biaya (\textit{zero gas}). &
-        Tinggi &
-        Jaringan blockchain aktif dan dapat digunakan. \\ \hline
+			% baris
+			1 &
+			Setup jaringan blockchain (Hyperledger Besu - QBFT) &
+			Membangun jaringan blockchain privat menggunakan Hyperledger Besu dengan mekanisme konsensus QBFT untuk mendukung transaksi tanpa biaya (\textit{zero gas}). &
+			Tinggi &
+			Jaringan blockchain aktif dan dapat digunakan. \\ \hline
 
-        2 &
-        Konfigurasi node dan \textit{smart contract deployment} &
-        Melakukan konfigurasi node serta proses \textit{deploy smart contract} untuk penyimpanan hash dokumen. &
-        Tinggi &
-        \textit{Smart contract} berhasil dideploy. \\ \hline
+			2 &
+			Konfigurasi node dan \textit{smart contract deployment} &
+			Melakukan konfigurasi node serta proses \textit{deploy smart contract} untuk penyimpanan hash dokumen. &
+			Tinggi &
+			\textit{Smart contract} berhasil dideploy. \\ \hline
 
-        3 &
-        Struktur Data \textit{Typed} &
-        Definisi objek JSON terstruktur yang digunakan untuk merepresentasikan data dalam bentuk parameter generik. &
-        Tinggi &
-        Struktur metadata siap digunakan. \\ \hline
+			3 &
+			Struktur Data \textit{Typed} &
+			Definisi objek JSON terstruktur yang digunakan untuk merepresentasikan data dalam bentuk parameter generik. &
+			Tinggi &
+			Struktur metadata siap digunakan. \\ \hline
 
-        4 &
-        Implementasi \textit{smart contract} verifikasi dokumen &
-        Mengembangkan \textit{smart contract} untuk menyimpan dan memverifikasi data dokumen. &
-        Tinggi &
-        Fungsi verifikasi berjalan di blockchain. \\ \hline
+			4 &
+			Implementasi \textit{smart contract} verifikasi dokumen &
+			Mengembangkan \textit{smart contract} untuk menyimpan dan memverifikasi data dokumen. &
+			Tinggi &
+			Fungsi verifikasi berjalan di blockchain. \\ \hline
 
-        5 &
-        Implementasi EIP-712 &
-        Definisi EIP-712 Domain (\textit{Name}, \textit{Version}, \textit{ChainId}, \textit{ContractAddress}). &
-        Tinggi &
-        Proses \textit{signing} dan \textit{verification} berhasil. \\ \hline
+			5 &
+			Implementasi EIP-712 &
+			Definisi EIP-712 Domain (\textit{Name}, \textit{Version}, \textit{ChainId}, \textit{ContractAddress}). &
+			Tinggi &
+			Proses \textit{signing} dan \textit{verification} berhasil. \\ \hline
 
-        6 &
-        Pengembangan API \textit{middleware} &
-        Membangun API sebagai penghubung antara \textit{frontend} dan blockchain (\textit{Relayer}). &
-        Tinggi &
-        API dapat mengirim dan menerima data. \\ \hline
+			6 &
+			Pengembangan API \textit{middleware} &
+			Membangun API sebagai penghubung antara \textit{frontend} dan blockchain (\textit{Relayer}). &
+			Tinggi &
+			API dapat mengirim dan menerima data. \\ \hline
 
-        7 &
-        Integrasi \textit{frontend} (Laravel) &
-        Menghubungkan sistem \textit{frontend} dengan API \textit{middleware}. &
-        Sedang &
-        Antarmuka pengguna dapat berinteraksi dengan sistem. \\ \hline
+			7 &
+			Integrasi \textit{frontend} (Laravel) &
+			Menghubungkan sistem \textit{frontend} dengan API \textit{middleware}. &
+			Sedang &
+			Antarmuka pengguna dapat berinteraksi dengan sistem. \\ \hline
 
-        9 &
-        Implementasi fitur verifikasi publik &
-        Mengembangkan fitur verifikasi dokumen tanpa login untuk pengguna eksternal. &
-        Tinggi &
-        Verifikasi publik dapat digunakan. \\ \hline
+			9 &
+			Implementasi fitur verifikasi publik &
+			Mengembangkan fitur verifikasi dokumen tanpa login untuk pengguna eksternal. &
+			Tinggi &
+			Verifikasi publik dapat digunakan. \\ \hline
 
-        10 &
-        Pengujian sistem (\textit{testing}) &
-        Melakukan pengujian fungsional dan integrasi sistem. &
-        Tinggi &
-        Sistem berjalan sesuai kebutuhan. \\ \hline
+			10 &
+			Pengujian sistem (\textit{testing}) &
+			Melakukan pengujian fungsional dan integrasi sistem. &
+			Tinggi &
+			Sistem berjalan sesuai kebutuhan. \\ \hline
 
-        12 &
-        Dokumentasi sistem &
-        Menyusun dokumentasi teknis dan penggunaan sistem. &
-        Rendah &
-        Dokumentasi sistem tersedia. \\ \hline
-			
-		\end{longtable}
-	\end{landscape}
+			12 &
+			Dokumentasi sistem &
+			Menyusun dokumentasi teknis dan penggunaan sistem. &
+			Rendah &
+			Dokumentasi sistem tersedia. \\ \hline
+				
+			\end{longtable}
+		\end{landscape}
 
-	\subsection{Sprint Planning}
-	Sprint Planning merupakan tahap perencanaan yang dilakukan sebelum Sprint dimulai. Pada tahap ini, dilakukan pemilihan item dari Product Backlog yang akan dikerjakan dalam satu periode Sprint berdasarkan tingkat prioritas yang telah ditentukan. Proses ini bertujuan untuk memastikan bahwa pekerjaan yang dilakukan memiliki fokus yang jelas dan sesuai dengan kebutuhan sistem yang paling mendesak.
+		\subsection{Sprint Planning}
+		Sprint Planning merupakan tahap perencanaan yang dilakukan sebelum Sprint dimulai. Pada tahap ini, dilakukan pemilihan item dari Product Backlog yang akan dikerjakan dalam satu periode Sprint berdasarkan tingkat prioritas yang telah ditentukan. Proses ini bertujuan untuk memastikan bahwa pekerjaan yang dilakukan memiliki fokus yang jelas dan sesuai dengan kebutuhan sistem yang paling mendesak.
 
-	Selain pemilihan backlog, pada tahap ini juga ditentukan tujuan Sprint (Sprint Goal) yang menjadi acuan utama selama proses pengembangan berlangsung. Penentuan tujuan ini penting agar setiap aktivitas yang dilakukan dalam Sprint memiliki arah yang jelas serta dapat memberikan nilai tambah terhadap sistem yang dikembangkan. Dengan adanya Sprint Goal, proses pengembangan menjadi lebih terstruktur dan terukur.
+		Selain pemilihan backlog, pada tahap ini juga ditentukan tujuan Sprint (Sprint Goal) yang menjadi acuan utama selama proses pengembangan berlangsung. Penentuan tujuan ini penting agar setiap aktivitas yang dilakukan dalam Sprint memiliki arah yang jelas serta dapat memberikan nilai tambah terhadap sistem yang dikembangkan. Dengan adanya Sprint Goal, proses pengembangan menjadi lebih terstruktur dan terukur.
 
-	Selanjutnya, dilakukan pembagian tugas serta perencanaan teknis terkait implementasi fitur yang akan dikembangkan. Dalam konteks penelitian ini, Sprint Planning mencakup perencanaan pengembangan komponen seperti infrastruktur blockchain, smart contract, middleware, serta integrasi sistem. Dengan adanya perencanaan yang matang, diharapkan setiap Sprint dapat menghasilkan Increment yang optimal sesuai dengan target yang telah ditentukan.
+		Selanjutnya, dilakukan pembagian tugas serta perencanaan teknis terkait implementasi fitur yang akan dikembangkan. Dalam konteks penelitian ini, Sprint Planning mencakup perencanaan pengembangan komponen seperti infrastruktur blockchain, smart contract, middleware, serta integrasi sistem. Dengan adanya perencanaan yang matang, diharapkan setiap Sprint dapat menghasilkan Increment yang optimal sesuai dengan target yang telah ditentukan.
 
-	\subsection{Sprint}
-	Sprint merupakan inti dari metode Scrum yang berisi seluruh aktivitas pengembangan sistem dalam periode waktu tertentu yang bersifat tetap (time-boxed). Pada tahap ini, seluruh item backlog yang telah dipilih pada Sprint Planning diimplementasikan menjadi bagian sistem yang berfungsi. Aktivitas dalam Sprint mencakup proses pengkodean, integrasi, serta pengujian terhadap fitur yang sedang dikembangkan.
+		\subsection{Sprint}
+		Sprint merupakan inti dari metode Scrum yang berisi seluruh aktivitas pengembangan sistem dalam periode waktu tertentu yang bersifat tetap (time-boxed). Pada tahap ini, seluruh item backlog yang telah dipilih pada Sprint Planning diimplementasikan menjadi bagian sistem yang berfungsi. Aktivitas dalam Sprint mencakup proses pengkodean, integrasi, serta pengujian terhadap fitur yang sedang dikembangkan.
 
-	Selama Sprint berlangsung, dilakukan pertemuan harian yang disebut Daily Scrum untuk memantau perkembangan pekerjaan serta mengidentifikasi hambatan yang dihadapi. Pertemuan ini bertujuan untuk menjaga koordinasi antar proses pengembangan sehingga setiap kendala dapat segera ditangani dan tidak menghambat pencapaian tujuan Sprint.
+		Selama Sprint berlangsung, dilakukan pertemuan harian yang disebut Daily Scrum untuk memantau perkembangan pekerjaan serta mengidentifikasi hambatan yang dihadapi. Pertemuan ini bertujuan untuk menjaga koordinasi antar proses pengembangan sehingga setiap kendala dapat segera ditangani dan tidak menghambat pencapaian tujuan Sprint.
 
-	Selain itu, pengujian sistem dilakukan secara berkelanjutan selama Sprint untuk memastikan bahwa setiap fitur yang dikembangkan telah berjalan sesuai dengan kebutuhan. Dengan demikian, setiap hasil kerja yang dihasilkan pada akhir Sprint telah memenuhi kriteria yang ditentukan dan siap untuk dievaluasi lebih lanjut pada tahap berikutnya.
+		Selain itu, pengujian sistem dilakukan secara berkelanjutan selama Sprint untuk memastikan bahwa setiap fitur yang dikembangkan telah berjalan sesuai dengan kebutuhan. Dengan demikian, setiap hasil kerja yang dihasilkan pada akhir Sprint telah memenuhi kriteria yang ditentukan dan siap untuk dievaluasi lebih lanjut pada tahap berikutnya.
 
 
-	\subsection{Sprint Review}
-	Sprint Review merupakan tahap evaluasi yang dilakukan pada akhir Sprint untuk meninjau hasil pengembangan yang telah dicapai. Pada tahap ini, hasil kerja berupa Increment didemonstrasikan untuk memastikan bahwa fitur yang telah dikembangkan sesuai dengan kebutuhan yang telah ditentukan sebelumnya.
+		\subsection{Sprint Review}
+		Sprint Review merupakan tahap evaluasi yang dilakukan pada akhir Sprint untuk meninjau hasil pengembangan yang telah dicapai. Pada tahap ini, hasil kerja berupa Increment didemonstrasikan untuk memastikan bahwa fitur yang telah dikembangkan sesuai dengan kebutuhan yang telah ditentukan sebelumnya.
 
-	Proses Sprint Review juga berfungsi sebagai sarana untuk memperoleh umpan balik terhadap sistem yang telah dikembangkan. Umpan balik ini sangat penting dalam pengembangan berbasis Scrum karena memungkinkan adanya penyesuaian terhadap kebutuhan sistem yang mungkin berubah selama proses pengembangan berlangsung.
+		Proses Sprint Review juga berfungsi sebagai sarana untuk memperoleh umpan balik terhadap sistem yang telah dikembangkan. Umpan balik ini sangat penting dalam pengembangan berbasis Scrum karena memungkinkan adanya penyesuaian terhadap kebutuhan sistem yang mungkin berubah selama proses pengembangan berlangsung.
 
-	Hasil dari Sprint Review akan digunakan sebagai dasar untuk memperbarui Product Backlog. Dengan demikian, backlog akan selalu relevan dengan kondisi sistem terkini dan kebutuhan pengguna, sehingga pengembangan pada Sprint berikutnya dapat dilakukan dengan lebih optimal dan terarah.
+		Hasil dari Sprint Review akan digunakan sebagai dasar untuk memperbarui Product Backlog. Dengan demikian, backlog akan selalu relevan dengan kondisi sistem terkini dan kebutuhan pengguna, sehingga pengembangan pada Sprint berikutnya dapat dilakukan dengan lebih optimal dan terarah.
 
-	\subsection{Sprint Retrospective}
-	Sprint Retrospective merupakan tahap evaluasi terhadap proses kerja yang telah dilakukan selama Sprint berlangsung. Fokus utama pada tahap ini adalah mengidentifikasi kelebihan, kekurangan, serta hambatan yang terjadi selama proses pengembangan sistem.
+		\subsection{Sprint Retrospective}
+		Sprint Retrospective merupakan tahap evaluasi terhadap proses kerja yang telah dilakukan selama Sprint berlangsung. Fokus utama pada tahap ini adalah mengidentifikasi kelebihan, kekurangan, serta hambatan yang terjadi selama proses pengembangan sistem.
 
-	Pada tahap ini dilakukan analisis terhadap berbagai aspek, seperti efektivitas perencanaan, kendala teknis yang dihadapi, serta koordinasi dalam proses pengembangan. Evaluasi ini bertujuan untuk meningkatkan kualitas proses kerja sehingga Sprint berikutnya dapat berjalan lebih baik dibandingkan sebelumnya.
+		Pada tahap ini dilakukan analisis terhadap berbagai aspek, seperti efektivitas perencanaan, kendala teknis yang dihadapi, serta koordinasi dalam proses pengembangan. Evaluasi ini bertujuan untuk meningkatkan kualitas proses kerja sehingga Sprint berikutnya dapat berjalan lebih baik dibandingkan sebelumnya.
 
-	Hasil dari Sprint Retrospective digunakan sebagai dasar perbaikan dalam Sprint berikutnya. Dengan adanya evaluasi yang berkelanjutan, metode Scrum memungkinkan peningkatan kualitas sistem secara bertahap, baik dari sisi teknis maupun proses pengembangan.
+		Hasil dari Sprint Retrospective digunakan sebagai dasar perbaikan dalam Sprint berikutnya. Dengan adanya evaluasi yang berkelanjutan, metode Scrum memungkinkan peningkatan kualitas sistem secara bertahap, baik dari sisi teknis maupun proses pengembangan.
 
-	\subsection{Increment}
-	Sprint Retrospective merupakan tahap evaluasi terhadap proses kerja yang telah dilakukan selama Sprint berlangsung. Fokus utama pada tahap ini adalah mengidentifikasi kelebihan, kekurangan, serta hambatan yang terjadi selama proses pengembangan sistem.
+		\subsection{Increment}
+		Sprint Retrospective merupakan tahap evaluasi terhadap proses kerja yang telah dilakukan selama Sprint berlangsung. Fokus utama pada tahap ini adalah mengidentifikasi kelebihan, kekurangan, serta hambatan yang terjadi selama proses pengembangan sistem.
 
-	Pada tahap ini dilakukan analisis terhadap berbagai aspek, seperti efektivitas perencanaan, kendala teknis yang dihadapi, serta koordinasi dalam proses pengembangan. Evaluasi ini bertujuan untuk meningkatkan kualitas proses kerja sehingga Sprint berikutnya dapat berjalan lebih baik dibandingkan sebelumnya.
+		Pada tahap ini dilakukan analisis terhadap berbagai aspek, seperti efektivitas perencanaan, kendala teknis yang dihadapi, serta koordinasi dalam proses pengembangan. Evaluasi ini bertujuan untuk meningkatkan kualitas proses kerja sehingga Sprint berikutnya dapat berjalan lebih baik dibandingkan sebelumnya.
 
-	yang dihasilkan pada setiap Sprint akan terus dikembangkan dan disempurnakan pada Sprint berikutnya hingga seluruh kebutuhan sistem dalam Product Backlog dapat terpenuhi. Dengan pendekatan ini, sistem yang dibangun menjadi lebih fleksibel, terukur, dan mampu beradaptasi terhadap perubahan kebutuhan selama proses pengembangan berlangsung.
+		yang dihasilkan pada setiap Sprint akan terus dikembangkan dan disempurnakan pada Sprint berikutnya hingga seluruh kebutuhan sistem dalam Product Backlog dapat terpenuhi. Dengan pendekatan ini, sistem yang dibangun menjadi lebih fleksibel, terukur, dan mampu beradaptasi terhadap perubahan kebutuhan selama proses pengembangan berlangsung.
 
-	
+		
 	\section{Perancangan Sistem}
 		\subsection{Arsitektur Sistem}
 		\setlength{\leftskip}{1.4cm}
@@ -334,7 +334,7 @@
 			\item Flowchart Penandatanganan Dokumen
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=1\textwidth]{assets/flowchart-1.png}
+					\includegraphics[width=0.9\textwidth]{assets/flowchart-1.png}
 					\caption{FLowchart Penandatanganan Digital}
 					\label{fig:flowchart-1}
 				\end{figure}
@@ -377,5 +377,64 @@
 
 		\end{subsecenumerate}
 			
+	\section{Pengujian Sistem}
+	Proses pengujian dilakukan untuk memvalidasi fungsionalitas sistem, mulai dari penandatanganan data terstruktur hingga transaksi di jaringan privat blockchain. Pengujian ini mencangkup kriptografi EIP-712, evaluasi efisiensi transaksi melalui mekanisme zero-gas pada Hyperledger Besu, verifikasi integritas dokumen pada privat Blockchain, serta pengujian ketahanan manajemen kunci yang memisahkan peran antara pemberi otorisasi dengan pelaksana transaksi. Secara rinci, rencana pengujian prototype pada penelitian ini dijabarkan pada Tabel XXX berikut: 
 
+	% TABLE
+	\renewcommand{\arraystretch}{1.3}
+	\begin{longtable}{|
+	>{\centering\arraybackslash}p{0.8cm}|
+	>{\raggedright\arraybackslash}p{2.5cm}|
+	p{3.2cm}|
+	p{3.2cm}|
+	p{3.2cm}|}
+
+	\caption{Rencana Pengujian Sistem}
+	\label{tab:rencana_pengujian} \\
+
+	\hline
+    \textbf{No} &
+    \textbf{Aspek yang Diuji} &
+    \textbf{Tujuan Pengujian} &
+    \textbf{Metode Pengujian} &
+    \textbf{Indikator Keberhasilan} \\ \hline
+    \endfirsthead
+
+	\hline
+    \endfoot
+
+    \hline
+    \endlastfoot
+
+	1 &
+    Validitas Tanda Tangan EIP-712 &
+    Memastikan \textit{signature} data terstruktur dapat di-\textit{recover} dengan benar. &
+    \textit{Black-Box Testing} dengan input data akademik riil. &
+    Alamat \textit{signer} hasil \textit{recover} cocok 100\% dengan alamat biro yang terdaftar di kontrak. \\ \hline
+
+    2 &
+    Mekanisme Zero-Gas &
+    Memastikan transaksi dapat masuk ke blok tanpa memotong saldo \textit{wallet}. &
+    Observasi saldo \textit{wallet middleware} sebelum dan sesudah transaksi. &
+    Saldo \textit{wallet} tetap statis (tidak berkurang) meskipun status transaksi berhasil/sukses. \\ \hline
+
+    3 &
+    Integritas Data \textit{On-Chain} &
+    Menilai apakah data akademik tersimpan secara permanen dan valid. &
+    Verifikasi \textit{doc\_hash} melalui fungsi \textit{checkDocument} dan \textit{Block Explorer}. &
+    Sistem berhasil mengembalikan status \textit{true} untuk hash yang terdaftar dan data tidak dapat diubah. \\ \hline
+
+    4 &
+    Manajemen Kunci (\textit{Decoupling}) &
+    Memastikan pemisahan peran antara \textit{Signer} dan \textit{Relayer} berfungsi. &
+    Simulasi pengiriman transaksi menggunakan \textit{private key} yang berbeda. &
+    Transaksi berhasil dieksekusi \textit{on-chain} dengan otorisasi tetap berasal dari kunci biro yang sah. \\ \hline
+
+    5 &
+    Konsensus \& \textit{Fault Tolerance} (QBFT) &
+    Memastikan jaringan tetap berjalan stabil dengan skema 4 \textit{node} dan 3 validator. &
+    Mematikan salah satu \textit{node} validator secara sengaja saat proses transaksi berlangsung. &
+    Jaringan tetap mampu menghasilkan blok baru dan memproses transaksi selama minimal 2 validator (2/3) aktif. \\ \hline
+		
+	\end{longtable}
 			

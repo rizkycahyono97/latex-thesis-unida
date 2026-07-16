@@ -71,6 +71,10 @@
 \usepackage{indentfirst}
 \usepackage{lipsum}
 \usepackage{xstring}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage{array}
+\usepackage{longtable}
 % =================== LANGUAGE & FONTS CONFIG ===================
 \usepackage{polyglossia}
 \setmainlanguage{indonesian}

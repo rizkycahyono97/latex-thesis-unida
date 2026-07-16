@@ -5,85 +5,85 @@
 		
 	% TABLE
 	\begin{table}[ht]
-	\centering
-	\caption{Waktu Penelitian}
-	\renewcommand{\arraystretch}{2}
+		\centering
+		\caption{Waktu Penelitian}
+		\renewcommand{\arraystretch}{2}
 
-	\begin{tabular}{|c|p{4cm}|c|c|c|c|c|c|}
-		\hline
-		\textbf{No} &
-		\textbf{Jenis Kegiatan} &
-		\textbf{Maret} &
-		\textbf{April} &
-		\textbf{Mei} &
-		\textbf{Juni} &
-		\textbf{Juli} &
-		\textbf{Agustus} \\ \hline		
+		\begin{tabular}{|c|p{4cm}|c|c|c|c|c|c|}
+			\hline
+			\textbf{No} &
+			\textbf{Jenis Kegiatan} &
+			\textbf{Maret} &
+			\textbf{April} &
+			\textbf{Mei} &
+			\textbf{Juni} &
+			\textbf{Juli} &
+			\textbf{Agustus} \\ \hline		
 
-		1 &
-		Penyusunan Proposal Penelitian &
-		\cellcolor{blue!70} &
-		\cellcolor{blue!70} &
-		&
-		&
-		&
-		\\ \hline
+			1 &
+			Penyusunan Proposal Penelitian &
+			\cellcolor{blue!70} &
+			\cellcolor{blue!70} &
+			&
+			&
+			&
+			\\ \hline
 
-		2 &
-		Analisis Kebutuhan Sistem dan Protokol Blockchain &
-		&
-		\cellcolor{blue!70} &
-		&
-		&
-		&
-		\\ \hline
+			2 &
+			Analisis Kebutuhan Sistem dan Protokol Blockchain &
+			&
+			\cellcolor{blue!70} &
+			&
+			&
+			&
+			\\ \hline
 
-		3 &
-		Perancangan Smart Contract dan Struktur EIP-712 &
-		&
-		\cellcolor{blue!70} &
-		\cellcolor{blue!70} &
-		&
-		&
-		\\ \hline
+			3 &
+			Perancangan Smart Contract dan Struktur EIP-712 &
+			&
+			\cellcolor{blue!70} &
+			\cellcolor{blue!70} &
+			&
+			&
+			\\ \hline
 
-		4 &
-		Konfigurasi Jaringan Hyperledger Besu dan Mekanisme Zero-gas &
-		&
-		&
-		\cellcolor{blue!70} &
-		\cellcolor{blue!70} &
-		&
-		\\ \hline
+			4 &
+			Konfigurasi Jaringan Hyperledger Besu dan Mekanisme Zero-gas &
+			&
+			&
+			\cellcolor{blue!70} &
+			\cellcolor{blue!70} &
+			&
+			\\ \hline
 
-		5 &
-		Pengembangan Middleware (API) dan Integrasi dengan Protokol EIP-712 &
-		&
-		&
-		&
-		\cellcolor{blue!70} &
-		\cellcolor{blue!70} &
-		\\ \hline
+			5 &
+			Pengembangan Middleware (API) dan Integrasi dengan Protokol EIP-712 &
+			&
+			&
+			&
+			\cellcolor{blue!70} &
+			\cellcolor{blue!70} &
+			\\ \hline
 
-		6 &
-		Pengujian Integritas dan Validasi On-Chain &
-		&
-		&
-		&
-		&
-		\cellcolor{blue!70} &
-		\\ \hline
+			6 &
+			Pengujian Integritas dan Validasi On-Chain &
+			&
+			&
+			&
+			&
+			\cellcolor{blue!70} &
+			\\ \hline
 
-		7 &
-		Penyusunan dan Penyelesaian Laporan &
-		&
-		&
-		&
-		&
-		\cellcolor{blue!70} &
-		\cellcolor{blue!70}
-		\\ \hline
-	\end{tabular}
+			7 &
+			Penyusunan dan Penyelesaian Laporan &
+			&
+			&
+			&
+			&
+			\cellcolor{blue!70} &
+			\cellcolor{blue!70}
+			\\ \hline
+		\end{tabular}
 	\end{table}
 
 	\section{Alat dan Bahan Penelitian}
@@ -111,13 +111,13 @@
 	\end{secenumerate}
 	
 	\section{Tahapan Penelitian}
-	Penelitian ini menggunakan metode Scrum, yang merupakan salah satu pendekatan dalam \textit{Agile Software Development} yang bersifat iteratif dan incremental. Metode ini dipilih karena mampu mengakomodasi perubahan kebutuhan serta memungkinkan pengembangan sistem dilakukan secara bertahap melalui siklus yang berulang (\textit{Sprint}). Berikut adalah tampilan model Scrum yang tertera pada Gambar \ref{fig:contoh-f}:
+	Penelitian ini menggunakan metode Scrum, yang merupakan salah satu pendekatan dalam \textit{Agile Software Development} yang bersifat iteratif dan incremental. Metode ini dipilih karena mampu mengakomodasi perubahan kebutuhan serta memungkinkan pengembangan sistem dilakukan secara bertahap melalui siklus yang berulang (\textit{Sprint}). Berikut adalah tampilan model Scrum yang tertera pada Gambar \ref{fig:metode-scrum}:
 	
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.8\textwidth]{assets/scrum.png}
 		\caption{Metode Scrum}
-		\label{fig:contoh-f}
+		\label{fig:metode-scrum}
 	\end{figure}
 
 		\subsection{Product Backlog}
@@ -126,7 +126,7 @@
 
 		Berdasarkan hasil identifikasi kebutuhan sistem, \textit{Product Backlog} mencakup pembangunan infrastruktur blockchain menggunakan \textit{Hyperledger Besu} dengan mekanisme konsensus QBFT yang mendukung transaksi tanpa biaya (zero gas), konfigurasi node, serta proses deployment smart contract untuk penyimpanan dan verifikasi data dokumen dalam bentuk hash. Selain itu, dirancang struktur metadata dokumen untuk merepresentasikan data akademik secara unik. Tahap selanjutnya meliputi pengembangan smart contract verifikasi, implementasi tanda tangan digital menggunakan EIP-712, serta pembangunan API middleware yang berfungsi sebagai penghubung antara sistem frontend dan jaringan blockchain.
 
-		Selanjutnya, dilakukan integrasi antara middleware dengan blockchain serta pengembangan frontend berbasis Laravel untuk merepresentasikan sistem informasi kampus (SIAKAD Unida). Fitur verifikasi publik juga diimplementasikan agar pengguna eksternal dapat melakukan validasi dokumen tanpa proses autentikasi, namun tetap menjamin keabsahan data. Selain itu, dilakukan pengujian sistem secara menyeluruh, optimasi performa untuk mendukung efisiensi sistem, serta penyusunan dokumentasi sebagai bagian akhir dari pengembangan. Rincian lengkap \textit{Product Backlog} disajikan pada \colorbox{yellow}{tabel 7 2.}
+		Selanjutnya, dilakukan integrasi antara middleware dengan blockchain serta pengembangan frontend berbasis Laravel untuk merepresentasikan sistem informasi kampus (SIAKAD Unida). Fitur verifikasi publik juga diimplementasikan agar pengguna eksternal dapat melakukan validasi dokumen tanpa proses autentikasi, namun tetap menjamin keabsahan data. Selain itu, dilakukan pengujian sistem secara menyeluruh, optimasi performa untuk mendukung efisiensi sistem, serta penyusunan dokumentasi sebagai bagian akhir dari pengembangan. Rincian lengkap \textit{Product Backlog} disajikan pada tabel \ref{tab:produk_backlog}.
 
 		% TABLE
 		\begin{landscape}
@@ -158,63 +158,45 @@
 			% baris
 			1 &
 			Setup jaringan blockchain (Hyperledger Besu - QBFT) &
-			Membangun jaringan blockchain privat menggunakan Hyperledger Besu dengan mekanisme konsensus QBFT untuk mendukung transaksi tanpa biaya (\textit{zero gas}). &
+			Membangun jaringan blockchain privat menggunakan Hyperledger Besu dengan mekanisme konsensus QBFT untuk mendukung transaksi tanpa biaya (\textit{zero gas}), dengan 3 Node validator dan 1 Node klien &
 			Tinggi &
 			Jaringan blockchain aktif dan dapat digunakan. \\ \hline
 
 			2 &
-			Konfigurasi node dan \textit{smart contract deployment} &
-			Melakukan konfigurasi node serta proses \textit{deploy smart contract} untuk penyimpanan hash dokumen. &
+			Mengembangkan \textit{Smart contract}  &
+			Pengembangan \textit{Smart contract} berbasis \textit{Solidity} untuk penyimpanan dokumen. &
 			Tinggi &
 			\textit{Smart contract} berhasil dideploy. \\ \hline
 
 			3 &
-			Struktur Data \textit{Typed} &
-			Definisi objek JSON terstruktur yang digunakan untuk merepresentasikan data dalam bentuk parameter generik. &
-			Tinggi &
-			Struktur metadata siap digunakan. \\ \hline
-
-			4 &
-			Implementasi \textit{smart contract} verifikasi dokumen &
-			Mengembangkan \textit{smart contract} untuk menyimpan dan memverifikasi data dokumen. &
-			Tinggi &
-			Fungsi verifikasi berjalan di blockchain. \\ \hline
-
-			5 &
 			Implementasi EIP-712 &
-			Definisi EIP-712 Domain (\textit{Name}, \textit{Version}, \textit{ChainId}, \textit{ContractAddress}). &
+			Definisi EIP-712 Domain (\textit{Name}, \textit{Version}, \textit{ChainId}, \textit{ContractAddress}), beserta \textit{fileHash} dan \textit{identityHash} &
 			Tinggi &
 			Proses \textit{signing} dan \textit{verification} berhasil. \\ \hline
 
-			6 &
-			Pengembangan API \textit{middleware} &
+			4 &
+			Pengembangan API \textit{Middleware} &
 			Membangun API sebagai penghubung antara \textit{frontend} dan blockchain (\textit{Relayer}). &
 			Tinggi &
 			API dapat mengirim dan menerima data. \\ \hline
 
-			7 &
-			Integrasi \textit{frontend} (Laravel) &
-			Menghubungkan sistem \textit{frontend} dengan API \textit{middleware}. &
+			5 &
+			Mengembangkan klien layer &
+			Menghubungkan sistem untuk klien layer menggunakan \textit{laravel} &
 			Sedang &
-			Antarmuka pengguna dapat berinteraksi dengan sistem. \\ \hline
+			Antarmuka pengguna dapat berinteraksi dengan sistem, dan terhubung dengan API \textit{Middleware} \\ \hline
 
-			9 &
-			Implementasi fitur verifikasi publik &
+			6 &
+			Implementasi fitur verifikasi publik menggunakan QR Code dan upload manual &
 			Mengembangkan fitur verifikasi dokumen tanpa login untuk pengguna eksternal. &
 			Tinggi &
 			Verifikasi publik dapat digunakan. \\ \hline
 
-			10 &
+			7 &
 			Pengujian sistem (\textit{testing}) &
 			Melakukan pengujian fungsional dan integrasi sistem. &
 			Tinggi &
 			Sistem berjalan sesuai kebutuhan. \\ \hline
-
-			12 &
-			Dokumentasi sistem &
-			Menyusun dokumentasi teknis dan penggunaan sistem. &
-			Rendah &
-			Dokumentasi sistem tersedia. \\ \hline
 				
 			\end{longtable}
 		\end{landscape}
@@ -260,13 +242,13 @@
 		\subsection{Arsitektur Sistem}
 		\setlength{\leftskip}{1.4cm}
 
-		Bagian ini menjelaskan rancangan arsitektur sistem yang dibangun untuk mengintegrasikan beberapa komponen utama, seperti SIAKAD Unida, API Middleware, Smart Contract, dan Blockchain. Arsitektur ini dirancang untuk memastikan komunikasi data antra komponen berjalan dengan aman, terdistribusi, dan efisien dalam mendukung verifikasi dokumen akademik. Berikut adalah tampilan arsitektur sistem pada protype, yang tertera pada Gambar 
+		Bagian ini menjelaskan rancangan arsitektur sistem yang dibangun untuk mengintegrasikan beberapa komponen utama, seperti SIAKAD Unida, API Middleware, Smart Contract, dan Blockchain. Arsitektur ini dirancang untuk memastikan komunikasi data antra komponen berjalan dengan aman, terdistribusi, dan efisien dalam mendukung verifikasi dokumen akademik. Berikut adalah tampilan arsitektur sistem pada protype, yang tertera pada Gambar \ref{fig:arsitektur-sistem}.
 
 		\begin{figure}[h!]
 			\centering
 			\includegraphics[width=1\textwidth]{assets/arsitektur-utama.png}
 			\caption{Arsitektur Sistem}
-			\label{fig:contoh-f}
+			\label{fig:arsitektur-sistem}
 		\end{figure}
 
 		Arsitektur sistem yang dikembangkan terdiri dari beberapa komponen utama yang saling terintegrasi, yang memiliki peran sebagai berikut:
@@ -286,10 +268,10 @@
 			\centering
 			\includegraphics[width=0.8\textwidth]{assets/arsitektur-jaringan.png}
 			\caption{Metode Scrum}
-			\label{fig:contoh-f}
+			\label{fig:arsitektur-jaringan}
 		\end{figure}
 
-		Berdasarkan visualisasi arsitektur jaringan yang dirancang, berikut adalah penjelasan fungsi dari setiap komponen didalam sistem:
+		Berdasarkan visualisasi arsitektur jaringan yang dirancang pada gambar \ref{fig:arsitektur-jaringan}, berikut adalah penjelasan fungsi dari setiap komponen didalam sistem:
 
 		\begin{subsecenumerate}
 			\item Validator 1 (Bootnode): Node utama yang berfungsi sebagai titik awal ketika jaringan di jalankan. Bootnode bertugas mencatat konfigurasi awal jaringan sehingga Validator 2, Validator 3 dan RPC Node dapat saling mengenal.
@@ -298,13 +280,13 @@
 		\end{subsecenumerate}
 
 		\subsection{Use Case Sistem}
-		Use Case diagram digunakan untuk memodelkan fungsionalitas sistem berdasarkan sudut pandang pengguna. Penjelasan ini menguraikan aktor-aktor yang terlibat serta batasan interaksi mereka dengan sistem. Berikut adalah tampilan Use Case Prototype, yang tertera pada GAMBAR XXX:
+		Use Case diagram digunakan untuk memodelkan fungsionalitas sistem berdasarkan sudut pandang pengguna. Penjelasan ini menguraikan aktor-aktor yang terlibat serta batasan interaksi mereka dengan sistem. Berikut adalah tampilan Use Case Prototype, yang tertera pada gambar \ref{fig:flow-user}:
 
 		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.8\textwidth]{assets/flow-user.png}
-			\caption{Metode Scrum}
-			\label{fig:contoh-f}
+			\includegraphics[width=0.9\textwidth]{assets/flow-user.png}
+			\caption{Flow User}
+			\label{fig:flow-user}
 		\end{figure}
 
 		Berdasarkan diagram alur sistem tersebut, fungsionalitas aplikasi dibagi menjadi dua proses utama yaitu Arsip dan Publik:
@@ -379,7 +361,7 @@
 			
 	\section{Pengujian Sistem}
 	\setlength{\leftskip}{0.7cm}
-	Proses pengujian dilakukan untuk memvalidasi fungsionalitas sistem, mulai dari penandatanganan data terstruktur hingga transaksi di jaringan privat blockchain. Pengujian ini mencangkup kriptografi EIP-712, evaluasi efisiensi transaksi melalui mekanisme zero-gas pada Hyperledger Besu, verifikasi integritas dokumen pada privat Blockchain, serta pengujian ketahanan manajemen kunci yang memisahkan peran antara pemberi otorisasi dengan pelaksana transaksi. Secara rinci, rencana pengujian prototype pada penelitian ini dijabarkan pada Tabel XXX berikut: 
+	Proses pengujian dilakukan untuk memvalidasi fungsionalitas sistem, mulai dari penandatanganan data terstruktur hingga transaksi di jaringan privat blockchain. Pengujian ini mencangkup kriptografi EIP-712, evaluasi efisiensi transaksi melalui mekanisme zero-gas pada Hyperledger Besu, verifikasi integritas dokumen pada privat Blockchain, serta pengujian ketahanan manajemen kunci yang memisahkan peran antara pemberi otorisasi dengan pelaksana transaksi. Secara rinci, rencana pengujian prototype pada penelitian ini dijabarkan pada tabel \ref{tab:rencana_pengujian} berikut: 
 
 	% TABLE
 	\renewcommand{\arraystretch}{1.3}

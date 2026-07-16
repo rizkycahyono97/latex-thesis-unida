@@ -77,73 +77,71 @@
 			\renewcommand{\arraystretch}{1.3}
 
 			\begin{longtable}{|
-			>{\centering\arraybackslash}p{0.8cm}|
-			>{\centering\arraybackslash}p{3.5cm}|
-			>{\centering\arraybackslash}p{1.2cm}|
-			p{6cm}|
-			p{5cm}|
-			p{5cm}|}
+				>{\centering\arraybackslash}p{0.8cm}|
+				>{\centering\arraybackslash}p{3.5cm}|
+				>{\centering\arraybackslash}p{1.2cm}|
+				p{6cm}|
+				p{5cm}|
+				p{5cm}|}
 
-			\caption{Perbandingan Penelitian Terdahulu}
-			\label{tab:perbandingan_penelitian} \\
+				\caption{Perbandingan Penelitian Terdahulu}
+				\label{tab:perbandingan_penelitian} \\
 
-			\hline
-			\textbf{No} &
-			\textbf{Peneliti} &
-			\textbf{Tahun} &
-			\textbf{Judul Penelitian} &
-			\textbf{Persamaan} &
-			\textbf{Perbedaan} \\ \hline
-			\endfirsthead
+				\hline
+				\textbf{No} &
+				\textbf{Peneliti} &
+				\textbf{Tahun} &
+				\textbf{Judul Penelitian} &
+				\textbf{Persamaan} &
+				\textbf{Perbedaan} \\ \hline
+				\endfirsthead
 
-			\hline
-			\endfoot
+				\hline
+				\endfoot
 
-			\hline
-			\endlastfoot
+				\hline
+				\endlastfoot
 
-			1 &
-			Rafael Genes Duran, dkk. &
-			2020 &
-			\textit{An Architecture for Easy Onboarding and Key Life-Cycle Management in Blockchain Applications} &
-			Menerapkan pemisahan peran kunci (\textit{decoupling signature}) untuk kemudahan penggunaan. &
-			Penelitian terdahulu fokus pada aplikasi web umum, sedangkan penelitian ini berfokus pada data akademik terstruktur menggunakan \textit{EIP-712}. \\ \hline
+				1 &
+				Rafael Genes Duran, dkk. &
+				2020 &
+				\textit{An Architecture for Easy Onboarding and Key Life-Cycle Management in Blockchain Applications} &
+				Menerapkan pemisahan peran kunci (\textit{decoupling signature}) untuk kemudahan penggunaan. &
+				Penelitian terdahulu fokus pada aplikasi web umum, sedangkan penelitian ini berfokus pada data akademik terstruktur menggunakan \textit{EIP-712}. \\ \hline
 
-			2 &
-			Saleh, O. S., dkk. &
-			2020 &
-			\textit{Blockchain Based Framework for Educational Certificates Verification} &
-			Menjamin keamanan dan integritas sertifikat akademik melalui mekanisme otentikasi dan otorisasi. &
-			Penelitian terdahulu menggunakan \textit{Hyperledger Fabric}, sedangkan penelitian ini menggunakan \textit{Hyperledger Besu} dengan protokol \textit{EIP-712}. \\ \hline
+				2 &
+				Saleh, O. S., dkk. &
+				2020 &
+				\textit{Blockchain Based Framework for Educational Certificates Verification} &
+				Menjamin keamanan dan integritas sertifikat akademik melalui mekanisme otentikasi dan otorisasi. &
+				Penelitian terdahulu menggunakan \textit{Hyperledger Fabric}, sedangkan penelitian ini menggunakan \textit{Hyperledger Besu} dengan protokol \textit{EIP-712}. \\ \hline
 
-			3 &
-			Om Pal, dkk. &
-			2021 &
-			\textit{Key Management for Blockchain Technology} &
-			Berfokus pada keamanan manajemen kunci (\textit{Key Management}) untuk menjaga kerahasiaan data. &
-			Penelitian terdahulu bersifat teoritis, sedangkan penelitian ini mengimplementasikan pemisahan peran Signer dan Relayer secara teknis. \\ \hline
+				3 &
+				Om Pal, dkk. &
+				2021 &
+				\textit{Key Management for Blockchain Technology} &
+				Berfokus pada keamanan manajemen kunci (\textit{Key Management}) untuk menjaga kerahasiaan data. &
+				Penelitian terdahulu bersifat teoritis, sedangkan penelitian ini mengimplementasikan pemisahan peran Signer dan Relayer secara teknis. \\ \hline
 
-			4 &
-			Kumar, dkk. &
-			2022 &
-			\textit{Academic Certificate Verification System using Blockchain} &
-			Menggunakan blockchain privat untuk verifikasi dokumen akademik. &
-			Penelitian terdahulu belum menerapkan protokol \textit{EIP-712}, sedangkan penelitian ini menggunakan \textit{human-readable signing}. \\ \hline
+				4 &
+				Kumar, dkk. &
+				2022 &
+				\textit{Academic Certificate Verification System using Blockchain} &
+				Menggunakan blockchain privat untuk verifikasi dokumen akademik. &
+				Penelitian terdahulu belum menerapkan protokol \textit{EIP-712}, sedangkan penelitian ini menggunakan \textit{human-readable signing}. \\ \hline
 
-			5 &
-			Gangwar, S. dan Chaurasia, A. &
-			2024 &
-			\textit{Blockchain-based Authentication and Verification System for Academic Certificate} &
-			Membangun DApp verifikasi ijazah berbasis blockchain dengan integrasi QR Code. &
-			Penelitian terdahulu menggunakan Ethereum 2.0 yang memerlukan biaya gas, sedangkan penelitian ini menggunakan Hyperledger Besu dengan mekanisme zero-gas. \\ \hline
+				5 &
+				Gangwar, S. dan Chaurasia, A. &
+				2024 &
+				\textit{Blockchain-based Authentication and Verification System for Academic Certificate} &
+				Membangun DApp verifikasi ijazah berbasis blockchain dengan integrasi QR Code. &
+				Penelitian terdahulu menggunakan Ethereum 2.0 yang memerlukan biaya gas, sedangkan penelitian ini menggunakan Hyperledger Besu dengan mekanisme zero-gas. \\ \hline
 
-			6 &
-			Brömme, A. dan Yavas, T. &
-			2026 &
-			\textit{Snaproot: Decentralized File Integrity Verification Using Blockchain-Anchored Cryptographic Hashing} &
-			Melakukan verifikasi integritas melalui perhitungan ulang hash dan penyimpanan bukti hash pada blockchain. &
-			Penelitian terdahulu memverifikasi integritas file secara umum dan tidak menggunakan protokol \textit{EIP-712} untuk data terstruktur. \\
-
+				6 &
+				Brömme, A. dan Yavas, T. &
+				2026 &
+				\textit{Snaproot: Decentralized File Integrity Verification Using Blockchain-Anchored Cryptographic Hashing} &
+				Melakukan verifikasi integritas melalui perhitungan ulang hash dan penyimpanan bukti hash pada blockchain. &
+				Penelitian terdahulu memverifikasi integritas file secara umum dan tidak menggunakan protokol \textit{EIP-712} untuk data terstruktur. \\
 			\end{longtable}
-
-			\end{landscape}
+		\end{landscape}

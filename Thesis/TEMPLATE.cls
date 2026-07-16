@@ -82,6 +82,10 @@
 \setotherlanguage{arabic}
 \setmainfont{Times New Roman}
 \newfontfamily\arabicfont[Script=Arabic, Scale=1.2]{Amiri}
+\usepackage{microtype}
+\tolerance=2000
+\emergencystretch=3em
+\hfuzz=1pt
 %==================== ENUMERATE ====================
 \usepackage{enumitem}
 

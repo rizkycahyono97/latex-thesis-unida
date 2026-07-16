@@ -31,4 +31,4 @@
 # =====================================================================
 # Abaikan PDF karena ukurannya besar dan selalu berubah setiap compile.
 # Hapus baris di bawah ini JIKA Anda memang ingin menyimpan riwayat PDF di Git.
-main.pdf
+# main.pdf

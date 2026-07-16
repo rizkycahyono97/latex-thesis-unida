@@ -12,10 +12,10 @@ Template ini dikembangkan untuk memfasilitasi mahasiswa dalam menyusun dokumen a
 
 Template ini telah dikonfigurasi untuk memenuhi kebutuhan penulisan akademis, antara lain:
 
-* **Kesesuaian Format:** Tata letak halaman, margin, dan penggunaan *font* Times New Roman telah disesuaikan dengan pedoman penulisan skripsi UNIDA Gontor.
-* **Dukungan Bahasa Arab:** Menggunakan *engine* XeLaTeX dan paket `polyglossia` untuk penulisan ayat Al-Qur'an dan teks Arab (font *Amiri*) yang presisi.
-* **Otomatisasi Dokumen:** Daftar Isi, Daftar Gambar, dan Daftar Tabel dihasilkan secara otomatis.
-* **Manajemen Referensi:** Integrasi dengan `BibLaTeX` menggunakan gaya sitasi *Chicago Manual of Style* (Catatan Kaki/Footnote) sesuai standar kampus.
+- **Kesesuaian Format:** Tata letak halaman, margin, dan penggunaan _font_ Times New Roman telah disesuaikan dengan pedoman penulisan skripsi UNIDA Gontor.
+- **Dukungan Bahasa Arab:** Menggunakan _engine_ XeLaTeX dan paket `polyglossia` untuk penulisan ayat Al-Qur'an dan teks Arab (font _Amiri_) yang presisi.
+- **Otomatisasi Dokumen:** Daftar Isi, Daftar Gambar, dan Daftar Tabel dihasilkan secara otomatis.
+- **Manajemen Referensi:** Integrasi dengan `BibLaTeX` menggunakan gaya sitasi _Chicago Manual of Style_ (Catatan Kaki/Footnote) sesuai standar kampus.
 
 ---
 
@@ -23,13 +23,13 @@ Template ini telah dikonfigurasi untuk memenuhi kebutuhan penulisan akademis, an
 
 Untuk menggunakan template ini, pastikan perangkat komputer Anda telah terinstal perangkat lunak berikut:
 
-| Perangkat Lunak | Windows | Linux | Fungsi |
-| :--- | :--- | :--- | :--- |
-| **LaTeX Distribution** | [MiKTeX](https://miktex.org/download) | TeX Live (`texlive-full`) | Mesin kompilasi utama dokumen LaTeX. |
-| **Teks Editor** | [TeXstudio](https://www.texstudio.org/) | VS Code / Neovim | Lingkungan pengembangan (IDE) untuk menulis kode. |
-| **Reference Manager** | [Zotero](https://www.zotero.o:rg/) | Zotero | Manajemen basis data daftar pustaka (*bibliography*). |
+| Perangkat Lunak        | Windows                                 | Linux                     | Fungsi                                                |
+| :--------------------- | :-------------------------------------- | :------------------------ | :---------------------------------------------------- |
+| **LaTeX Distribution** | [MiKTeX](https://miktex.org/download)   | TeX Live (`texlive-full`) | Mesin kompilasi utama dokumen LaTeX.                  |
+| **Teks Editor**        | [TeXstudio](https://www.texstudio.org/) | VS Code / Neovim          | Lingkungan pengembangan (IDE) untuk menulis kode.     |
+| **Reference Manager**  | [Zotero](https://www.zotero.o:rg/)      | Zotero                    | Manajemen basis data daftar pustaka (_bibliography_). |
 
-> **Catatan:** Pengguna Windows disarankan untuk mengaktifkan opsi *"Install missing packages on-the-fly"* pada pengaturan MiKTeX untuk mengunduh paket yang diperlukan secara otomatis.
+> **Catatan:** Pengguna Windows disarankan untuk mengaktifkan opsi _"Install missing packages on-the-fly"_ pada pengaturan MiKTeX untuk mengunduh paket yang diperlukan secara otomatis.
 
 ---
 
@@ -54,45 +54,46 @@ Pengguna hanya perlu menyunting file pada direktori tertentu sesuai dengan bagia
 
 ---
 
-```text
-
 ## ⚙️ Panduan Kompilasi
+
 Karena template ini menggunakan BibLaTeX dan Polyglossia, urutan proses kompilasi (build sequence) sangat krusial untuk menghasilkan dokumen yang sempurna.
 
-#Opsi A: Menggunakan TeXstudio (Direkomendasikan)
-Buka file main.tex.
+### Opsi A: Menggunakan TeXstudio (Direkomendasikan)
 
-Pastikan konfigurasi Build pada menu Options -> Configure TeXstudio -> Build diatur sebagai berikut:
+- Buka file main.tex.
 
-Default Compiler: XeLaTeX
+- Pastikan konfigurasi Build pada menu Options -> Configure TeXstudio -> Build diatur sebagai berikut:
 
-Default Bibliography Tool: Biber
+- Default Compiler: XeLaTeX
 
-Tekan tombol F5 (Build & View).
+- Default Bibliography Tool: Biber
 
-#Opsi B: Menggunakan Visual Studio Code
-Pastikan ekstensi LaTeX Workshop telah terinstal.
+- Tekan tombol F5 (Build & View).
 
-Buka file main.tex.
+### Opsi B: Menggunakan Visual Studio Code
 
-Buka Command Palette (Ctrl+Shift+P), ketik "Build with recipe".
+- Pastikan ekstensi LaTeX Workshop telah terinstal.
 
-Pilih resep: latexmk (xelatex).
+- Buka file main.tex.
 
-#Opsi C: Menggunakan Terminal (Command Line)
+- Buka Command Palette (Ctrl+Shift+P), ketik "Build with recipe".
+
+- Pilih resep: latexmk (xelatex).
+
+### Opsi C: Menggunakan Terminal (Command Line)
+
 Jalankan perintah berikut di dalam direktori proyek secara berurutan:
 
-Bash
-
--xelatex main.tex
--biber main
--xelatex main.tex
--xelatex main.tex
+```Bash
+- xelatex main.tex
+- biber main
+- xelatex main.tex
 ```
 
 ---
 
 ## 📝 Catatan Tambahan
+
 Penyisipan Gambar: Letakkan file gambar pada folder assets/, kemudian panggil menggunakan perintah \includegraphics.
 
 Tabel: Disarankan menggunakan paket booktabs (\toprule, \midrule, \bottomrule) untuk tampilan tabel yang profesional.

@@ -1,7 +1,20 @@
-\chapter{CONCLUSION}
+\chapter{KESIMPULAN}
 \setlength{\leftskip}{0.7cm}
-	\section{Conclusion}
-	\lipsum[2]
+	\section{Kesimpulan}
+	Penelitian ini berhasil merancang prototype sistem verifikasi dokumen akademik berbasis blockchain menggunakan Hyperledger Besu sebagai jaringan privat, smart contract berbasis Solidity, serta protokol tanda tangan digital EIP-712 untuk memastikan keaslian dokumen. Prototype yang dikembangkan mampu mengintegrasikan aplikasi klien (Client Layer), API Middleware dan jaringan blockchain. Berdasarkan hasil penelitian yang telah dilakukan, diperoleh beberapa kesimpulan sebagai berikut. 
+
+	\begin{subsecenumerate}
+		\item Berhasil membuat prototipe sistem verifikasi dokumen akademik berbasis blockchain menggunakan Hyperledger Besu dengan mekanisme QBFT yang mampu mencatat dokumen secara immutable serta mendukung transaksi tanpa biaya (zero gas) pada jaringan blockchain.
+		\item Implementasi protokol EIP-712 berhasil digunakan sebagai mekanisme autentikasi penerbitan dokumen melalui proses penandatanganan data terstuktur (typed structured data) secara off-chain dan verifikasi tanda tangan digital pada smart contract.
+		\item Sistem menyediakan dua metode verifikasi, yaitu verifikasi menggunakan QR Code dan verifikasi melalui unggah dokumen PDF.
+		\item Berdasarkan hasil pengujian Blackbox, seluruh fitur utama sistem, meliputi pengelolaan dokumen, penerbitan dokumen, pengelolaan validator, serta proses verifikasi dokumen, telah berjalan sesuai dengan kebutuhan fungsional yang telah ditetapkan. 
+	\end{subsecenumerate}
 	
-	\section{Suggestions}
-	\lipsum[2]
+	\section{Saran}
+	Berdasarkan hasil penelitian yang telah dilakukan, peneliti mengajukan beberapa saran untuk pengembangan dan penelitian selanjutnya:
+
+	\begin{subsecenumerate}
+		\item Sistem yang dikembangkan pada penelitian ini masih berupa prototipe, sehingga penelitian selanjutnya dapat dikembangkan dan diintegrasikan secara langsung dengan Sistem Informasi Akademik (SIAKAD) Unida Gontor. 
+		\item Infrasuktru blockchain pada penelitian ini masih dijalankan di lingkungan lokal (Local Network) sebagai media implementasi dan pengujian. Penelitian selanjutnnya dapat mengembangkan infrastuktur blockchain pada lingkungan produksi \textit{(Production-Ready)}, misalnya jaringan berjalan pada beberapa server terpisah, strategi pencadangan (Backup) dan pemulihan (Recover).
+		\item Pengembangan selanjutnnya dapat diimplementasikan \textit{InterPlanetary File System (IPFS)} sebagai media penyimpanan dokumen sehingga penyimpanan tidak lagi bergantung pada server aplikasi
+	\end{subsecenumerate}

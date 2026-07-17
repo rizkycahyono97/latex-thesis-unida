@@ -20,13 +20,74 @@
 		\end{figure}
 
 		Gambar \ref{fig:blockscout-dashboard} yang berhasil terhubung dengan jaringan Hyperledger Besu. Dashboard tersebut menampilkan informasi mengenai blok terbaru, jumlah transaksi, jumlah validator, serta data transaksi jaringan secara \textit{real-time}. Keberhasilan tersebut menandakan bahwasannya jaringan blockchain berjalan dan dapat diakses oleh aplikasi pendukung untuk melakukan pemantauan terhadap transaksi di jaringan.
+
 		\subsection{Implementasi Smart Contract}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{assets/contract.png}
+			\caption{smart contract berhasil dideploy}
+			\label{fig:contract}
+		\end{figure}
+
+		Berdasarkan hasil pengujian pada gambar \ref{fig:contract}, proses kompilasi dan deployment smart contract ke dalam jaringan blockchain dengan \textit{Chain ID 1337} menggunakan pustaka  Foundry telah berhasil dilakukan dengan aman. Indikasi keberhasilan ini ditunjukan oleh status konfirmasi \textit{On-chain Execution Complete \& Successful}, dimana  smart contract tersebut sukses dideploy secara permanen pada alamat \textit{0x8cba94B714C1eD691c207c6d9ad71C64b86EAc2a} pada blok \textit{9569} dengan total konsumsi biaya komputasi sebesar \textit{1.913.599 gas}. Keberhasilan tahap deployment ini membuktikan bahwa infrastruktur node privat Hyperledger Besu beserta smart contract telah siap sepenuhnya untuk dihubungkan dengan lapisan API Middleware.
 		
 		\subsection{Implementasi Protokol EIP-712}
 
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{assets/eip-712.png}
+			\caption{Log EIP-712}
+			\label{fig:eip-712}
+		\end{figure}
+
+		Berdasarkan hasil tangkapan layar di terminal API Middleware pada gambar \ref{fig:eip-712}, sistem berhasil menampilkan struktur data EIP-712 secara utuh sesaat sebelum proses penandatanganan dilakukan. Dengan rincian analisisi nilai parameter berikut:
+
+		\begin{subsecenumerate}
+			\item \textit{Domain}: Bagian ini mengunci konteks penandatanganan agar tidak dapat disalah gunakan pada lingkungan lain. Berdasarkan log, parameter didefinisikan sebagai ‘Tasdiqi-UNIDA’, versi ‘1’, dan chainId 1337, serta alamat kontrak \textit{0x8cba94B714C1eD691c207c6d9ad71C64b86EAc2a}. 
+			\item \textit{Types}: Menentukan stuktur tipe data untuk dokumen. Skema ini membatasi bahwa objek dokumen wajib memiliki stuktur data yang sama, pembatasan ini mencegah serangan modifikasi tipe data pada saat rekontruksi data on-chain
+			\item \textit{Message}: Berisi data rill dokumen. Berdasarkan log, dokumen yang diproses membawa ‘XXX’, nilai \textit{identityHash} berupa \textit{0x8a35d38a099a485e3f8821048e0b76a45c928db4d5aa42327d90a4c850b3dd1d}, serta nilai \textit{fileHash} berupa \textit{0xe1bbd8603388bb54783988cc885215d86b08a07fe0943ca2cc52d42a7d025975}. Selain itu terekan pula parameter \textit{validatorPrivateKey} yang merupakan kunci privat yang akan bertindak sebagai entitas penandatanganan utama.
+		\end{subsecenumerate}
+
 		\subsection{Implementasi Middleware API}
 
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{assets/swagger-api.png}
+			\caption{Dokumentasi API Middleware}
+			\label{fig:swagger-api}
+		\end{figure}
+
+		Gambar \ref{fig:swagger-api} menampilkan antarmuka dokumentasi \textit{API Middleware} berbasis OpenAPI, dokumen ini terbagi menjadi dua kelompok utama, yaitu kelompok Documents yang menangani pengambilan detail dokumen dan penandatanganan dokumen, dan kelompok validators yang berfungsi untuk menambahkan validator dokumen.
+
 		\subsection{Implementasi Aplikasi Klien}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{assets/upload-dokumen-asli.png}
+			\caption{Halaman Upload Dokumen Awal}
+			\label{fig:upload-dokumen-asli}
+		\end{figure}
+
+		Gambar \ref{fig:upload-dokumen-asli} menunjukan halaman untuk upload dokumen asli sebelum dilakukan penandatanganan, halaman tersebut juga menampilkan informasi pendukung (\textit{metadata}) seperti nomor dokumen, jenis dokumen, judul dokumen, tanggal terbit, serta data tambahan yang dinamis
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{assets/upload-manual.png}
+			\caption{Halaman Upload Manual}
+			\label{fig:upload-manual}
+		\end{figure}
+		Gambar \ref{fig:upload-manual} menampilkan antarmuka komponen verifikasi manual dengan mengupload dokumen yang akan diverifikasi. Pada implementasinya , antarmuka ini menyediakan area unggah berkas interaktif yang mendukung drag and drop maupun pencarian berkas secara manual, nantinya sistem akan menghitung ulang nilai hash dari dokumen yang di upload kemudian akan dilakukan pencocokan data dari database lokal dengan data di blockchain.
+		
+		\colorbox{yellow}{GAMBAR DOKUMEN YANG SUDAH ADA QRnya} 
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{assets/verify.png}
+			\caption{Halaman Verifikasi}
+			\label{fig:verify}
+		\end{figure}
+		
+		Gambar \ref{fig:verify} menampilkan antramuka halaman pengguna verifikasi  sistem yang menunjukan dokumen terverifikasi secara valid dan sah. Pada implementasinya, halaman ini melakukan pencocokan data secara real-time denan membandingkan data di database lokal dengan data pada jaringan blockchain. Status sinkron menandakan bahwa dokumen terbuktu identik dan tidak mengalami manipulasi, yang diperkuat lagi dengan adannya informasi bukti resi transaksi jaringan blockchain
 		
 	\section{Application Testing Results}
 	

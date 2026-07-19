@@ -86,6 +86,14 @@
 \tolerance=2000
 \emergencystretch=3em
 \hfuzz=1pt
+%=================== COSTUMIZATION ==========================
+\renewcommand{\chaptername}{BAB}
+\renewcommand{\contentsname}{DAFTAR ISI}
+\renewcommand{\listfigurename}{DAFTAR GAMBAR}
+\renewcommand{\listtablename}{DAFTAR TABEL}
+\renewcommand{\figurename}{Gambar}
+\renewcommand{\tablename}{Tabel}
+\renewcommand{\bibname}{DAFTAR PUSTAKA}
 %==================== ENUMERATE ====================
 \usepackage{enumitem}
 
@@ -105,15 +113,6 @@
 % =================== PREFERENCES ===================
 \usepackage{csquotes}
 \usepackage[style=chicago-notes, backend=biber]{biblatex}
-
-%=================== COSTUMIZATION ==========================
-\addto\captionsenglish{
-	\renewcommand{\chaptername}{Chapter}
-	\renewcommand{\bibname}{BIBLIOGRAPHY}
-	\renewcommand{\contentsname}{Table of Contents}
-	\renewcommand{\listfigurename}{List of Figures}
-	\renewcommand{\listtablename}{List of Tables}
-}
 
 \justifying
 \setlength{\parindent}{1.27cm}

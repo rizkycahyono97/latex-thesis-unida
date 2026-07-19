@@ -287,9 +287,64 @@
 
 			\end{landscape}
 
-		\subsection{Pengujian Validasi Transaksi BLockchain}
-		
+		\subsection{Pengujian Validitas Transaksi BLockchain}
+		Pengujian validasi transaksi blockchain bertujuan untuk memastikan bahwa transaksi berhasil diproses sesuai dengan mekanisme blockchain, mulai dari validasi transaksi, pembentukan blok, hingga pencatatan data secara permanen. Berdasarkan \textit{NISTIR 8202}\footcite{nistir8202}, setiap transaksi harus melewati proses verifiksi oleh node jaringan, divalidasi menggunakan mekanisme konsensus, kemudian dimasukan kedalam block yang bersifat terdistribusi dan \textit{immutable}. Oleh karena itu, pengujian ini difokuskan pada verifikasi bahwa implementasi blockchain \textit{Hyperledger Besu} telah memenuhi karakteristik tersebut.
 
+		\begin{landscape}
+			\renewcommand{\arraystretch}{1.3}
+			\begin{table}[ht]
+				\centering
+				\caption{Hasil Pengujian Validasi Transaksi Blockchain}
+				\label{tab:pengujian_validasi_transaksi}
+
+				\begin{tabular}{|
+				>{\centering\arraybackslash}p{0.8cm}|
+				>{\raggedright\arraybackslash}p{4cm}|
+				>{\raggedright\arraybackslash}p{3.5cm}|
+				p{6cm}|
+				p{6.5cm}|
+				>{\centering\arraybackslash}p{1.8cm}|}
+				\hline
+
+				\textbf{No} &
+				\textbf{Aspek yang Diuji} &
+				\textbf{Acuan NISTIR 8202} &
+				\textbf{Nilai Ekspektasi} &
+				\textbf{Hasil Aktual Sistem} &
+				\textbf{Status} \\ \hline
+
+				1 &
+				Validasi Transaksi &
+				Transaction Validation &
+				Transaksi berhasil divalidasi oleh jaringan blockchain sebelum dicatat ke dalam ledger. &
+				Seluruh transaksi dokumen memperoleh status \textit{Success} setelah diproses oleh jaringan Hyperledger Besu. &
+				Lolos \\ \hline
+
+				2 &
+				Pembentukan Blok &
+				Block Creation &
+				Transaksi yang telah divalidasi dimasukkan ke dalam blok baru. &
+				Setiap transaksi berhasil tercatat pada blok baru yang dihasilkan oleh jaringan blockchain. &
+				Lolos \\ \hline
+
+				3 &
+				Penyimpanan Data \textit{On-Chain} &
+				Distributed Ledger &
+				Data transaksi tersimpan secara permanen dan dapat diakses kembali melalui blockchain. &
+				Nilai \textit{documentKey}, \textit{identityHash}, dan \textit{fileHash} berhasil disimpan pada \textit{smart contract} dan dapat diambil kembali melalui fungsi \textit{getDocument} di smart contract. &
+				Lolos \\ \hline
+
+				4 &
+				Sinkronisasi Ledger &
+				Ledger Replication &
+				Seluruh node memiliki salinan data transaksi yang identik setelah proses konsensus selesai. &
+				Informasi blok dan transaksi ditampilkan secara konsisten pada dashboard Blockscout sebagai representasi data yang tersinkronisasi. &
+				Lolos \\ \hline
+
+				\end{tabular}
+			\end{table}
+
+			\end{landscape}
 		\subsection{Pengujian Integritas Dokumen}
 
 		\subsection{Pengujian Zero-Gas Transaction}

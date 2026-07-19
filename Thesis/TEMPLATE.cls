@@ -77,8 +77,9 @@
 \usepackage{longtable}
 % =================== LANGUAGE & FONTS CONFIG ===================
 \usepackage{polyglossia}
-\setmainlanguage{indonesian}
-\setotherlanguage{english}
+% \setmainlanguage{indonesian}
+\setmainlanguage{english}
+% \setotherlanguage{english}
 \setotherlanguage{arabic}
 \setmainfont{Times New Roman}
 \newfontfamily\arabicfont[Script=Arabic, Scale=1.2]{Amiri}
@@ -112,7 +113,11 @@
 
 % =================== PREFERENCES ===================
 \usepackage{csquotes}
-\usepackage[style=chicago-notes, backend=biber]{biblatex}
+\usepackage[
+    backend=biber,
+    ibidtracker=constrict,
+    citetracker=true
+]{biblatex-chicago}
 
 \justifying
 \setlength{\parindent}{1.27cm}

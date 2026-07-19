@@ -27,6 +27,17 @@
 			\item \textit{hashStruct(message)}: Representasi hash dari isi dokumen itu sendiri yang akan diverifikasi integritasnya.
 		\end{subsecenumerate}
 
+		Integritas pada level data struktur dikelola melalui fungsi hashStruct yang didefinisikan sebagai:
+
+		$$hashStruct(s) = keccak256(typeHash \parallel encodedData(s))$$
+
+		Penjelasan variable pada fungsi hashStruct:
+
+		\begin{subsecenumerate}
+			\item \texttt{typeHash}: Merupakan hasil hashing dari definisi skema atau struktur data (misal: nama struct dan tipe data variabel di dalamnya). Hal ini memastikan bahwa penanda tangan menyetujui struktur data yang konsisten.
+			\item \texttt{encodedData(s)}: Merupakan hasil pengkodean nilai riil dari dokumen yang dikirim menjadi format 32-byte yang terstandarisasi.
+		\end{subsecenumerate}
+
 		
 		\subsection{Integritas Data}
 		Integritas data adalah jaminan bahwa data tetap akurat, konsisten, dan tidak mengalami perubahan yang tidak sah selama siklus hidupnya. Dalam sistem verifikasi dokumen, integritas menjadi pilar utama untuk memastikan bahwa informasi yang diterima oleh verifikator sama persis dengan yang diterbitkan oleh institusi asal. Teknologi blockchain menjamin integritas ini melalui penggunaan fungsi hash satu arah, dimana perubahan sekecil apapun akan menghasilkan nilai hash yang berbeda pada dokumen, sehingga modifikasi dapat terdeteksi secara instan\footcite{zheng2018}. Sifat \textit{immutability} pada blockchain memastikan bahwa setelah data diverifikasi dan dimasukan kedalam blok, maka data tersebut menjadi dari bagian dari buku besar secara permanen. Dengan demikian, integritas data dalam penelitian ini tidak hanya mencangkup keamanan terhadap serangan luar, tetapi juga pencegahan terhadap manipulasi data internal oleh pihak yang memiliki akses.

@@ -89,8 +89,211 @@
 		
 		Gambar \ref{fig:verify} menampilkan antramuka halaman pengguna verifikasi  sistem yang menunjukan dokumen terverifikasi secara valid dan sah. Pada implementasinya, halaman ini melakukan pencocokan data secara real-time denan membandingkan data di database lokal dengan data pada jaringan blockchain. Status sinkron menandakan bahwa dokumen terbuktu identik dan tidak mengalami manipulasi, yang diperkuat lagi dengan adannya informasi bukti resi transaksi jaringan blockchain
 		
-	\section{Application Testing Results}
+	\section{Hasil Pengujian Sistem}
+
+		\subsection{Pengujian Unit Test}
+		Pada sub-bab ini, dilakukan pengujian unit (Unit Testing) terhadap API Middleware untuk memastikan semua fungsi autentikasi dan validasi keamanan berjalan sesuai spesifikasi sebelum permintaan diteruskan ke endpoint utama. Pada tabel \ref{tab:pengujian_endpoint_api}  endpoint pengujian diawali dengan prefix \textit{/api/documents}.
 	
+		% TABLE
+		\begin{landscape}
+
+			\renewcommand{\arraystretch}{1.3}
+
+			\begin{longtable}{|
+				>{\centering\arraybackslash}p{0.7cm}|
+				>{\raggedright\arraybackslash}p{4.3cm}|
+				>{\centering\arraybackslash}p{1.8cm}|
+				p{6.3cm}|
+				p{5.6cm}|
+				>{\centering\arraybackslash}p{1.5cm}|}
+
+				\caption{Hasil Pengujian Unit Test API Middleware}
+				\label{tab:pengujian_endpoint_api} \\
+
+				\hline
+				\textbf{No} &
+				\textbf{Endpoint} &
+				\textbf{HTTP Method} &
+				\textbf{Hasil Uji} &
+				\textbf{Ekspektasi} &
+				\textbf{Status} \\ \hline
+				\endfirsthead
+
+				\hline
+				\endfoot
+
+				\hline
+				\endlastfoot
+
+				1 &
+				\path{/:documentKey} &
+				GET &
+				Mengambil detail data dokumen digital berdasarkan \textit{document key} yang valid. &
+				Mengembalikan objek detail dokumen. &
+				Lolos \\ \hline
+
+				2 &
+				\path{/sign} &
+				POST &
+				Melakukan tanda tangan digital dan menerbitkan dokumen ke jaringan \textit{blockchain}. &
+				Mengembalikan detail resi transaksi. &
+				Lolos \\ \hline
+
+				3 &
+				\path{/validator} &
+				POST &
+				Melakukan registrasi atau pengaktifan status otorisasi alamat validator baru. &
+				Mengembalikan \textit{hash} transaksi aktivasi berstatus sukses. &
+				Lolos \\ \hline
+
+				4 &
+				\path{/validator/check/:address} &
+				GET &
+				Memeriksa status otorisasi validator pengguna untuk alamat yang sudah terdaftar. &
+				Mengembalikan status otorisasi bernilai \textit{isAuthorized: true}. &
+				Lolos \\ \hline
+
+			\end{longtable}
+		\end{landscape}
+
+		\subsection{Pengujian Blackbock}
+		Pengujian \textit{black-box} pada tahap ini dilakukan untuk menguji sistem dari segi fungsionalitas tanpa perlu mengetahui stuktur kode program atau alur logika internal yang ada didalamnya.
+
+			\renewcommand{\arraystretch}{1.3}
+			\begin{longtable}{|
+				>{\centering\arraybackslash}p{0.8cm}|
+				>{\raggedright\arraybackslash}p{2.3cm}|
+				p{3.8cm}|
+				p{4.5cm}|
+				>{\centering\arraybackslash}p{1.6cm}|}
+
+				\caption{Hasil Pengujian Fitur Aplikasi}
+				\label{tab:pengujian_fitur} \\
+
+				\hline
+				\textbf{No} &
+				\textbf{Fitur} &
+				\textbf{Kondisi} &
+				\textbf{Hasil Uji} &
+				\textbf{Status} \\ \hline
+				\endfirsthead
+
+				\hline
+				\textbf{No} &
+				\textbf{Fitur} &
+				\textbf{Kondisi} &
+				\textbf{Hasil Uji} &
+				\textbf{Status} \\ \hline
+				\endhead
+
+				\hline
+				\endfoot
+
+				\hline
+				\endlastfoot
+
+				1 &
+				Generate Wallet &
+				Admin melakukan generate wallet yang akan digunakan sebagai validator &
+				Wallet berhasil dibuat beserta \textit{public address} dan \textit{private address} &
+				Berhasil \\ \hline
+
+				2 &
+				Upload Dokumen &
+				Petugas arsip mengunggah dokumen PDF beserta metadata &
+				Dokumen terimpan dan \textit{hash} dokumen berhasil dibentuk &
+				Berhasil \\ \hline
+
+				3 &
+				Penerbitan Dokumen (EIP-712) &
+				Dokumen berhasil diterbitkan dengan validator yang sah &
+				Signature berhasil dibuat dan transaksi berhasil dicatat di blockchain &
+				Berhasil \\ \hline
+
+				4 &
+				Verifikasi QR Code &
+				Pengguna memindai QR Code pada dokumen &
+				Sistem berhasil mengambil data blockchain dan menampilkan status keaslian dokumen &
+				Berhasil \\ \hline
+
+				5 &
+				Verifikasi Upload Dokumen &
+				Pengguna mengunggah dokumen PDF untuk diverifikasi &
+				Sistem menghitung ulang \textit{identityHash} dan \textit{fileHash}, kemudian membandingkannya pada data blockchain &
+				Berhasil \\ \hline
+
+			\end{longtable}
+
+		\subsection{Pengujian Validitas Tanda Tangan Digital EIP-712}
+		Pengujian kebsahan tanda tangan digital dilakukan untuk memastikan bahwa mekanisme penandatanganan menggunakan standar EIP-712 telah mengehasilkan tanda tangan digital yang valid dan dapat diverifikasi. Berdasarkan spesifikasi EIP-712\footcite{bloemen2017eip712}, data terstuktur harus ditandatangani menggunakan domain separator dan tipe data (\textit{typed structured data}), sehingga identitas dapat dipulihkan kembali dari nilai tanda tangan yang dihasilkan
+
+			% TABLE
+			\begin{landscape}
+
+			\renewcommand{\arraystretch}{1.4}
+
+			\begin{table}[!h]
+				\centering
+				\caption{Hasil Pengujian Keabsahan \textit{Digital Signature} EIP-712}
+				\label{tab:pengujian_eip712}
+
+				\begin{tabular}{|
+				>{\centering\arraybackslash}p{0.8cm}|
+				>{\centering\arraybackslash}p{3.5cm}|
+				p{6cm}|
+				p{8cm}|
+				>{\centering\arraybackslash}p{1.8cm}|}
+				\hline
+
+				\textbf{No} &
+				\textbf{Komponen yang Diuji} &
+				\textbf{Data Uji} &
+				\textbf{Nilai Ekspektasi} &
+				\textbf{Status} \\ \hline
+
+				1 &
+				\textbf{Domain} &
+				Parameter \textit{name}, \textit{version}, \textit{chainId}, dan \textit{verifyingContract}. &
+				Seluruh parameter \textit{Domain} berhasil dibentuk sesuai konfigurasi jaringan Hyperledger Besu. &
+				Lolos \\ \hline
+
+				2 &
+				\textbf{Types} &
+				Struktur data \texttt{Document} yang terdiri dari \textit{documentNumber} (string), \textit{identityHash} (bytes32), dan \textit{fileHash} (bytes32). &
+				Nama setiap field beserta tipe datanya sesuai dengan spesifikasi EIP-712. &
+				Lolos \\ \hline
+
+				3 &
+				\textbf{Message} &
+				\textit{documentKey}, \textit{identityHash}, dan \textit{fileHash}. &
+				Data yang akan ditandatangani identik dengan data dokumen yang dikirimkan ke middleware. &
+				Lolos \\ \hline
+
+				4 &
+				\textbf{Digital Signature} &
+				Proses \textit{signTypedData()} terhadap kombinasi \textit{Domain}, \textit{Types}, dan \textit{Message}. &
+				\textit{Digital Signature} berhasil dihasilkan sesuai mekanisme EIP-712. &
+				Lolos \\ \hline
+
+				5 &
+				\textbf{Signer Verification} &
+				Alamat hasil \textit{recover} dari \textit{digital signature}. &
+				Alamat hasil \textit{recover} identik dengan alamat validator dari arsip sebagai \textit{signer}. &
+				Lolos \\ \hline
+
+				\end{tabular}
+
+			\end{table}
+
+			\end{landscape}
+
+		\subsection{Pengujian Validasi Transaksi BLockchain}
+		
+
+		\subsection{Pengujian Integritas Dokumen}
+
+		\subsection{Pengujian Zero-Gas Transaction}
+
 	\section{Pembahasan}
 	Berdarkan hasil implementasi dan pengujian yang telah dilakukan, dapat disimpulkan bahwa sistem verifikasi dokumen akademik berbasis blockchain berhasil dikembangkan sesuai dengan tujuan penelitian. Integrasi antara aplikasi klien, API Middleware, smart contract, dan jaringan blockchain Hyperledger Besu berjalan dengan baik, sehingga proses penerbitan dan verifikasi dokumen dapat dilakukan secara terstuktur. Hasil penngujian blackbox menunjukan bahwa seluruh fitur utama sistem telah berfungsi sesuai dengan kebutuhan yang telah ditetapkan.
 

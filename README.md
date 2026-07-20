@@ -28,6 +28,7 @@ Untuk menggunakan template ini, pastikan perangkat komputer Anda telah terinstal
 | **LaTeX Distribution** | [MiKTeX](https://miktex.org/download)   | TeX Live (`texlive-full`) | Mesin kompilasi utama dokumen LaTeX.                  |
 | **Teks Editor**        | [TeXstudio](https://www.texstudio.org/) | VS Code / Neovim          | Lingkungan pengembangan (IDE) untuk menulis kode.     |
 | **Reference Manager**  | [Zotero](https://www.zotero.o:rg/)      | Zotero                    | Manajemen basis data daftar pustaka (_bibliography_). |
+| **Plugin Better Bibtex**  | [Bibtex Plugin](https://github.com/retorquere/zotero-better-bibtex/releases/download/v9.0.47/zotero-better-bibtex-9.0.47.xpi)      | Zotero                    | supaya file .bib otomatis terupdate jika zootero ada update |
 
 > **Catatan:** Pengguna Windows disarankan untuk mengaktifkan opsi _"Install missing packages on-the-fly"_ pada pengaturan MiKTeX untuk mengunduh paket yang diperlukan secara otomatis.
 

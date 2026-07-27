@@ -86,9 +86,9 @@ Karena template ini menggunakan BibLaTeX dan Polyglossia, urutan proses kompilas
 Jalankan perintah berikut di dalam direktori proyek secara berurutan:
 
 ```Bash
-- xelatex main.tex
+- xelatex main
 - biber main
-- xelatex main.tex
+- xelatex main
 ```
 
 ---

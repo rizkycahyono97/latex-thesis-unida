@@ -2,21 +2,18 @@
 	\section{Landasan Teori}
 		\subsection{Verifikasi Dokumen Akademik}
 		\setlength{\leftskip}{1.4cm}
-		Dokumen akademik dalam penelitian ini dipandang sebagai bentuk khusus dari informasi yang memiliki fungsi tertentu, seperti sebagai bukti, alat pembuktian, maupun sarana pendukung proses pendidikan\footcite{stolyarov2011}. Secara konseptual, dokumen tidak hanya dipahami sebagai media fisik atau digital, tetapi sebagai entitas informasi yang memiliki nilai fungsi dalam konteks tertentu. Dalam lingkungan pendidikan, dokumen akademik mencakup berbagai bentuk seperti ijazah, transkrip nilai, dan surat keterangan akademik yang berperan sebagai representasi capaian akademik seseorang. Oleh karena itu, dokumen akademik memiliki nilai penting dalam aspek administratif maupun profesional, sehingga keaslian dan integritasnya harus dapat dijamin melalui suatu mekanisme verifikasi yang andal.
-
-		Verifikasi dokumen akademik merupakan prosedur penting untuk memvalidasi kredensial pendidikan (seperti ijazah dan transkrip nilai) yang dimiliki oleh seorang individu guna memastikan keasliannya. Menurutuh Saleh dkk\footcite{saleh2020},  tantangan utama dalam domain ini adalah maraknya \textit{‘Degree Mills’} (pabrik ijazah) dan dokumen hasil modifikasi yang dapat merusak reputasi institusi serta kepercayaan masyarakat. Kumar dkk\footcite{hemaScrum2020}, menambahkan proses verifikasi konvensional sering kali tidak efisien karena memerlukan intervensi manusia dan waktu yang lama untuk mendapatkan konfirmasi dari otoritas penerbit. Oleh karena itu, penerapan teknologi digital yang aman, transparan, dan tidak dapat diubah (\textit{immutable}) menjadi kebutuhan yang penting untuk menjamin integritas data akademik dan efisiensi validasi secara instan.
-
+		Dokumen akademik dalam penelitian ini dipandang sebagai bentuk khusus dari informasi yang memiliki fungsi tertentu, seperti sebagai bukti, alat pembuktian, maupun sarana pendukung proses pendidikan\footcite{Stolyarov2021}. Pemanfaatan blockchain untuk verifikasi dokumen akademik telah banyak diteliti sebagai solusi untuk pemalsuan dokumen. Penelitian sebelumnya menunjukan penerapan privat blockchain mampu meningkatkan keamanan, efisiensi, dan integritas dokumen melalui penyimpanan nilai hash sebagai representasi keaslian data\footcite{KumarK2020}, sementara integrasi Decentralized Application (DApp), IPFS, dan QR Code juga terbukti mendukung proses verifikasi dokumen yang lebih efisien\footcite{Gangwar2024}. Meskipun
+		demikian, sebagian penelitian masih berfokus pada penyimpanan hash dan integrasi sistem, sehingga belum menerapkan data terstruktur seperti standar EIP-712.
 
 
 		\subsection{Blockchain dam Hyperledger Besu}
-		Blockchain merupakan teknologi buku besar terdistribusi (\textit{distributed ledger technology}) yang mencatat transaksi secara kronologis, permanen dan aman melalui mekanisme konsensus kriptografi\footcite{zheng2018}. Dalam pengemangan sistem ini, yang digunakan adalah  Hyperledger Besu, yaitu sebuah Ethereum open-source yang dirancang untuk mendukung kebutuhan pengguna pada tingkat perusahaan.  Hyperledger Besu mendukung jaringan blockchain privat  yang memmungkinkan kendali penuh atas biaya transaksi (\textit{gas-fee}) serta penggunaan algoritma konsensus yang efisien seperti QBFT Hyperledger Foundation\footcite{hyperledgerbesu}.
+		Blockchain merupakan teknologi buku besar terdistribusi (\textit{distributed ledger technology}) yang mencatat transaksi secara kronologis, permanen dan aman melalui mekanisme konsensus kriptografi\footcite{Zheng2017}. Dalam pengemangan sistem ini, yang digunakan adalah  Hyperledger Besu, yaitu sebuah Ethereum open-source yang dirancang untuk mendukung kebutuhan pengguna pada tingkat perusahaan.  Hyperledger Besu mendukung jaringan blockchain privat  yang memmungkinkan kendali penuh atas biaya transaksi (\textit{gas-fee}) serta penggunaan algoritma konsensus yang efisien seperti QBFT Hyperledger Foundation\footcite{HyperledgerFoundation}.
 
 		
 		\subsection{Protokol EIP-712}
-		EIP-712 (Ethereum Improvement Proposal) merupakan standar untuk hashing dan penandatanganan data terstruktur guna memberikan keamanan yang lebih baik untuk interaksi ke dompet kripto. Standar ini memastikan pengguna melihat data yang bisa dibaca manusia saat memberikan tanda tangan digital, sehingga mencegah kesalahan manusia saat proses otorisasi data mentah yang tidak dapat terbaca.
+		EIP-712 (Ethereum Improvement Proposal) merupakan standar untuk hashing dan penandatanganan data terstruktur guna memberikan keamanan yang lebih baik untuk interaksi ke dompet kripto\footcite{Bloemen2017}. Standar ini memastikan pengguna melihat data yang bisa dibaca manusia saat memberikan tanda tangan digital, sehingga mencegah kesalahan manusia saat proses otorisasi data mentah yang tidak dapat terbaca.
 
 		Prosedur penandatanganan dalam protokol ini mengikuti rumus kriptografi deterministik sebagai berikut:
-
 		\[Signature = sign(keccak256(0x1901 \parallel domainSeparator \parallel hashStruct(message)))\]
 
 		Keterangan komponen rumus tersebut adalah:
@@ -28,7 +25,6 @@
 		\end{subsecenumerate}
 
 		Integritas pada level data struktur dikelola melalui fungsi hashStruct yang didefinisikan sebagai:
-
 		$$hashStruct(s) = keccak256(typeHash \parallel encodedData(s))$$
 
 		Penjelasan variable pada fungsi hashStruct:

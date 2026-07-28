@@ -1,7 +1,19 @@
 \chapter*{ABSTRAK}
 \addcontentsline{toc}{chapter}{ABSTRAK}
 
-\textit{Penelitian ini bertujuan untuk merancang dan mengimplementasikan prototype sistem verifikasi data dokumen akademik berbasis blockchain guna mengatasi kelemahan sistem konvensional yang masih bergantung pada database terpusat yang berpotensi menimbulkan Single Point of Failure (SPoF) dan risiko manipulasi data. Sistem dikembangkan menggunakan metode Scrum sebagai pendekatan pengembangan sistem, dengan memanfaatkan standar penandatanganan data terstruktur EIP-712 (Ethereum Improvement Proposal) untuk menghasilkan tanda tangan digital yang aman dan human-readable. Arsitektur sistem terdiri dari smart contract berbasis Solidity, API middleware berbasis Nest.js dan Ethers.js yang berperan sebagai penghubung antara sistem informasi atau aplikasi klien layer berbasis Laravel yang terintegrasi dengan jaringan blockchain privat Hyperledger Besu dengan konsensus QBFT. Setiap dokumen direpresentasikan dalam bentuk fileHash dan identityHash, kemudian kedua nilai tersebut ditandatangani menggunakan standar EIP-712 sebelum disimpan ke blockchain. Selain itu, sistem mengimplementasikan mekanisme zero-gas pada jaringan privat serta menerapkan skema manajemen kunci dengan pemisahan peran antara signer dan relayer. Hasil pengujian menunjukan bahwa implementasi EIP-712 berhasil menghasilkan tanda tangan digital yang valid dan dapat diverifikasi, sementara itu hash dokumen berhasil disimpan secara permanen di jaringan blockchain Hyperledger Besu tanpa biaya gas. Sistem yang dikembangkan mampu menjaga integritas dan keaslian dokumen akademik serta menyediakan verifikasi yang lebih aman.}\\	
+\textit{Penelitian ini merancang sebuah prototipe sistem verifikasi dokumen akademik berbasis
+blockchain untuk mengatasi kelemahan sistem terpusat yang rentan terhadap Single
+Point of Failure (SPoF) dan manipulasi data sistem. Sistem menggunakan privat
+blockchain Hyperledger Besu dengan konsensus QBFT serta protokol data terstruktur
+EIP-712 untuk menghasilkan tanda tangan digital yang human-readable. Data yang
+disimpan di blockhain direpresentaikan sebagai identityHash dan fileHash, kemudian
+ditandatangani dan disimpan di blockchain melalui API Middleware. Selain itu sistem
+menerapkan mekanisme zero-gas dan pemisahan antara relayer dan signer. Hasil
+pengujian menunjukan bahwa sistem memenuhi parameter transaksi blockchain
+berdasarkan NISTIR 8202, serta mampu memverifikasi integritas dokumen melalui
+pencocokan idendityHash dan fileHash dengaan data on-chain. Selain itu, transaksi juga
+berhasil dilakukan tanpa ada biaya gas pada jaringaan. Kode implementasi bisa diakses
+di halaman: https://github.com/rizkycahyono97/tasdiqi.}\\	
 
 \noindent\textit{\textbf{Keywords:} Blockchain, Hyperledger Besu, EIP-712, Verifikasi Dokumen Akademik, Tanda Tangan Digital}\\	%edited
 

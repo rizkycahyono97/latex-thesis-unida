@@ -3,13 +3,13 @@
 	\setlength{\leftskip}{0.7cm}
 	Pemalsuan dokumen akademik seperti ijazah, transkip nilai, surat-menyurat dan sertifikasi kompetensi telah menjadi isu sangat krusial yang mengancam kredibilitas institusi pendidikan tinggi. Di Universitas Darussalam Gontor (UNIDA) Gontor, pengelolaan dokumen akademik memerlukan standar kemanan tinggi untuk memastikan setiap dokumen tercatat dengan baik dan benar dan tidak dapat dimanipulasi. 
 
-	Sistem verifikasi konvensional yang umum digunakan saat ini, termasuk di lingkungan UNIDA Gontor masih bergantung pada database terpusat dan proses manual,  yang memiliki kelemahan fundamental dalam hal keamanan data dan memerlukan waktu yang relatif lama. Database terpusat juga bertindak sebagai \textit{Single Point of Failure} (SPoF), yang mana jika server database terkena serangan siber atau mengalami kegagalan, maka seluruh proses akan terhenti, selain itu administrator juga memiliki akses penuh terhadap database sehingga memiliki kemampuan untuk mengubah atau memanipulasi data secara sepihak, sehingga integritas data tidak dapat dijamin sepenuhnya.
+	Sistem verifikasi konvensional yang umum digunakan saat ini, termasuk di lingkungan UNIDA Gontor masih bergantung pada database terpusat dan proses manual,  yang memiliki kelemahan fundamental dalam hal keamanan data dan memerlukan waktu yang relatif lama. Database terpusat juga bertindak sebagai \textit{Single Point of Failure} (SPoF)\footcite{Awang2025}, yang mana jika server database terkena serangan siber atau mengalami kegagalan, maka seluruh proses akan terhenti, selain itu administrator juga memiliki akses penuh terhadap database sehingga memiliki kemampuan untuk mengubah atau memanipulasi data secara sepihak, sehingga integritas data tidak dapat dijamin sepenuhnya.
 
-	Teknologi blockchain muncul sebagai paradigma baru yang menawarkan sifat \textit{immutability} (tidak dapat diubah) dan  transparansi melalui mekanisme penyimpanan data yang tersebar pada banyak node dalam jaringan \footcite{zheng2018}. Namun, implementasi pada skala institusi pendidikan seringkali terbentur oleh hambatan ekonomi dan kompleksitas teknis. Pada blockchain publik, setiap interaksi data ke blockchain memerlukan biaya transaksi  atau disebut \textit{gas-fee} yang fluktuatif, yang menjadi beban finansial yang signifikan bagi universitas jika harus memverifikasi ribuan dokumen setiap tahunnya. Selain itu kurva pembelajaran yang terjal bagi para staf UNIDA Gontor seringkali menghambat untuk pengelolaan dompet kripto dan kunci kriptografi seringkali menghambat adopsi teknologi ini secara luas. 
+	Teknologi blockchain muncul sebagai paradigma baru yang menawarkan sifat \textit{immutability} (tidak dapat diubah) dan  transparansi melalui mekanisme penyimpanan data yang tersebar pada banyak node dalam jaringan \footcite{Zheng2017}. Namun, implementasi pada skala institusi pendidikan seringkali terbentur oleh hambatan ekonomi dan kompleksitas teknis. Pada blockchain publik, setiap interaksi data ke blockchain memerlukan biaya transaksi  atau disebut \textit{gas-fee} yang fluktuatif, yang menjadi beban finansial yang signifikan bagi universitas jika harus memverifikasi ribuan dokumen setiap tahunnya. Selain itu kurva pembelajaran yang terjal bagi para staf UNIDA Gontor seringkali menghambat untuk pengelolaan dompet kripto dan kunci kriptografi seringkali menghambat adopsi teknologi ini secara luas. 
 
-	Dari sisi pengguna, tanda tangan digital pada umumnya seringkali direpresentasikan dalam bentuk deretan kode heksadesimal yang tidak dapat dibaca atau dipahami manusia (\textit{non-human readable}). Hal ini menimbulkan resiko keamanan di mana bagian arsip di UNIDA Gontor yang akan melakukan tanda tangan tidak mengetahui secara pasti data apa yang sedang mereka otorisasi tersebut. Implementasi protokol EIP-712 (\textit{Ethereum Typed Structured Data}) menjadi solusi krusial dalam penelitian ini karena memungkinkan penyajian data yang akan ditandatangani dalam format terstruktur yang mudah dibaca dan dipahami oleh manusia (\textit{human readable})\footcite{bloemen2017eip712}. Dengan protokol EIP-712, biro dapat memverifikasi Nama, NIM dan Nomor Surat secara visual sebelum memberikan tanda tangan kriptografis, sehingga menjamin keakuratan otorisasi.
+	Dari sisi pengguna, tanda tangan digital pada umumnya seringkali direpresentasikan dalam bentuk deretan kode heksadesimal yang tidak dapat dibaca atau dipahami manusia (\textit{non-human readable}). Hal ini menimbulkan resiko keamanan di mana bagian arsip di UNIDA Gontor yang akan melakukan tanda tangan tidak mengetahui secara pasti data apa yang sedang mereka otorisasi tersebut. Implementasi protokol \textit{EIP-712} (\textit{Ethereum Typed Structured Data}) menjadi solusi krusial dalam penelitian ini karena memungkinkan penyajian data yang akan ditandatangani dalam format terstruktur yang mudah dibaca dan dipahami oleh manusia (\textit{human readable})\footcite{bloemen2017eip712}. Dengan protokol \textit{EIP-712}, biro dapat memverifikasi Nama, NIM dan Nomor Surat secara visual sebelum memberikan tanda tangan kriptografis, sehingga menjamin keakuratan otorisasi.
 
-	Guna mengatasi hambatan biaya transaksi, penelitian ini mengusulkan penggunaan \textit{Hyperledger Besu} sebagai infrastruktur private blockchain. Melalui konfigurasi pada pada jaringan privat blockchain, sistem dapat diatur untuk menjalankan mekanisme \textit{zero-gas}, dimana transaksi masih bisa berjalan dan dapat divalidasi oleh jaringan privat blockchain tanpa memerlukan biaya (gas) bagi pengirim. Dengan mengintegrasikan mekanisme \textit{zero-gas} dan manajemen kunci privat yang aman berdasarkan standar penelitian Pal dkk\footcite{pal2021}. Prototipe ini diharapkan dapat menjadi solusi verifikasi dokumen yang tidak hanya aman dan transparan,  tetapi juga mudah diimplementasikan di lingkungan akademik. Mengacu pada Pal dkk., yang menekankan keamanan blockchain bergantung pada pengelolaan kunci, pendekatan \textit{local key management} (\textit{env/storage}) dalam sistem diimplementasikan sebagai tahap awal yang praktis, sambil menjaga prinsip keamanan, kerahasiaan, dan otentikasi.
+	Guna mengatasi hambatan biaya transaksi, penelitian ini mengusulkan penggunaan \textit{\textit{Hyperledger Besu}} sebagai infrastruktur private blockchain. Melalui konfigurasi pada pada jaringan privat blockchain, sistem dapat diatur untuk menjalankan mekanisme \textit{zero-gas}, dimana transaksi masih bisa berjalan dan dapat divalidasi oleh jaringan privat blockchain tanpa memerlukan biaya (\textit{gas}) bagi pengirim. Dengan mengintegrasikan mekanisme \textit{zero-gas} dan manajemen kunci privat yang aman berdasarkan standar penelitian Pal dkk\footcite{pal2021}. Prototipe ini diharapkan dapat menjadi solusi verifikasi dokumen yang tidak hanya aman dan transparan,  tetapi juga mudah diimplementasikan di lingkungan akademik. Mengacu pada Pal dkk., yang menekankan keamanan blockchain bergantung pada pengelolaan kunci, pendekatan \textit{local key management} (\textit{env/storage}) dalam sistem diimplementasikan sebagai tahap awal yang praktis, sambil menjaga prinsip keamanan, kerahasiaan, dan otentikasi.
 
 	Dalam perspektif keislaman, pengembangan sistem ini dapat dipandang sebagai implementasi dari prinsip maqashid syariah, khususnya dalam hal \textit{hifz al-‘aql} (menjaga akal). Konsep  \textit{hifz al-‘aql} tidak hanya sebatas berkaitan dengan perlindungan terhadap fungsi akal secara biologis, tetapi konsep ini juga mencangkup penjagaan keaslian, kebenaran, dan integritas ilmu pengetahuan yang dihasilkan oleh akal manusia. Tindakan pemalsuan dokumen akademik dapat dikategorikan sebagai bentuk penipuan (\textit{tadlis}) yang merusak nilai kebenaran  dan mencederai kehormatan ilmu itu sendiri. 
 
@@ -19,7 +19,7 @@
 	Berdasarkan permasalahan yang sudah di jelaskan di latar belakang, maka rumusan masalah dalam peneletian ini adalah:
 
 	\begin{secenumerate}
-		\item Sistem verifikasi dokumen akademik di UNIDA Gontor saat ini masih menggunakan database terpusat (\textit{centralized}), sehingga memiliki resiko \textit{Single Point of Failure} (SPoF) dan memungkinkan terjadinya manipulasi data internal. Selain itu, sistem yang ada belum menerapkan protokol penandatanganan data terstruktur seperti \textit{EIP-712} yang dapat meningkatkan keamanan sekaligus keterbacaan (human-readable) tanda tangan digital. 
+		\item Sistem verifikasi dokumen akademik di UNIDA Gontor saat ini masih menggunakan database terpusat (\textit{centralized}), sehingga memiliki resiko \textit{Single Point of Failure} (SPoF) dan memungkinkan terjadinya manipulasi data internal. Selain itu, sistem yang ada belum menerapkan protokol penandatanganan data terstruktur seperti \textit{EIP-712} yang dapat meningkatkan keamanan sekaligus keterbacaan (\textit{human-readable}) tanda tangan digital. 
 
 	\end{secenumerate}
 	
@@ -27,7 +27,7 @@
 	Berdasarkan rumusan masalah yang sudah diuraikan, maka tujuan penelitian ini sebagai berikut:
 
 	\begin{secenumerate}
-		\item Merancang sebuah prototype API middleware sistem verifikasi dokumen menggunakan standar EIP-712 yang  mampu membuktikan keaslian sebuah dokumen akademik UNIDA Gontor dan keabsahan tanda tangan pihak yang bersangkutan secara on-chain di private blockchain. Serta, mengimplementasikan mekanisme transaksi gratis (gasless) pada jaringan Hyperledger Besu guna meniadakan biaya (gas) saat transaksi berlangsung, sekaligus menerapkan skema manajemen kunci dengan memisahkan antara pemberi otoritas (signer) dan juga pelaksana transaksi (relayer) untuk menjamin keamanan dan integritas transaksi dokumen di lingkungan UNIDA Gontor.
+		\item Merancang sebuah prototipe \textit{API middleware} sistem verifikasi dokumen menggunakan standar \textit{EIP-712} yang  mampu membuktikan keaslian sebuah dokumen akademik UNIDA Gontor dan keabsahan tanda tangan pihak yang bersangkutan secara \textit{on-chain} di private blockchain. Serta, mengimplementasikan mekanisme transaksi gratis (\textit{gasless}) pada jaringan \textit{Hyperledger Besu} guna meniadakan biaya (\textit{gas}) saat transaksi berlangsung, sekaligus menerapkan skema manajemen kunci dengan memisahkan antara pemberi otoritas (\textit{signer}) dan juga pelaksana transaksi (\textit{relayer}) untuk menjamin keamanan dan integritas transaksi dokumen di lingkungan UNIDA Gontor.
 
 	\end{secenumerate}
 
@@ -35,10 +35,10 @@
 	Agar permasalahan yang sudah dirumuskan dapat terlaksana, maka penelitian ini memiliki batasan:
 
 	\begin{secenumerate}
-		\item Implementasi protokol fokus pada standar penandatanganan data terstruktur EIP-712.
-		\item Jaringan blockchain yang digunakan adalah Hyperledger Besu dengan konsensus QBFT.
-		\item Smart contract dikembangkan menggunakan bahasa Solidity 0.8.19 dan library OpenZeppelin v4.9.
-		\item Sistem yang dikembangkan dalam penelitian ini masih berupa prototype yang berfokus pada API Middleware dan belum diimplementasikan secara langsung pada lingkungan operasional UNIDA Gontor, melainkan hanya digunakan sebagai model simulasi untuk menguji konsep dan fungsionalitas sistem.
+		\item Implementasi protokol fokus pada standar penandatanganan data terstruktur \textit{EIP-712}.
+		\item Jaringan blockchain yang digunakan adalah \textit{Hyperledger Besu} dengan konsensus QBFT.
+		\item Smart contract dikembangkan menggunakan bahasa \textit{Solidity 0.8.19} dan pustaka \textit{OpenZeppelin v4.9}.
+		\item Sistem yang dikembangkan dalam penelitian ini masih berupa prototipe yang berfokus pada \textit{API Middleware} dan belum diimplementasikan secara langsung pada lingkungan operasional UNIDA Gontor, melainkan hanya digunakan sebagai model simulasi untuk menguji konsep dan fungsionalitas sistem.
 		\item Penelitian ini tidak berfokus pada klasifikasi maupun pengelolaan seluruh jenis dokumen akademik di UNIDA Gontor, melainkan pada pengembangan mekanisme verifikasi berbasis parameter data yang bersifat generik sehingga dapat diadaptasikan pada berbagai jenis dokumen. 
 
 	\end{secenumerate}
@@ -48,7 +48,7 @@
 		\begin{secenumerate}
 			\item Bagi Mahasiswa
 			
-			Penelitian ini memberikan referensi bagi mahasiswa dalam memahami dan mengimplementasikan protokol EIP-712 dalam jaringan private blockchain seperti Hyperledger besu untuk menciptakan sistem verifikasi data yang aman dan transparan.
+			Penelitian ini memberikan referensi bagi mahasiswa dalam memahami dan mengimplementasikan protokol \textit{EIP-712} dalam jaringan private blockchain seperti \textit{Hyperledger besu} untuk menciptakan sistem verifikasi data yang aman dan transparan.
 
 			\item Bagi Universitas
 			
@@ -56,7 +56,7 @@
 
 			\item Bagi Masyarakat
 			
-			Penelitian ini menargetkan luaran prototype sistem verifikasi bagi masyarakat dalam memvalidasi dokumen akademik.
+			Penelitian ini menargetkan luaran prototipe sistem verifikasi bagi masyarakat dalam memvalidasi dokumen akademik.
 
 			\item Bagi Peneliti
 			

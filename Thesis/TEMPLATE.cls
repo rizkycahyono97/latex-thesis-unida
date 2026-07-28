@@ -77,16 +77,26 @@
 \usepackage{longtable}
 % =================== LANGUAGE & FONTS CONFIG ===================
 \usepackage{polyglossia}
-% \setmainlanguage{indonesian}
-\setmainlanguage{english}
-% \setotherlanguage{english}
+\setmainlanguage{indonesian}
+% \setmainlanguage{english}
+\setotherlanguage{english}
 \setotherlanguage{arabic}
 \setmainfont{Times New Roman}
 \newfontfamily\arabicfont[Script=Arabic, Scale=1.2]{Amiri}
 \usepackage{microtype}
+
+% =================== TEXT JUSTIFICATION ===================
+\setlength{\emergencystretch}{3em}
 \tolerance=2000
-\emergencystretch=3em
-\hfuzz=1pt
+
+\hyphenpenalty=1000
+\exhyphenpenalty=50
+\lefthyphenmin=3
+\righthyphenmin=3
+
+\justifying
+\setlength{\parindent}{1.27cm}
+
 %=================== COSTUMIZATION ==========================
 \renewcommand{\chaptername}{BAB}
 \renewcommand{\contentsname}{DAFTAR ISI}
@@ -119,7 +129,6 @@
     citetracker=true
 ]{biblatex-chicago}
 
-\justifying
 \setlength{\parindent}{1.27cm}
 
 \endinput

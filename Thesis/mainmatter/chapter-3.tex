@@ -48,7 +48,7 @@
 			\\ \hline
 
 			4 &
-			Konfigurasi Jaringan Hyperledger Besu dan Mekanisme Zero-gas &
+			Konfigurasi Jaringan \textit{Hyperledger Besu} dan Mekanisme Zero-gas &
 			&
 			&
 			\cellcolor{blue!70} &
@@ -102,16 +102,17 @@
 			\item Foundry Framework: Perangkat pengembangan untuk kompilasi, pengujian, dan deployment Smart Contract.
 			\item Visual Studio Code: Sebagai editor kode utama (IDE).
 			\item Node.js (LTS Version): Sebagai runtime environment untuk skrip pendukung.
-			\item Ether.js v6: Pustaka untuk interaksi antara API middleware dengan Blockchain.
+			\item Ether.js v6: Pustaka untuk interaksi antara \textit{API middleware} dengan Blockchain.
 			\item Hyperledger Besu: Software node blockchain privat.
 			\item Nest.js: Sebagai framework untuk pembuatan API.
 			\item Laravel 13: Sebagai framework untuk pembuatan aplikasi yang berinteraksi dengan user.
 			\item Docker dan Docker Compose.
+			\item Chainless Web3Labs: Block explorer untuk monitoring jaringan blockchain.
 		\end{subsecenumerate}
 	\end{secenumerate}
 	
 	\section{Tahapan Penelitian}
-	Penelitian ini menggunakan metode Scrum, yang merupakan salah satu pendekatan dalam \textit{Agile Software Development} yang bersifat iteratif dan incremental. Metode ini dipilih karena mampu mengakomodasi perubahan kebutuhan serta memungkinkan pengembangan sistem dilakukan secara bertahap melalui siklus yang berulang (\textit{Sprint}). Berikut adalah tampilan model Scrum yang tertera pada Gambar \ref{fig:metode-scrum}:
+	Penelitian ini menggunakan metode Scrum, yang merupakan salah satu pendekatan dalam \textit{Agile Software Development} yang bersifat iteratif dan incremental.\footcite{Hema2020} Metode ini dipilih karena mampu mengakomodasi perubahan kebutuhan serta memungkinkan pengembangan sistem dilakukan secara bertahap melalui siklus yang berulang (\textit{Sprint}). Berikut adalah tampilan model Scrum yang tertera pada Gambar \ref{fig:metode-scrum}:
 	
 	\begin{figure}[h!]
 		\centering
@@ -122,11 +123,11 @@
 
 		\subsection{Product Backlog}
 		\setlength{\leftskip}{1.4cm}
-		\textit{Product Backlog} merupakan daftar kebutuhan sistem yang disusun secara terstruktur dan diprioritaskan berdasarkan tingkat kepentingan serta urgensi pengembangan. Daftar ini berisi seluruh fitur dan fungsi yang akan diimplementasikan kedalam sistem, sehingga menjadi acuan dalam pengembangan menggunakan metode Scrum. Penyusunan \textit{Product Backlog} pada penelitian ini dilakukan dengan mempertimbangkan kebutuhan sistem verifikasi berbasis blockchain secara menyeluruh.
+		\textit{Product Backlog} merupakan daftar kebutuhan sistem yang disusun secara terstruktur dan diprioritaskan berdasarkan tingkat kepentingan serta urgensi pengembangan. Daftar ini berisi seluruh fitur dan fungsi yang akan diimplementasikan kedalam sistem, sehingga menjadi acuan dalam pengembangan menggunakan metode \textit{Scrum}. Penyusunan \textit{Product Backlog} pada penelitian ini dilakukan dengan mempertimbangkan kebutuhan sistem verifikasi berbasis blockchain secara menyeluruh.
 
-		Berdasarkan hasil identifikasi kebutuhan sistem, \textit{Product Backlog} mencakup pembangunan infrastruktur blockchain menggunakan \textit{Hyperledger Besu} dengan mekanisme konsensus QBFT yang mendukung transaksi tanpa biaya (zero gas), konfigurasi node, serta proses deployment smart contract untuk penyimpanan dan verifikasi data dokumen dalam bentuk hash. Selain itu, dirancang struktur metadata dokumen untuk merepresentasikan data akademik secara unik. Tahap selanjutnya meliputi pengembangan smart contract verifikasi, implementasi tanda tangan digital menggunakan EIP-712, serta pembangunan API middleware yang berfungsi sebagai penghubung antara sistem frontend dan jaringan blockchain.
+		Berdasarkan hasil identifikasi kebutuhan sistem, \textit{Product Backlog} mencakup pembangunan infrastruktur blockchain menggunakan \textit{Hyperledger Besu} dengan mekanisme konsensus \textit{QBFT} yang mendukung transaksi tanpa biaya (\textit{zero gas}), konfigurasi node, serta proses deployment \textit{smart contract} untuk penyimpanan dan verifikasi data dokumen dalam bentuk hash. Selain itu, dirancang struktur metadata dokumen untuk merepresentasikan data akademik secara unik. Tahap selanjutnya meliputi pengembangan \textit{smart} contract verifikasi, implementasi tanda tangan digital menggunakan \textit{EIP-712}, serta pembangunan \textit{API middleware} yang berfungsi sebagai penghubung antara sistem \textit{frontend} dan jaringan blockchain.
 
-		Selanjutnya, dilakukan integrasi antara middleware dengan blockchain serta pengembangan frontend berbasis Laravel untuk merepresentasikan sistem informasi kampus (SIAKAD Unida). Fitur verifikasi publik juga diimplementasikan agar pengguna eksternal dapat melakukan validasi dokumen tanpa proses autentikasi, namun tetap menjamin keabsahan data. Selain itu, dilakukan pengujian sistem secara menyeluruh, optimasi performa untuk mendukung efisiensi sistem, serta penyusunan dokumentasi sebagai bagian akhir dari pengembangan. Rincian lengkap \textit{Product Backlog} disajikan pada tabel \ref{tab:produk_backlog}.
+		Selanjutnya, dilakukan integrasi antara \textit{} dengan blockchain serta pengembangan \textit{frontend} berbasis Laravel untuk merepresentasikan sistem informasi kampus (SIAKAD Unida). Fitur verifikasi publik juga diimplementasikan agar pengguna eksternal dapat melakukan validasi dokumen tanpa proses autentikasi, namun tetap menjamin keabsahan data. Selain itu, dilakukan pengujian sistem secara menyeluruh, optimasi performa untuk mendukung efisiensi sistem, serta penyusunan dokumentasi sebagai bagian akhir dari pengembangan. Rincian lengkap \textit{Product Backlog} disajikan pada tabel \ref{tab:produk_backlog}.
 
 		% TABLE
 		\begin{landscape}
@@ -157,8 +158,8 @@
 
 			% baris
 			1 &
-			Setup jaringan blockchain (Hyperledger Besu - QBFT) &
-			Membangun jaringan blockchain privat menggunakan Hyperledger Besu dengan mekanisme konsensus QBFT untuk mendukung transaksi tanpa biaya (\textit{zero gas}), dengan 3 Node validator dan 1 Node klien &
+			Setup jaringan blockchain (\textit{Hyperledger Besu - QBFT}) &
+			Membangun jaringan blockchain privat menggunakan \textit{Hyperledger Besu} dengan mekanisme konsensus QBFT untuk mendukung transaksi tanpa biaya (\textit{zero gas}), dengan 3 Node validator dan 1 Node klien &
 			Tinggi &
 			Jaringan blockchain aktif dan dapat digunakan. \\ \hline
 
@@ -187,7 +188,7 @@
 			Antarmuka pengguna dapat berinteraksi dengan sistem, dan terhubung dengan API \textit{Middleware} \\ \hline
 
 			6 &
-			Implementasi fitur verifikasi publik menggunakan QR Code dan upload manual &
+			Implementasi fitur verifikasi publik menggunakan \textit{QR Code} dan upload manual &
 			Mengembangkan fitur verifikasi dokumen tanpa login untuk pengguna eksternal. &
 			Tinggi &
 			Verifikasi publik dapat digunakan. \\ \hline
@@ -202,14 +203,14 @@
 		\end{landscape}
 
 		\subsection{Sprint Planning}
-		Sprint Planning merupakan tahap perencanaan yang dilakukan sebelum Sprint dimulai. Pada tahap ini, dilakukan pemilihan item dari Product Backlog yang akan dikerjakan dalam satu periode Sprint berdasarkan tingkat prioritas yang telah ditentukan. Proses ini bertujuan untuk memastikan bahwa pekerjaan yang dilakukan memiliki fokus yang jelas dan sesuai dengan kebutuhan sistem yang paling mendesak.
+		\textit{Sprint Planning} merupakan tahap perencanaan yang dilakukan sebelum \textit{Sprint} dimulai. Pada tahap ini, dilakukan pemilihan item dari Product Backlog yang akan dikerjakan dalam satu periode \textit{Sprint} berdasarkan tingkat prioritas yang telah ditentukan. Proses ini bertujuan untuk memastikan bahwa pekerjaan yang dilakukan memiliki fokus yang jelas dan sesuai dengan kebutuhan sistem yang paling mendesak.
 
-		Selain pemilihan backlog, pada tahap ini juga ditentukan tujuan Sprint (Sprint Goal) yang menjadi acuan utama selama proses pengembangan berlangsung. Penentuan tujuan ini penting agar setiap aktivitas yang dilakukan dalam Sprint memiliki arah yang jelas serta dapat memberikan nilai tambah terhadap sistem yang dikembangkan. Dengan adanya Sprint Goal, proses pengembangan menjadi lebih terstruktur dan terukur.
+		Selain pemilihan backlog, pada tahap ini juga ditentukan tujuan \textit{Sprint} (\textit{Sprint Goal}) yang menjadi acuan utama selama proses pengembangan berlangsung. Penentuan tujuan ini penting agar setiap aktivitas yang dilakukan dalam \textit{Sprint} memiliki arah yang jelas serta dapat memberikan nilai tambah terhadap sistem yang dikembangkan. Dengan adanya \textit{Sprint Goal}, proses pengembangan menjadi lebih terstruktur dan terukur.
 
 		Selanjutnya, dilakukan pembagian tugas serta perencanaan teknis terkait implementasi fitur yang akan dikembangkan. Dalam konteks penelitian ini, Sprint Planning mencakup perencanaan pengembangan komponen seperti infrastruktur blockchain, smart contract, middleware, serta integrasi sistem. Dengan adanya perencanaan yang matang, diharapkan setiap Sprint dapat menghasilkan Increment yang optimal sesuai dengan target yang telah ditentukan.
 
 		\subsection{Sprint}
-		Sprint merupakan inti dari metode Scrum yang berisi seluruh aktivitas pengembangan sistem dalam periode waktu tertentu yang bersifat tetap (time-boxed). Pada tahap ini, seluruh item backlog yang telah dipilih pada Sprint Planning diimplementasikan menjadi bagian sistem yang berfungsi. Aktivitas dalam Sprint mencakup proses pengkodean, integrasi, serta pengujian terhadap fitur yang sedang dikembangkan.
+		Sprint merupakan inti dari metode \textit{Scrum} yang berisi seluruh aktivitas pengembangan sistem dalam periode waktu tertentu yang bersifat tetap (time-boxed). Pada tahap ini, seluruh item backlog yang telah dipilih pada Sprint Planning diimplementasikan menjadi bagian sistem yang berfungsi. Aktivitas dalam Sprint mencakup proses pengkodean, integrasi, serta pengujian terhadap fitur yang sedang dikembangkan.
 
 		Selama Sprint berlangsung, dilakukan pertemuan harian yang disebut Daily Scrum untuk memantau perkembangan pekerjaan serta mengidentifikasi hambatan yang dihadapi. Pertemuan ini bertujuan untuk menjaga koordinasi antar proses pengembangan sehingga setiap kendala dapat segera ditangani dan tidak menghambat pencapaian tujuan Sprint.
 
@@ -242,7 +243,7 @@
 		\subsection{Arsitektur Sistem}
 		\setlength{\leftskip}{1.4cm}
 
-		Bagian ini menjelaskan rancangan arsitektur sistem yang dibangun untuk mengintegrasikan beberapa komponen utama, seperti SIAKAD Unida, API Middleware, Smart Contract, dan Blockchain. Arsitektur ini dirancang untuk memastikan komunikasi data antra komponen berjalan dengan aman, terdistribusi, dan efisien dalam mendukung verifikasi dokumen akademik. Berikut adalah tampilan arsitektur sistem pada protype, yang tertera pada Gambar \ref{fig:arsitektur-sistem}.
+		Bagian ini menjelaskan rancangan arsitektur sistem yang dibangun untuk mengintegrasikan beberapa komponen utama, seperti SIAKAD Unida, \textit{API Middleware}, Smart Contract, dan Blockchain. Arsitektur ini dirancang untuk memastikan komunikasi data antra komponen berjalan dengan aman, terdistribusi, dan efisien dalam mendukung verifikasi dokumen akademik. Berikut adalah tampilan arsitektur sistem pada protype, yang tertera pada Gambar \ref{fig:arsitektur-sistem}.
 
 		\begin{figure}[h!]
 			\centering
@@ -254,15 +255,15 @@
 		Arsitektur sistem yang dikembangkan terdiri dari beberapa komponen utama yang saling terintegrasi, yang memiliki peran sebagai berikut:
 
 		\begin{subsecenumerate}
-			\item Sistem Akademik Kampus: Berperan sebagai sumber utama data dokumen akademik, seperti nomor dokumen, identitas mahasiswa, serta metadata lainnya. Sistem ini berupa SIAKAD Unida atau sistem pengelolaan tentang dokumen akademik. Data yang dihasilkan kemudian dikirimkan ke API Middleware untuk diproses lebih lanjut
-			\item API Middleware: Berfungsi sebagai penghubung antara sistem akademik (SIAKAD Unida) dan jaringan blockchain. Komponen ini bertanggung jawab nutuk menerima data dari sistem akademik, melakukan validasi awal, serta mengubah data menjadi format terstruktur yang siap diproses lebih lanjut. Selain itu, middleware juga menyiapkan data menjadi format terstruktur menggunakan protokol EIP-712, sehingga data yang dikirim ke blockchain memiliki integritas dan format yang terstandarisasi. Dalam implementasinya, middleware yang dikembangkan menggunakan Node.js dengan dukungan library Ether.js untuk memfasilitasi interaksi dengan smart contract secara efisien.
+			\item Sistem Akademik Kampus: Berperan sebagai sumber utama data dokumen akademik, seperti nomor dokumen, identitas mahasiswa, serta metadata lainnya. Sistem ini berupa SIAKAD Unida atau sistem pengelolaan tentang dokumen akademik. Data yang dihasilkan kemudian dikirimkan ke \textit{API Middleware} untuk diproses lebih lanjut
+			\item \textit{API Middleware}: Berfungsi sebagai penghubung antara sistem akademik (SIAKAD Unida) dan jaringan blockchain. Komponen ini bertanggung jawab nutuk menerima data dari sistem akademik, melakukan validasi awal, serta mengubah data menjadi format terstruktur yang siap diproses lebih lanjut. Selain itu, middleware juga menyiapkan data menjadi format terstruktur menggunakan protokol EIP-712, sehingga data yang dikirim ke blockchain memiliki integritas dan format yang terstandarisasi. Dalam implementasinya, middleware yang dikembangkan menggunakan Node.js dengan dukungan library Ether.js untuk memfasilitasi interaksi dengan smart contract secara efisien.
 			\item Arsip (Validation dan Signing): Pada tahap ini, sistem melakukan validasi dan penandatanganan data dokumen akademik yang akan diarsipkan menggunakan standar protokol EIP-712 dengan kunci privat dari single of authority, yaitu pihak Arsip. Komponen ini mencakup mekanisme validasi integritas dokumen serta proses penandatanganan data secara terstruktur. Selain itu, pendekatan ini menerapkan pemisahan peran antara signer dan relayer untuk memastikan keamanan data dan mengurangi risiko penyalahgunaan kunci pada arsip dokumen.
 			\item Smart Contract: Smart contract adalah program yang berjalan diatas jaringan blockchain dan berfungsi sebagai komponen utama untuk verifikasi dokumen. Smart contract bertanggung jawab untuk menerima data yang telah ditandatangani, melakukan dan verifikasi keabsahan suatu dokumen, sehingga meningkatan tranparasi dan kepercayaan terhadap sistem. 
-			\item Blockchain: Blockchain sebagai media penyimpanan terdistribusi yang bersifat immutable (tidak dapat dirubah), dalam penelitian ini menggunakan Hyperledger Besu dengan mekanisme konsensus QBFT. Data yang tersimpan di dalam blockchain berupa hash dokumen dan informasi terkait transaksi, sehingga keaslian dokumen dapat diverifikasi kapan saja tanpa resiko manipulasi  
+			\item Blockchain: Blockchain sebagai media penyimpanan terdistribusi yang bersifat immutable (tidak dapat dirubah), dalam penelitian ini menggunakan \textit{Hyperledger Besu} dengan mekanisme konsensus QBFT. Data yang tersimpan di dalam blockchain berupa hash dokumen dan informasi terkait transaksi, sehingga keaslian dokumen dapat diverifikasi kapan saja tanpa resiko manipulasi  
 		\end{subsecenumerate}
 		
 		\subsection{Arsitektur Jaringan Blockchain}
-		Arsitektur jaringan blockchain pada sistem ini dirancang menggunakan konsensus Byzantine Fault Tolerance (QBFT) yang berjalan di atas framework Hyperledger Besu. Rancangan ini berokus pada pembagian peran antar node, untuk menjaga kelancaran proses pencatatan data.
+		Arsitektur jaringan blockchain pada sistem ini dirancang menggunakan konsensus Byzantine Fault Tolerance (QBFT) yang berjalan di atas framework \textit{Hyperledger Besu}. Rancangan ini berokus pada pembagian peran antar node, untuk menjaga kelancaran proses pencatatan data.
 
 		\begin{figure}[h!]
 			\centering
@@ -302,15 +303,15 @@
 			\begin{subsecenumerate}
 				\item Publik: Proses dimulai dari pengguna eksternal yang ingin melakukan verifikasi terhadap suatu dokumen. Pengguna tidak perlu memiliki akun atau akses khusus untuk menggunakan fitur ini.
 				\item Upload Dokumen: Pengguna dapat mengunggah dokumen yang ingin diverifikasi ke dalam sistem. Dokumen ini kemudian akan diproses untuk menghasilkan nilai hash yang akan dibandingkan dengan data yang tersimpan di blockchain.
-				\item QR Code: Selain melalui upload dokumen, pengguna juga dapat melakukan verifikasi dengan memindai QR Code yang tertera pada dokumen. QR Code ini berisi informasi atau referensi hash yang telah 	tersimpan sebelumnya.
-				\item Cek Hash: Semua metode input (upload, QR Code, atau input manual) akan bermuara pada proses pengecekan hash. Sistem akan membandingkan hash yang diberikan dengan data yang tersimpan di blockchain untuk menentukan keabsahan dokumen.
+				\item \textit{QR Code}: Selain melalui upload dokumen, pengguna juga dapat melakukan verifikasi dengan memindai \textit{QR Code} yang tertera pada dokumen. \textit{QR Code} ini berisi informasi atau referensi hash yang telah 	tersimpan sebelumnya.
+				\item Cek Hash: Semua metode input (upload, \textit{QR Code}, atau input manual) akan bermuara pada proses pengecekan hash. Sistem akan membandingkan hash yang diberikan dengan data yang tersimpan di blockchain untuk menentukan keabsahan dokumen.
 				\item Blockchain: Tahap akhir adalah proses pencocokan data dengan blockchain. Jika hash ditemukan dan sesuai, maka dokumen dinyatakan valid dan tidak mengalami perubahan. Sebaliknya, jika tidak ditemukan atau tidak sesuai, maka dokumen dianggap tidak valid atau telah dimodifikasi.
 			\end{subsecenumerate}
 
 		\end{subsecenumerate}
 
 		\subsection{Flowchart Sistem}
-		Flowchart memaparkan urutan logika dan langkah-langkah proses kerja sistem secara terperinci. Bagian ini terbagi menjadi tiga bagian, yaitu: proses penandatanganan, proses verifikasi menggunakan QR Code, dan proses verifikasi manual upload dokumen.
+		Flowchart memaparkan urutan logika dan langkah-langkah proses kerja sistem secara terperinci. Bagian ini terbagi menjadi tiga bagian, yaitu: proses penandatanganan, proses verifikasi menggunakan \textit{QR Code}, dan proses verifikasi manual upload dokumen.
 
 		\begin{subsecenumerate}
 			\item Flowchart Penandatanganan Dokumen
@@ -322,10 +323,10 @@
 				\end{figure}
 				\begin{subsecenumerate}
 					\item Upload PDF dan Input Metadata: Pengguna mengunggah berkas mentah PDF sekaligus memasukan informasi pendukung (metadata) dokumen ke dalam sistem secara bersamaan.
-					\item Generate QR: Sistem membuat gambar QR Code unik berbasis UUID dan langusung menempelkannya di halaman berkas PDF yang baru diunggah.
-					\item Generate HASH: Aplikasi menghitung file hash dari dokumen yang sudah dimuat QR Code didalamnya dan juga informasi pendukung (metadata) menggunakan algoritma SHA-256.
+					\item Generate QR: Sistem membuat gambar \textit{QR Code} unik berbasis UUID dan langusung menempelkannya di halaman berkas PDF yang baru diunggah.
+					\item Generate HASH: Aplikasi menghitung file hash dari dokumen yang sudah dimuat \textit{QR Code} didalamnya dan juga informasi pendukung (metadata) menggunakan algoritma SHA-256.
 					\item Penandatanganan EIP-712: Proses penandatanganan digital menggunakan standar EIP-712.
-					\item Blockchain: Tanda tangan digital dikirim secara permanen ke jaringan blockchain Hyperledger Besu.
+					\item Blockchain: Tanda tangan digital dikirim secara permanen ke jaringan blockchain \textit{Hyperledger Besu}.
 				\end{subsecenumerate}
 			\item Flowchart Verifikasi Menggunakan QR:
 				\begin{figure}[H]
@@ -361,7 +362,7 @@
 			
 	\section{Pengujian Sistem}
 	\setlength{\leftskip}{0.7cm}
-	Proses pengujian dilakukan untuk memvalidasi fungsionalitas sistem, mulai dari penandatanganan data terstruktur hingga transaksi di jaringan privat blockchain. Pengujian ini mencangkup kriptografi EIP-712, evaluasi efisiensi transaksi melalui mekanisme zero-gas pada Hyperledger Besu, verifikasi integritas dokumen pada privat Blockchain, serta pengujian ketahanan manajemen kunci yang memisahkan peran antara pemberi otorisasi dengan pelaksana transaksi. Secara rinci, rencana pengujian prototype pada penelitian ini dijabarkan pada tabel \ref{tab:rencana_pengujian} berikut: 
+	Proses pengujian dilakukan untuk memvalidasi fungsionalitas sistem, mulai dari penandatanganan data terstruktur hingga transaksi di jaringan privat blockchain. Pengujian ini mencangkup kriptografi EIP-712, evaluasi efisiensi transaksi melalui mekanisme zero-gas pada \textit{Hyperledger Besu}, verifikasi integritas dokumen pada privat Blockchain, serta pengujian ketahanan manajemen kunci yang memisahkan peran antara pemberi otorisasi dengan pelaksana transaksi. Secara rinci, rencana pengujian prototype pada penelitian ini dijabarkan pada tabel \ref{tab:rencana_pengujian} berikut: 
 
 	% TABLE
 	\renewcommand{\arraystretch}{1.3}

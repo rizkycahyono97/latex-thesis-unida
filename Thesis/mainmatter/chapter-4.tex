@@ -224,68 +224,68 @@
 
 			\end{longtable}
 
-		\subsection{Pengujian Validitas Tanda Tangan Digital \textit{EIP-712}}
-		Pengujian kebsahan tanda tangan digital dilakukan untuk memastikan bahwa mekanisme penandatanganan menggunakan standar EIP-712 telah mengehasilkan tanda tangan digital yang valid dan dapat diverifikasi. Berdasarkan spesifikasi EIP-712\footcite{Bloemen2017}, data terstuktur harus ditandatangani menggunakan \textit{domain separator} dan tipe data (\textit{typed structured data}), sehingga identitas dapat dipulihkan kembali dari nilai tanda tangan yang dihasilkan
+		% \subsection{Pengujian Validitas Tanda Tangan Digital \textit{EIP-712}}
+		% Pengujian kebsahan tanda tangan digital dilakukan untuk memastikan bahwa mekanisme penandatanganan menggunakan standar EIP-712 telah mengehasilkan tanda tangan digital yang valid dan dapat diverifikasi. Berdasarkan spesifikasi EIP-712\footcite{Bloemen2017}, data terstuktur harus ditandatangani menggunakan \textit{domain separator} dan tipe data (\textit{typed structured data}), sehingga identitas dapat dipulihkan kembali dari nilai tanda tangan yang dihasilkan
 
-			% TABLE
-			\begin{landscape}
+		% 	% TABLE
+		% 	\begin{landscape}
 
-			\renewcommand{\arraystretch}{1.4}
+		% 	\renewcommand{\arraystretch}{1.4}
 
-			\begin{table}[!h]
-				\centering
-				\caption{Hasil Pengujian Keabsahan \textit{Digital Signature} EIP-712}
-				\label{tab:pengujian_eip712}
+		% 	\begin{table}[!h]
+		% 		\centering
+		% 		\caption{Hasil Pengujian Keabsahan \textit{Digital Signature} EIP-712}
+		% 		\label{tab:pengujian_eip712}
 
-				\begin{tabular}{|
-				>{\centering\arraybackslash}p{0.8cm}|
-				>{\centering\arraybackslash}p{3.5cm}|
-				p{6cm}|
-				p{8cm}|
-				>{\centering\arraybackslash}p{1.8cm}|}
-				\hline
+		% 		\begin{tabular}{|
+		% 		>{\centering\arraybackslash}p{0.8cm}|
+		% 		>{\centering\arraybackslash}p{3.5cm}|
+		% 		p{6cm}|
+		% 		p{8cm}|
+		% 		>{\centering\arraybackslash}p{1.8cm}|}
+		% 		\hline
 
-				\textbf{No} &
-				\textbf{Komponen yang Diuji} &
-				\textbf{Data Uji} &
-				\textbf{Nilai Ekspektasi} &
-				\textbf{Status} \\ \hline
+		% 		\textbf{No} &
+		% 		\textbf{Komponen yang Diuji} &
+		% 		\textbf{Data Uji} &
+		% 		\textbf{Nilai Ekspektasi} &
+		% 		\textbf{Status} \\ \hline
 
-				1 &
-				\textbf{Domain} &
-				Parameter \textit{name}, \textit{version}, \textit{chainId}, dan \textit{verifyingContract}. &
-				Seluruh parameter \textit{Domain} berhasil dibentuk sesuai konfigurasi jaringan \textit{Hyperledger Besu}. &
-				Lolos \\ \hline
+		% 		1 &
+		% 		\textbf{Domain} &
+		% 		Parameter \textit{name}, \textit{version}, \textit{chainId}, dan \textit{verifyingContract}. &
+		% 		Seluruh parameter \textit{Domain} berhasil dibentuk sesuai konfigurasi jaringan \textit{Hyperledger Besu}. &
+		% 		Lolos \\ \hline
 
-				2 &
-				\textbf{Types} &
-				Struktur data \texttt{Document} yang terdiri dari \textit{documentNumber} (string), \textit{identityHash} (bytes32), dan \textit{fileHash} (bytes32). &
-				Nama setiap field beserta tipe datanya sesuai dengan spesifikasi EIP-712. &
-				Lolos \\ \hline
+		% 		2 &
+		% 		\textbf{Types} &
+		% 		Struktur data \texttt{Document} yang terdiri dari \textit{documentNumber} (string), \textit{identityHash} (bytes32), dan \textit{fileHash} (bytes32). &
+		% 		Nama setiap field beserta tipe datanya sesuai dengan spesifikasi EIP-712. &
+		% 		Lolos \\ \hline
 
-				3 &
-				\textbf{Message} &
-				\textit{documentKey}, \textit{identityHash}, dan \textit{fileHash}. &
-				Data yang akan ditandatangani identik dengan data dokumen yang dikirimkan ke middleware. &
-				Lolos \\ \hline
+		% 		3 &
+		% 		\textbf{Message} &
+		% 		\textit{documentKey}, \textit{identityHash}, dan \textit{fileHash}. &
+		% 		Data yang akan ditandatangani identik dengan data dokumen yang dikirimkan ke middleware. &
+		% 		Lolos \\ \hline
 
-				4 &
-				\textbf{Digital Signature} &
-				Proses \textit{signTypedData()} terhadap kombinasi \textit{Domain}, \textit{Types}, dan \textit{Message}. &
-				\textit{Digital Signature} berhasil dihasilkan sesuai mekanisme EIP-712. &
-				Lolos \\ \hline
+		% 		4 &
+		% 		\textbf{Digital Signature} &
+		% 		Proses \textit{signTypedData()} terhadap kombinasi \textit{Domain}, \textit{Types}, dan \textit{Message}. &
+		% 		\textit{Digital Signature} berhasil dihasilkan sesuai mekanisme EIP-712. &
+		% 		Lolos \\ \hline
 
-				5 &
-				\textbf{Signer Verification} &
-				Alamat hasil \textit{recover} dari \textit{digital signature}. &
-				Alamat hasil \textit{recover} identik dengan alamat validator dari arsip sebagai \textit{signer}. &
-				Lolos \\ \hline
+		% 		5 &
+		% 		\textbf{Signer Verification} &
+		% 		Alamat hasil \textit{recover} dari \textit{digital signature}. &
+		% 		Alamat hasil \textit{recover} identik dengan alamat validator dari arsip sebagai \textit{signer}. &
+		% 		Lolos \\ \hline
 
-				\end{tabular}
+		% 		\end{tabular}
 
-			\end{table}
+		% 	\end{table}
 
-			\end{landscape}
+		% 	\end{landscape}
 
 		\subsection{Pengujian Validitas Transaksi BLockchain}
 		Pengujian validasi transaksi blockchain bertujuan untuk memastikan bahwa transaksi berhasil diproses sesuai dengan mekanisme blockchain, mulai dari validasi transaksi, pembentukan blok, hingga pencatatan data secara permanen. Berdasarkan \textit{NISTIR 8202}\footcite{Yaga2018}, setiap transaksi harus melewati proses verifiksi oleh node jaringan, divalidasi menggunakan mekanisme konsensus, kemudian dimasukan kedalam block yang bersifat terdistribusi dan \textit{immutable}. Oleh karena itu, pengujian ini difokuskan pada verifikasi bahwa implementasi blockchain \textit{Hyperledger Besu} telah memenuhi karakteristik tersebut.
@@ -349,9 +349,9 @@
 		\subsection{Pengujian Ahli Materi}
 
 	\section{Pembahasan}
-	Berdarkan hasil implementasi dan pengujian yang telah dilakukan, dapat disimpulkan bahwa sistem verifikasi dokumen akademik berbasis blockchain berhasil dikembangkan sesuai dengan tujuan penelitian. Integrasi antara aplikasi klien, API Middleware, \textit{smart contract}, dan jaringan blockchain \textit{Hyperledger Besu} berjalan dengan baik, sehingga proses penerbitan dan verifikasi dokumen dapat dilakukan secara terstuktur. Hasil penngujian blackbox menunjukan bahwa seluruh fitur utama sistem telah berfungsi sesuai dengan kebutuhan yang telah ditetapkan.
+	Berdarkan hasil implementasi dan pengujian yang telah dilakukan, dapat disimpulkan bahwa sistem verifikasi dokumen akademik berbasis blockchain berhasil dikembangkan sesuai dengan tujuan penelitian. Integrasi antara aplikasi klien, \textit{API Middleware}, \textit{smart contract}, dan jaringan blockchain \textit{Hyperledger Besu} berjalan dengan baik, sehingga proses penerbitan dan verifikasi dokumen dapat dilakukan secara terstuktur. Hasil pengujian \textit{blackbox} menunjukan bahwa seluruh fitur utama sistem telah berfungsi sesuai dengan kebutuhan yang telah ditetapkan.
 
-	Lebih lanjut, implementasi protokol EIP-712 berhasil memberikan mekanisme autentikasi terhadap proses penerbitan dokumen melalui tanda tangan digital, sedangkan penggunaan identityHash dan fileHash memungkinkan sistem mendeteksi perubahaan pada file dan metadata berkas melalui perhitungan ulang hash dan pencocokan data yang tersimpan pada blockchain. Selain itu, sistem juga menyediakan dua metode verifikasi, yaitu melalaui QR Code dan unggah dokumen PDF.
+	Lebih lanjut, implementasi protokol \textit{EIP-712} berhasil memberikan mekanisme autentikasi terhadap proses penerbitan dokumen melalui tanda tangan digital, sedangkan penggunaan \textit{identityHash} dan \textit{fileHash} memungkinkan sistem mendeteksi perubahaan pada file dan metadata berkas melalui perhitungan ulang hash dan pencocokan data yang tersimpan pada blockchain. Selain itu, sistem juga menyediakan dua metode verifikasi, yaitu melalaui \textit{QR Code} dan unggah dokumen PDF.
 
-	Secara keseluruhan, penelitian ini menunjukan bahwa penerapan blockchain menggunakann \textit{Hyperledger Besu} dan protokol EIP-712 mempu meningkatkan keamanan, integritas, dan keaslian dokumen akademik. Meskipun demikian, sistem yang dikembangkan masih berupa prototype dan infrastruktur blockchain masih dijalankan pada lingkungan lokal, sehingga penerapan lebih lanjut diperlukan agar dapat diintegrasikan dengan SIAKAD Unida, serta didukung oleh infrastuktur blockchain yang lebih siap diterapkan di lingkungan produksi
+	Secara keseluruhan, penelitian ini menunjukan bahwa penerapan blockchain menggunakann \textit{Hyperledger Besu} dan protokol \textit{EIP-712} mempu meningkatkan keamanan, integritas, dan keaslian dokumen akademik. Meskipun demikian, sistem yang dikembangkan masih berupa prototipe dan infrastruktur blockchain masih dijalankan pada lingkungan lokal, sehingga penerapan lebih lanjut diperlukan agar dapat diintegrasikan dengan SIAKAD Unida, serta didukung oleh infrastuktur blockchain yang lebih siap diterapkan di lingkungan produksi.
 		

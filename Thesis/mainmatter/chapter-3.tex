@@ -362,60 +362,54 @@
 	\renewcommand{\arraystretch}{1.25}
 	
 	% TABLE
-	\begin{longtable}{|
-	>{\centering\arraybackslash}p{0.7cm}|
-	>{\raggedright\arraybackslash}p{3.1cm}|
-	>{\raggedright\arraybackslash}p{3.3cm}|
-	>{\raggedright\arraybackslash}p{3.5cm}|
-	>{\raggedright\arraybackslash}p{3.3cm}|}
+    \begin{longtable}{|
+    >{\centering\arraybackslash}p{0.7cm}|
+    >{\raggedright\arraybackslash}p{3.1cm}|
+    >{\raggedright\arraybackslash}p{3.3cm}|
+    >{\raggedright\arraybackslash}p{3.5cm}|
+    >{\raggedright\arraybackslash}p{3.3cm}|}
 
-	\caption{Rencana Pengujian Sistem}
-	\label{tab:rencana_pengujian} \\
+    \caption{Rencana Pengujian Sistem}
+    \label{tab:rencana_pengujian} \\
 
-	\hline
-	\textbf{No} &
-	\textbf{Jenis Pengujian} &
-	\textbf{Tujuan Pengujian} &
-	\textbf{Metode Pengujian} &
-	\textbf{Indikator Keberhasilan} \\ \hline
-	\endfirsthead
+    \hline
+    \textbf{No} &
+    \textbf{Jenis Pengujian} &
+    \textbf{Tujuan Pengujian} &
+    \textbf{Metode Pengujian} &
+    \textbf{Indikator Keberhasilan} \\ \hline
+    \endfirsthead
 
-	\hline
-	\textbf{No} &
-	\textbf{Jenis Pengujian} &
-	\textbf{Tujuan Pengujian} &
-	\textbf{Metode Pengujian} &
-	\textbf{Indikator Keberhasilan} \\ \hline
-	\endhead
+    \hline
+    \textbf{No} &
+    \textbf{Jenis Pengujian} &
+    \textbf{Tujuan Pengujian} &
+    \textbf{Metode Pengujian} &
+    \textbf{Indikator Keberhasilan} \\ \hline
+    \endhead
 
-	\hline
-	\endfoot
+    \hline
+    \endfoot
 
-	\hline
-	\endlastfoot
+    \hline
+    \endlastfoot
 
-	1 &
-	\textit{Unit Test} &
-	Validasi fungsi kriptografi \textit{encodeType}, \textit{typeHash}, dan \textit{structHash}. &
-	Membandingkan \textit{output} dengan \textit{Official Test Vector EIP-712}. &
-	Seluruh \textit{output} sesuai \textit{test vector}. \\ \hline
+    1 &
+    \textit{Unit Test} &
+    Memastikan seluruh fungsi dan \textit{endpoint} API pada \textit{middleware} bekerja sesuai spesifikasi teknis. &
+    \textit{Assertion testing} dengan mengirimkan variasi \textit{payload} HTTP (positif dan negatif) ke \textit{endpoint} API. &
+    Sistem mengembalikan \textit{status code} dan \textit{response body} yang sesuai dengan kriteria yang ditentukan. \\ \hline
 
-	2 &
-	\textit{Black-Box} &
-	Memastikan \textit{endpoint} API bekerja sesuai spesifikasi. &
-	Menguji \textit{payload} HTTP positif dan negatif. &
-	\textit{Status code} dan \textit{response body} sesuai spesifikasi. \\ \hline
+    2 &
+    \textit{Black-Box} &
+    Menguji fungsionalitas alur kerja sistem dari sisi pengguna tanpa melihat struktur kode internal. &
+    Simulasi skenario eksekusi antarmuka untuk fitur pengelolaan, penerbitan, dan verifikasi dokumen. &
+    Seluruh alur fitur utama berjalan lancar tanpa mengalami penolakan sistem atau \textit{error}. \\ \hline
 
-	3 &
-	Validitas Tanda Tangan \textit{EIP-712} &
-	Memastikan integritas pesan dan keabsahan \textit{signer recovery}. &
-	Menguji data valid dan data yang dimanipulasi. &
-	Data valid terverifikasi dan data manipulasi ditolak. \\ \hline
+    3 &
+    Validitas Transaksi sesuai \textit{NISTIR 8202} &
+    Memvalidasi konsistensi, kepermanenan data (\textit{immutability}), dan performa eksekusi transaksi \textit{on-chain}. &
+    Verifikasi pencatatan \textit{doc\_hash}, evaluasi skema \textit{zero-gas}, dan uji \textit{fault tolerance} konsensus QBFT. &
+    Data dokumen tersimpan imutabel di \textit{smart contract}, saldo \textit{wallet} statis, dan blok baru berhasil terbentuk. \\ \hline
 
-	4 &
-	Validitas Transaksi sesuai \textit{NISTIR 8202} &
-	Memvalidasi pencatatan dan eksekusi transaksi \textit{on-chain}. &
-	Menguji \textit{doc\_hash}, \textit{zero-gas}, dan konsensus QBFT. &
-	Data tersimpan \textit{on-chain}, saldo tetap, dan transaksi terkonfirmasi. \\ \hline
-
-	\end{longtable}
+    \end{longtable}

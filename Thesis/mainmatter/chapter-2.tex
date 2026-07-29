@@ -6,7 +6,7 @@
 		demikian, sebagian penelitian masih berfokus pada penyimpanan hash dan integrasi sistem, sehingga belum menerapkan data terstruktur seperti standar \textit{EIP-712}.
 
 
-		\subsection{Blockchain dam \textit{Hyperledger Besu}}
+		\subsection{Blockchain dan \textit{Hyperledger Besu}}
 		Blockchain merupakan teknologi buku besar terdistribusi (\textit{distributed ledger technology}) yang mencatat transaksi secara kronologis, permanen dan aman melalui mekanisme konsensus kriptografi\footcite{Zheng2017}. Dalam pengembangan sistem ini, yang digunakan adalah  \textit{Hyperledger Besu}\footcite{HyperledgerFoundation}, yaitu sebuah Ethereum open-source yang dirancang untuk mendukung kebutuhan pengguna pada tingkat perusahaan.  \textit{Hyperledger Besu} mendukung jaringan blockchain privat  yang memmungkinkan kendali penuh atas biaya transaksi (\textit{gas-fee}) serta penggunaan algoritma konsensus yang efisien seperti QBFT Hyperledger Foundation\footcite{HyperledgerFoundation}. Pada penelitian ini, jaringan privat dikonfigurasi dengan flag \textit{--min-gas-price=0} pada node validator. Sehingga transaksi dapat diproses tanpa membebankan biaya (\textit{gas}) kepada pengguna. 
 
 		
@@ -18,7 +18,6 @@
 			Signature = sign(keccak256(0x1901 \parallel domainSeparator \parallel hashStruct(message)))
 			\label{eq:eip712-signature}
 		\end{equation}
-
 		Keterangan komponen rumus tersebut adalah:
 
 		\begin{subsecenumerate}
@@ -27,12 +26,12 @@
 			\item \textit{hashStruct(message)}: Representasi hash dari isi dokumen itu sendiri yang akan diverifikasi integritasnya.
 		\end{subsecenumerate}
 
+		\newpage
 		Integritas pada level data struktur dikelola melalui fungsi hashStruct yang didefinisikan pada persamaan~\eqref{eq:eip712-hashstruct}.
 		\begin{equation}
 			hashStruct(s) = keccak256(typeHash \parallel encodedData(s))
 			\label{eq:eip712-hashstruct}
 		\end{equation}
-
 		Penjelasan variable pada fungsi hashStruct:
 
 		\begin{subsecenumerate}
@@ -44,16 +43,16 @@
 		\subsection{Integritas Data}
 		Integritas data adalah jaminan bahwa data tetap akurat, konsisten, dan tidak mengalami perubahan yang tidak sah selama siklus hidupnya. Dalam sistem verifikasi dokumen, integritas menjadi pilar utama untuk memastikan bahwa informasi yang diterima oleh verifikator sama persis dengan yang diterbitkan oleh institusi asal. Teknologi blockchain menjamin integritas ini melalui penggunaan fungsi hash satu arah, dimana perubahan sekecil apapun akan menghasilkan nilai hash yang berbeda pada dokumen, sehingga modifikasi dapat terdeteksi secara instan\footcite{Zheng2017}. Sifat \textit{immutability} pada blockchain memastikan bahwa setelah data diverifikasi dan dimasukan kedalam blok, maka data tersebut menjadi dari bagian dari buku besar secara permanen. Dengan demikian, integritas data dalam penelitian ini tidak hanya mencangkup keamanan terhadap serangan luar, tetapi juga pencegahan terhadap manipulasi data internal oleh pihak yang memiliki akses.
 
-		Verifikasi integritas berbasis blockchain dengan memanfaatkan fungsi hash kriptografi untuk menghasilkan sidik digital (digital fingerprint) dari suatu berkas, kemudian menyimpan bukti hash tersebut pada blockchain sebagai referensi yang bersifat immutable. Pada saat proses verifikasi, sistem menghitung ulang nilai hash pada berkas kemudian membandingkannya dengan nilai hash yang telah tercatat pada blockchain\footcite{Bromme}. Pendekatan ini menjadi landasan dalam penelitian ini, dimana integritas data direpresentasikan melalui identityHash dan integritas berkas PDF direpresentasikan sebagai fileHash, yang kemudian dicocokan dan diverifikasi di jaringan blockchain.
+		Verifikasi integritas berbasis blockchain dengan memanfaatkan fungsi hash kriptografi untuk menghasilkan sidik digital (\textit{digital fingerprint}) dari suatu berkas, kemudian menyimpan bukti hash tersebut pada blockchain sebagai referensi yang bersifat immutable. Pada saat proses verifikasi, sistem menghitung ulang nilai hash pada berkas kemudian membandingkannya dengan nilai hash yang telah tercatat pada blockchain\footcite{Bromme}. Pendekatan ini menjadi landasan dalam penelitian ini, dimana integritas data direpresentasikan melalui \textit{identityHash} dan integritas berkas PDF direpresentasikan sebagai \textit{fileHash}, yang kemudian dicocokan dan diverifikasi di jaringan blockchain.
 
 
 		
 		\subsection{Manajemen Kunci (\textit{Key Managment})}
-		Manajemen kunci pada teknologi blockchain mencangkup seluruh siklus hidup kunci, mulai dari proses pembuatan hingga penyimpanan menggunakan keystore terenkripsi\footcite{Pal2021}. Implementasi ini krusial untuk menjamin fungsionalitas sistem yang tangguh dalam melindungi aset digital pengguna melalui mekanisme distribusi otoritas terukur guna mencegah eskalasi pihak luar yang tidak sah
+		Manajemen kunci pada teknologi blockchain mencangkup seluruh siklus hidup kunci, mulai dari proses pembuatan hingga penyimpanan menggunakan keystore terenkripsi\footcite{Pal2021}. Implementasi ini krusial untuk menjamin fungsionalitas sistem yang tangguh dalam melindungi aset digital pengguna melalui mekanisme distribusi otoritas terukur guna mencegah eskalasi pihak luar yang tidak sah.
 
 
 		\subsection{Solidity dan Smart Contract}
-		Solidity adalah bahasa pemrograman tingkat tinggi berorientasi object yang dirancang khusus untuk pengembangan \textit{smart contract} pada platform ke blockchain yang kompatible dengan Ethereum Virtual Machine  (\textit{EVM})\footcite{Wood2014}. Penggunaan \textit{Solidity} versi \textit{0.1.19} dalam penelitian ini menjamin stabilitas dan fungsionalitas yang luas terhadap protokol \textit{EVM} pada \textit{Hyperledger Besu}, terutama menghindari penggunaan instruksi (opcode) yang belum didukung oleh konfigurasi jaringan privat blockchain.
+		Solidity adalah bahasa pemrograman tingkat tinggi berorientasi object yang dirancang khusus untuk pengembangan \textit{smart contract} pada platform ke blockchain yang kompatible dengan \textit{Ethereum Virtual Machine}  (EVM)\footcite{Wood2014}. Penggunaan \textit{Solidity} versi \textit{0.1.19} dalam penelitian ini menjamin stabilitas dan fungsionalitas yang luas terhadap protokol \textit{EVM} pada \textit{Hyperledger Besu}, terutama menghindari penggunaan instruksi (\textit{opcode}) yang belum didukung oleh konfigurasi jaringan privat blockchain.
 
 
 
@@ -64,15 +63,15 @@
 
 		Selain itu, penelitian dari Rafel Genes Duran dkk\footcite{Duran2020}. Mengusulkan pendekatan arsitektur \textit{middleware} yang memisahkan antra peran kunci antara otorisasi data dan pembayaran biaya transaksi (\textit{gas-fee}). Pendekatan ini mampu meningkatkan keamanan sekaligus memberikan kemudahan bagi pengguna dalam pengelolaan kunci kriptografi.
 
-		Dalam penelitian ini, konsep manajemen kunci diadopsi melalui pemisahan peran antara \textit{signer} dan \textit{relayer} pada API Middleware. Implementasi yang dilakukan masih bersifat sederhana, yaitu menggunakan penyimpanan berbasis environment variables dan memori sistem (\textit{storage}) untuk pengelolaan kunci privat dimana kunci tersebut diamankan melalui proses enkripsi sebelum disimpan dan digunakan kembali pada proses penandatangan dokumen.
+		Dalam penelitian ini, konsep manajemen kunci diadopsi melalui pemisahan peran antara \textit{signer} dan \textit{relayer} pada \textit{API Middleware}. Implementasi yang dilakukan masih bersifat sederhana, yaitu menggunakan penyimpanan berbasis \textit{environment variables} dan memori sistem (\textit{storage}) untuk pengelolaan kunci privat dimana kunci tersebut diamankan melalui proses enkripsi sebelum disimpan dan digunakan kembali pada proses penandatangan dokumen.
 
 		
 		\subsection{Sistem Verifikasi Dokumen Akademik Berbasis Blockchain}
 		Pemanfaatan blockchain dalam verifikasi dokumen akademik telah banyak diteliti sebagai solusi terhadap pemalsuan dokumen. Penelitian oleh Kumar, dkk\footcite{KumarK2020}. Mengimplementasikan sistem verifikasi sertifikat berbasis \textit{private blockchain} berbasis Ethereum, dimana hash dokumen digunakan sebagai representasi keaslian data. Hasil penelitian menunjukan pendekatan ini lebih efisien dalam hal waktu dan biaya dibandingkan sistem berbasis blockchain publik, serta meningkatkan keamanan terhadap manipulasi data.
 
-		Sementara itu, penelitian dari Gangwar dan Chaurasia\footcite{Gangwar2024} mengembangkan sistem autentikasi ijazah berbasis \textit{Decentralized Application} (DApp) dengan integrasi \textit{IPFS} sebagai media penyimpanan dan QR Code untuk verifikasi fisik. Hasilnya menunjukan peningkatan signifikan dalam hal keamanan dan efisiensi biaya pembuatan dokumen.
+		Sementara itu, penelitian dari Gangwar dan Chaurasia\footcite{Gangwar2024} mengembangkan sistem autentikasi ijazah berbasis \textit{Decentralized Application} (DApp) dengan integrasi \textit{IPFS} sebagai media penyimpanan dan \textit{QR Code} untuk verifikasi fisik. Hasilnya menunjukan peningkatan signifikan dalam hal keamanan dan efisiensi biaya pembuatan dokumen.
 
-		Penelitian-penelitian ini menunjukan bahwa blockchain efektif dalam menjamin keaslian sebuah dokumen akademik. Namun, sebagian besar masih berfokus pada penyimpanan hash atau integrasi sistem, sehingga membuka peluang untuk penelitian atau pengembangan lebih lanjut pada aspek penandatangan data terstruktur seperti EIP-712 yang menjadi fokus penelitian ini.
+		Penelitian-penelitian ini menunjukan bahwa blockchain efektif dalam menjamin keaslian sebuah dokumen akademik. Namun, sebagian besar masih berfokus pada penyimpanan hash atau integrasi sistem, sehingga membuka peluang untuk penelitian atau pengembangan lebih lanjut pada aspek penandatangan data terstruktur seperti \textit{EIP-712} yang menjadi fokus penelitian ini.
 
 			
 		\subsection{Keamanan dan Arsitektur Sistem Verifikasi Berbasis Blockchain}

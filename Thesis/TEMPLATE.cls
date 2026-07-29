@@ -77,13 +77,24 @@
 \usepackage{longtable}
 % =================== LANGUAGE & FONTS CONFIG ===================
 \usepackage{polyglossia}
-\setmainlanguage{indonesian}
-% \setmainlanguage{english}
-\setotherlanguage{english}
+% \setmainlanguage{indonesian}
+\setmainlanguage{english}
+\setotherlanguage{indonesian}
 \setotherlanguage{arabic}
 \setmainfont{Times New Roman}
 \newfontfamily\arabicfont[Script=Arabic, Scale=1.2]{Amiri}
 \usepackage{microtype}
+
+% =================== INDONESIAN DOCUMENT LABELS ===================
+\addto\captionsenglish{%
+    \renewcommand{\chaptername}{BAB}%
+    \renewcommand{\contentsname}{DAFTAR ISI}%
+    \renewcommand{\listtablename}{DAFTAR TABEL}%
+    \renewcommand{\listfigurename}{DAFTAR GAMBAR}%
+    \renewcommand{\figurename}{Gambar}%
+    \renewcommand{\tablename}{Tabel}%
+    \renewcommand{\bibname}{DAFTAR PUSTAKA}%
+}
 
 % =================== TEXT JUSTIFICATION ===================
 \setlength{\emergencystretch}{3em}

@@ -10,7 +10,7 @@
 			\label{fig:blockchain-deployed}
 		\end{figure}
 
-		Berdasarkan gambar \ref{fig:blockchain-deployed}, seluruh node Hyperledger  Besu dijalankan dengan status \textit{running}. Tiga node berfungsi sebagai validator yang bertugas melakukan proses konsensu QBFT, sedangkan satu node berfungsi sebagai RPC Endpoint, keberhasilan seluruh node untuk berjalan secara bersamaan menunjukan bahwa infrastuktur blockchain telah berhasil dikonfigurasi dan siap digunakan untuk penyimpanan.
+		Berdasarkan gambar \ref{fig:blockchain-deployed}, seluruh node \textit{Hyperledger  Besu} dijalankan dengan status \textit{running}. Tiga node berfungsi sebagai validator yang bertugas melakukan proses konsensus \textit{QBFT}, sedangkan satu node berfungsi sebagai \textit{RPC Endpoint}, keberhasilan seluruh node untuk berjalan secara bersamaan menunjukan bahwa infrastuktur blockchain telah berhasil dikonfigurasi dan siap digunakan untuk penyimpanan.
 
 		\begin{figure}[h!]
 			\centering
@@ -19,17 +19,17 @@
 			\label{fig:blockscout-dashboard}
 		\end{figure}
 
-		Gambar \ref{fig:blockscout-dashboard} yang berhasil terhubung dengan jaringan Hyperledger Besu. Dashboard tersebut menampilkan informasi mengenai blok terbaru, jumlah transaksi, jumlah validator, serta data transaksi jaringan secara \textit{real-time}. Keberhasilan tersebut menandakan bahwasannya jaringan blockchain berjalan dan dapat diakses oleh aplikasi pendukung untuk melakukan pemantauan terhadap transaksi di jaringan.
+		Gambar \ref{fig:blockscout-dashboard} yang berhasil terhubung dengan jaringan \textit{Hyperledger Besu}. Dashboard tersebut menampilkan informasi mengenai blok terbaru, jumlah transaksi, jumlah validator, serta data transaksi jaringan secara \textit{real-time}. Keberhasilan tersebut menandakan bahwasannya jaringan blockchain berjalan dan dapat diakses oleh aplikasi pendukung untuk melakukan pemantauan terhadap transaksi di jaringan.
 
-		\subsection{Implementasi Smart Contract}
+		\subsection{Implementasi \textit{Smart Contract}}
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=1\textwidth]{assets/contract.png}
-			\caption{smart contract berhasil dideploy}
+			\caption{\textit{smart contract} berhasil dideploy}
 			\label{fig:contract}
 		\end{figure}
 
-		Berdasarkan hasil pengujian pada gambar \ref{fig:contract}, proses kompilasi dan deployment smart contract ke dalam jaringan blockchain dengan \textit{Chain ID 1337} menggunakan pustaka  Foundry telah berhasil dilakukan dengan aman. Indikasi keberhasilan ini ditunjukan oleh status konfirmasi \textit{On-chain Execution Complete \& Successful}, dimana  smart contract tersebut sukses dideploy secara permanen pada alamat \textit{0x8cba94B714C1eD691c207c6d9ad71C64b86EAc2a} pada blok \textit{9569} dengan total konsumsi biaya komputasi sebesar \textit{1.913.599 gas}. Keberhasilan tahap deployment ini membuktikan bahwa infrastruktur node privat Hyperledger Besu beserta smart contract telah siap sepenuhnya untuk dihubungkan dengan lapisan API Middleware.
+		Berdasarkan hasil pengujian pada gambar \ref{fig:contract}, proses kompilasi dan deployment \textit{smart contract} ke dalam jaringan blockchain dengan \textit{Chain ID 1337} menggunakan pustaka  \textit{Foundry} telah berhasil dilakukan dengan aman. Indikasi keberhasilan ini ditunjukan oleh status konfirmasi \textit{On-chain Execution Complete \& Successful}, dimana  \textit{smart contract} tersebut sukses dideploy secara permanen pada alamat \textit{0x8cba94B714C1eD691c207c6d9ad71C64b86EAc2a} pada blok \textit{9569} dengan total konsumsi biaya komputasi sebesar \textit{1.913.599 gas}.
 		
 		\subsection{Implementasi Protokol EIP-712}
 
@@ -57,7 +57,7 @@
 			\label{fig:swagger-api}
 		\end{figure}
 
-		Gambar \ref{fig:swagger-api} menampilkan antarmuka dokumentasi \textit{API Middleware} berbasis OpenAPI, dokumen ini terbagi menjadi dua kelompok utama, yaitu kelompok Documents yang menangani pengambilan detail dokumen dan penandatanganan dokumen, dan kelompok validators yang berfungsi untuk menambahkan validator dokumen.
+		Gambar \ref{fig:swagger-api} menampilkan antarmuka dokumentasi \textit{API Middleware} berbasis \textit{OpenAPI}, dokumen ini terbagi menjadi dua kelompok utama, yaitu kelompok Documents yang menangani pengambilan detail dokumen dan penandatanganan dokumen, dan kelompok validators yang berfungsi untuk menambahkan validator dokumen.
 
 		\subsection{Implementasi Aplikasi Klien}
 
@@ -92,7 +92,7 @@
 	\section{Hasil Pengujian Sistem}
 
 		\subsection{Pengujian Unit Test}
-		Pada sub-bab ini, dilakukan pengujian unit (Unit Testing) terhadap API Middleware untuk memastikan semua fungsi autentikasi dan validasi keamanan berjalan sesuai spesifikasi sebelum permintaan diteruskan ke endpoint utama. Pada tabel \ref{tab:pengujian_endpoint_api}  endpoint pengujian diawali dengan prefix \textit{/api/documents}.
+		Pada sub-bab ini, dilakukan pengujian unit (\textit{Unit Testing}) terhadap \textit{API Middleware} untuk memastikan semua fungsi autentikasi dan validasi keamanan berjalan sesuai spesifikasi sebelum permintaan diteruskan ke \textit{endpoint} utama. Pada tabel \ref{tab:pengujian_endpoint_api}  \textit{endpoint} pengujian diawali dengan prefix \textit{/api/documents}.
 	
 		% TABLE
 		\begin{landscape}
@@ -195,7 +195,7 @@
 				1 &
 				Generate Wallet &
 				Admin melakukan generate wallet yang akan digunakan sebagai validator &
-				Wallet berhasil dibuat beserta \textit{public address} dan \textit{private address} &
+				\textit{Wallet} berhasil dibuat beserta \textit{public address} dan \textit{private address} &
 				Berhasil \\ \hline
 
 				2 &
@@ -205,14 +205,14 @@
 				Berhasil \\ \hline
 
 				3 &
-				Penerbitan Dokumen (EIP-712) &
+				Penerbitan Dokumen (\textit{EIP-712}) &
 				Dokumen berhasil diterbitkan dengan validator yang sah &
 				Signature berhasil dibuat dan transaksi berhasil dicatat di blockchain &
 				Berhasil \\ \hline
 
 				4 &
-				Verifikasi QR Code &
-				Pengguna memindai QR Code pada dokumen &
+				Verifikasi \textit{QR Code} &
+				Pengguna memindai \textit{QR Code} pada dokumen &
 				Sistem berhasil mengambil data blockchain dan menampilkan status keaslian dokumen &
 				Berhasil \\ \hline
 
@@ -224,8 +224,8 @@
 
 			\end{longtable}
 
-		\subsection{Pengujian Validitas Tanda Tangan Digital EIP-712}
-		Pengujian kebsahan tanda tangan digital dilakukan untuk memastikan bahwa mekanisme penandatanganan menggunakan standar EIP-712 telah mengehasilkan tanda tangan digital yang valid dan dapat diverifikasi. Berdasarkan spesifikasi EIP-712\footcite{bloemen2017eip712}, data terstuktur harus ditandatangani menggunakan domain separator dan tipe data (\textit{typed structured data}), sehingga identitas dapat dipulihkan kembali dari nilai tanda tangan yang dihasilkan
+		\subsection{Pengujian Validitas Tanda Tangan Digital \textit{EIP-712}}
+		Pengujian kebsahan tanda tangan digital dilakukan untuk memastikan bahwa mekanisme penandatanganan menggunakan standar EIP-712 telah mengehasilkan tanda tangan digital yang valid dan dapat diverifikasi. Berdasarkan spesifikasi EIP-712\footcite{Bloemen2017}, data terstuktur harus ditandatangani menggunakan \textit{domain separator} dan tipe data (\textit{typed structured data}), sehingga identitas dapat dipulihkan kembali dari nilai tanda tangan yang dihasilkan
 
 			% TABLE
 			\begin{landscape}
@@ -254,7 +254,7 @@
 				1 &
 				\textbf{Domain} &
 				Parameter \textit{name}, \textit{version}, \textit{chainId}, dan \textit{verifyingContract}. &
-				Seluruh parameter \textit{Domain} berhasil dibentuk sesuai konfigurasi jaringan Hyperledger Besu. &
+				Seluruh parameter \textit{Domain} berhasil dibentuk sesuai konfigurasi jaringan \textit{Hyperledger Besu}. &
 				Lolos \\ \hline
 
 				2 &
@@ -288,7 +288,7 @@
 			\end{landscape}
 
 		\subsection{Pengujian Validitas Transaksi BLockchain}
-		Pengujian validasi transaksi blockchain bertujuan untuk memastikan bahwa transaksi berhasil diproses sesuai dengan mekanisme blockchain, mulai dari validasi transaksi, pembentukan blok, hingga pencatatan data secara permanen. Berdasarkan \textit{NISTIR 8202}\footcite{nistir8202}, setiap transaksi harus melewati proses verifiksi oleh node jaringan, divalidasi menggunakan mekanisme konsensus, kemudian dimasukan kedalam block yang bersifat terdistribusi dan \textit{immutable}. Oleh karena itu, pengujian ini difokuskan pada verifikasi bahwa implementasi blockchain \textit{Hyperledger Besu} telah memenuhi karakteristik tersebut.
+		Pengujian validasi transaksi blockchain bertujuan untuk memastikan bahwa transaksi berhasil diproses sesuai dengan mekanisme blockchain, mulai dari validasi transaksi, pembentukan blok, hingga pencatatan data secara permanen. Berdasarkan \textit{NISTIR 8202}\footcite{Yaga2018}, setiap transaksi harus melewati proses verifiksi oleh node jaringan, divalidasi menggunakan mekanisme konsensus, kemudian dimasukan kedalam block yang bersifat terdistribusi dan \textit{immutable}. Oleh karena itu, pengujian ini difokuskan pada verifikasi bahwa implementasi blockchain \textit{Hyperledger Besu} telah memenuhi karakteristik tersebut.
 
 		\begin{landscape}
 			\renewcommand{\arraystretch}{1.3}
@@ -316,8 +316,8 @@
 				1 &
 				Validasi Transaksi &
 				Transaction Validation &
-				Transaksi berhasil divalidasi oleh jaringan blockchain sebelum dicatat ke dalam ledger. &
-				Seluruh transaksi dokumen memperoleh status \textit{Success} setelah diproses oleh jaringan Hyperledger Besu. &
+				Transaksi berhasil divalidasi oleh jaringan blockchain sebelum dicatat ke dalam \textit{ledger}. &
+				Seluruh transaksi dokumen memperoleh status \textit{Success} setelah diproses oleh jaringan \textit{Hyperledger Besu}. &
 				Lolos \\ \hline
 
 				2 &
@@ -331,28 +331,27 @@
 				Penyimpanan Data \textit{On-Chain} &
 				Distributed Ledger &
 				Data transaksi tersimpan secara permanen dan dapat diakses kembali melalui blockchain. &
-				Nilai \textit{documentKey}, \textit{identityHash}, dan \textit{fileHash} berhasil disimpan pada \textit{smart contract} dan dapat diambil kembali melalui fungsi \textit{getDocument} di smart contract. &
+				Nilai \textit{documentKey}, \textit{identityHash}, dan \textit{fileHash} berhasil disimpan pada \textit{smart contract} dan dapat diambil kembali melalui fungsi \textit{getDocument} di \textit{smart contract}. &
 				Lolos \\ \hline
 
 				4 &
 				Sinkronisasi Ledger &
 				Ledger Replication &
 				Seluruh node memiliki salinan data transaksi yang identik setelah proses konsensus selesai. &
-				Informasi blok dan transaksi ditampilkan secara konsisten pada dashboard Blockscout sebagai representasi data yang tersinkronisasi. &
+				Informasi blok dan transaksi ditampilkan secara konsisten pada dashboard \textit{Blockscout} sebagai representasi data yang tersinkronisasi. &
 				Lolos \\ \hline
 
 				\end{tabular}
 			\end{table}
 
 			\end{landscape}
-		\subsection{Pengujian Integritas Dokumen}
 
-		\subsection{Pengujian Zero-Gas Transaction}
+		\subsection{Pengujian Ahli Materi}
 
 	\section{Pembahasan}
-	Berdarkan hasil implementasi dan pengujian yang telah dilakukan, dapat disimpulkan bahwa sistem verifikasi dokumen akademik berbasis blockchain berhasil dikembangkan sesuai dengan tujuan penelitian. Integrasi antara aplikasi klien, API Middleware, smart contract, dan jaringan blockchain Hyperledger Besu berjalan dengan baik, sehingga proses penerbitan dan verifikasi dokumen dapat dilakukan secara terstuktur. Hasil penngujian blackbox menunjukan bahwa seluruh fitur utama sistem telah berfungsi sesuai dengan kebutuhan yang telah ditetapkan.
+	Berdarkan hasil implementasi dan pengujian yang telah dilakukan, dapat disimpulkan bahwa sistem verifikasi dokumen akademik berbasis blockchain berhasil dikembangkan sesuai dengan tujuan penelitian. Integrasi antara aplikasi klien, API Middleware, \textit{smart contract}, dan jaringan blockchain \textit{Hyperledger Besu} berjalan dengan baik, sehingga proses penerbitan dan verifikasi dokumen dapat dilakukan secara terstuktur. Hasil penngujian blackbox menunjukan bahwa seluruh fitur utama sistem telah berfungsi sesuai dengan kebutuhan yang telah ditetapkan.
 
 	Lebih lanjut, implementasi protokol EIP-712 berhasil memberikan mekanisme autentikasi terhadap proses penerbitan dokumen melalui tanda tangan digital, sedangkan penggunaan identityHash dan fileHash memungkinkan sistem mendeteksi perubahaan pada file dan metadata berkas melalui perhitungan ulang hash dan pencocokan data yang tersimpan pada blockchain. Selain itu, sistem juga menyediakan dua metode verifikasi, yaitu melalaui QR Code dan unggah dokumen PDF.
 
-	Secara keseluruhan, penelitian ini menunjukan bahwa penerapan blockchain menggunakann Hyperledger Besu dan protokol EIP-712 mempu meningkatkan keamanan, integritas, dan keaslian dokumen akademik. Meskipun demikian, sistem yang dikembangkan masih berupa prototype dan infrastruktur blockchain masih dijalankan pada lingkungan lokal, sehingga penerapan lebih lanjut diperlukan agar dapat diintegrasikan dengan SIAKAD Unida, serta didukung oleh infrastuktur blockchain yang lebih siap diterapkan di lingkungan produksi
+	Secara keseluruhan, penelitian ini menunjukan bahwa penerapan blockchain menggunakann \textit{Hyperledger Besu} dan protokol EIP-712 mempu meningkatkan keamanan, integritas, dan keaslian dokumen akademik. Meskipun demikian, sistem yang dikembangkan masih berupa prototype dan infrastruktur blockchain masih dijalankan pada lingkungan lokal, sehingga penerapan lebih lanjut diperlukan agar dapat diintegrasikan dengan SIAKAD Unida, serta didukung oleh infrastuktur blockchain yang lebih siap diterapkan di lingkungan produksi
 		

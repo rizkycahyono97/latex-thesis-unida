@@ -63,7 +63,7 @@
 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=1\textwidth]{assets/upload-dokumen-asli.png}
+			\includegraphics[width=0.6\textwidth]{assets/upload-dokumen-asli.png}
 			\caption{Halaman Upload Dokumen Awal}
 			\label{fig:upload-dokumen-asli}
 		\end{figure}
@@ -78,12 +78,12 @@
 		\end{figure}
 		Gambar \ref{fig:upload-manual} menampilkan antarmuka komponen verifikasi manual dengan mengupload dokumen yang akan diverifikasi. Pada implementasinya , antarmuka ini menyediakan area unggah berkas interaktif yang mendukung drag and drop maupun pencarian berkas secara manual, nantinya sistem akan menghitung ulang nilai hash dari dokumen yang di upload kemudian akan dilakukan pencocokan data dari database lokal dengan data di blockchain.
 		
-		\colorbox{yellow}{GAMBAR DOKUMEN YANG SUDAH ADA QRnya} 
+		% \colorbox{yellow}{GAMBAR DOKUMEN YANG SUDAH ADA QRnya} 
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=1\textwidth]{assets/verify.png}
-			\caption{Halaman Verifikasi}
+			\includegraphics[width=0.8\textwidth]{assets/verify.png}
+			\caption{Halaman Dokumen Terverifikasi}
 			\label{fig:verify}
 		\end{figure}
 		
@@ -287,7 +287,7 @@
 
 		% 	\end{landscape}
 
-		\subsection{Pengujian Validitas Transaksi BLockchain}
+		\subsection{Pengujian Validitas Transaksi Blockchain}
 		Pengujian validasi transaksi blockchain bertujuan untuk memastikan bahwa transaksi berhasil diproses sesuai dengan mekanisme blockchain, mulai dari validasi transaksi, pembentukan blok, hingga pencatatan data secara permanen. Berdasarkan \textit{NISTIR 8202}\footcite{Yaga2018}, setiap transaksi harus melewati proses verifiksi oleh node jaringan, divalidasi menggunakan mekanisme konsensus, kemudian dimasukan kedalam block yang bersifat terdistribusi dan \textit{immutable}. Oleh karena itu, pengujian ini difokuskan pada verifikasi bahwa implementasi blockchain \textit{Hyperledger Besu} telah memenuhi karakteristik tersebut.
 
 		\begin{landscape}
@@ -346,7 +346,6 @@
 
 			\end{landscape}
 
-		\subsection{Pengujian Ahli Materi}
 
 	\section{Pembahasan}
 	Berdarkan hasil implementasi dan pengujian yang telah dilakukan, dapat disimpulkan bahwa sistem verifikasi dokumen akademik berbasis blockchain berhasil dikembangkan sesuai dengan tujuan penelitian. Integrasi antara aplikasi klien, \textit{API Middleware}, \textit{smart contract}, dan jaringan blockchain \textit{Hyperledger Besu} berjalan dengan baik, sehingga proses penerbitan dan verifikasi dokumen dapat dilakukan secara terstuktur. Hasil pengujian \textit{blackbox} menunjukan bahwa seluruh fitur utama sistem telah berfungsi sesuai dengan kebutuhan yang telah ditetapkan.

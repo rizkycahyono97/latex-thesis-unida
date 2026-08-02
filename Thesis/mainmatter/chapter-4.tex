@@ -92,7 +92,8 @@
 	\section{Hasil Pengujian Sistem}
 
 		\subsection{Pengujian Unit Test}
-		Pada sub-bab ini, dilakukan pengujian unit (\textit{Unit Testing}) terhadap \textit{API Middleware} untuk memastikan semua fungsi autentikasi dan validasi keamanan berjalan sesuai spesifikasi sebelum permintaan diteruskan ke \textit{endpoint} utama. Pada tabel \ref{tab:pengujian_endpoint_api}  \textit{endpoint} pengujian diawali dengan prefix \textit{/api/documents}.
+		\setlength{\leftskip}{1.4cm}
+		Pada sub-bab ini, dilakukan pengujian unit (\textit{Unit Testing}) terhadap \textit{API Middleware} untuk memastikan semua fungsi berjalan sesuai spesifikasi sebelum permintaan diteruskan ke \textit{endpoint} utama. Pada tabel \ref{tab:pengujian_endpoint_api}  \textit{endpoint} pengujian diawali dengan prefix \textit{/api/documents}.
 	
 		% TABLE
 		\begin{landscape}
@@ -290,6 +291,15 @@
 		\subsection{Pengujian Validitas Transaksi Blockchain}
 		Pengujian validasi transaksi blockchain bertujuan untuk memastikan bahwa transaksi berhasil diproses sesuai dengan mekanisme blockchain, mulai dari validasi transaksi, pembentukan blok, hingga pencatatan data secara permanen. Berdasarkan \textit{NISTIR 8202}\footcite{Yaga2018}, setiap transaksi harus melewati proses verifiksi oleh node jaringan, divalidasi menggunakan mekanisme konsensus, kemudian dimasukan kedalam block yang bersifat terdistribusi dan \textit{immutable}. Oleh karena itu, pengujian ini difokuskan pada verifikasi bahwa implementasi blockchain \textit{Hyperledger Besu} telah memenuhi karakteristik tersebut.
 
+		\begin{subsecenumerate}
+			\item \textit{Transaction Validation}: Pengujian ini dilakukan dengan mengirimkan data dokumen yang sudah dilakukan penandatanganan ke \textit{smart contract}. Hasil pengujian menunjukan seluruh transaksi berhasil di eksekusi dan divalidasi tanpa mengalami kegagalan, ditandai dengan status transaksi berhasil (\textit{Success}).
+			\item \textit{Block Creation}: Pengujian dilakukan dengan mengamati proses konsensus \textit{QBFT} setelah transaksi dikirimkan. Hasil menunjukan seluruh transaksi berhasil dimasukan kedalam blok baru tanpa tertahan di \textit{transaction pool}, sehingga proses pembuatan blok berjalan dengan baik.
+			\item  Penyimpanan Data \textit{On-Chain}: Pengujian dilakukan dengan membaca kembali data yang sudah tersimpan di blockchain menggunakan fungsi \textit{getDocument()}. Hasil menunjukan data yang dikirim tersimpan identik dengan data awal, sehingga integritas data tetap terjaga.
+			\item Sinkronisasi Ledger: Pengujian dilakukan dengan membandingkan data di setiap \textit{RPC Node}. Hasil menunjukan seluruh node memiliki data yang sama, sehingga
+			konsistensi \textit{ledger} antar \textit{node} berhasil dipertahankan.  
+		\end{subsecenumerate}
+
+		% TABLE
 		\begin{landscape}
 			\renewcommand{\arraystretch}{1.3}
 			\begin{table}[ht]
@@ -344,8 +354,7 @@
 				\end{tabular}
 			\end{table}
 
-			\end{landscape}
-
+		\end{landscape}
 
 	\section{Pembahasan}
 	Berdarkan hasil implementasi dan pengujian yang telah dilakukan, dapat disimpulkan bahwa sistem verifikasi dokumen akademik berbasis blockchain berhasil dikembangkan sesuai dengan tujuan penelitian. Integrasi antara aplikasi klien, \textit{API Middleware}, \textit{smart contract}, dan jaringan blockchain \textit{Hyperledger Besu} berjalan dengan baik, sehingga proses penerbitan dan verifikasi dokumen dapat dilakukan secara terstuktur. Hasil pengujian \textit{blackbox} menunjukan bahwa seluruh fitur utama sistem telah berfungsi sesuai dengan kebutuhan yang telah ditetapkan.

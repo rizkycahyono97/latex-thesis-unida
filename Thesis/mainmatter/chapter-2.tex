@@ -43,7 +43,7 @@
 		\subsection{Integritas Data}
 		Integritas data adalah jaminan bahwa data tetap akurat, konsisten, dan tidak mengalami perubahan yang tidak sah selama siklus hidupnya. Dalam sistem verifikasi dokumen, integritas menjadi pilar utama untuk memastikan bahwa informasi yang diterima oleh verifikator sama persis dengan yang diterbitkan oleh institusi asal. Teknologi blockchain menjamin integritas ini melalui penggunaan fungsi hash satu arah, dimana perubahan sekecil apapun akan menghasilkan nilai hash yang berbeda pada dokumen, sehingga modifikasi dapat terdeteksi secara instan\footcite{Zheng2017}. Sifat \textit{immutability} pada blockchain memastikan bahwa setelah data diverifikasi dan dimasukan kedalam blok, maka data tersebut menjadi dari bagian dari buku besar secara permanen. Dengan demikian, integritas data dalam penelitian ini tidak hanya mencangkup keamanan terhadap serangan luar, tetapi juga pencegahan terhadap manipulasi data internal oleh pihak yang memiliki akses.
 
-		Verifikasi integritas berbasis blockchain dengan memanfaatkan fungsi hash kriptografi untuk menghasilkan sidik digital (\textit{digital fingerprint}) dari suatu berkas, kemudian menyimpan bukti hash tersebut pada blockchain sebagai referensi yang bersifat immutable. Pada saat proses verifikasi, sistem menghitung ulang nilai hash pada berkas kemudian membandingkannya dengan nilai hash yang telah tercatat pada blockchain\footcite{Bromme}. Pendekatan ini menjadi landasan dalam penelitian ini, dimana integritas data direpresentasikan melalui \textit{identityHash} dan integritas berkas PDF direpresentasikan sebagai \textit{fileHash}, yang kemudian dicocokan dan diverifikasi di jaringan blockchain.
+		Verifikasi integritas berbasis blockchain dengan memanfaatkan fungsi hash kriptografi untuk menghasilkan sidik digital (\textit{digital fingerprint}) dari suatu berkas, kemudian menyimpan bukti hash tersebut pada blockchain sebagai referensi yang bersifat immutable. Pada saat proses verifikasi, sistem menghitung ulang nilai hash pada berkas kemudian membandingkannya dengan nilai hash yang telah tercatat pada blockchain\footcite{Ramya2026}. Pendekatan ini menjadi landasan dalam penelitian ini, dimana integritas data direpresentasikan melalui \textit{identityHash} dan integritas berkas PDF direpresentasikan sebagai \textit{fileHash}, yang kemudian dicocokan dan diverifikasi di jaringan blockchain.
 
 
 		
@@ -77,7 +77,7 @@
 		\subsection{Keamanan dan Arsitektur Sistem Verifikasi Berbasis Blockchain}
 		Aspek keamanan dalam sistem verifikasi dokumen akademik berbasis blockchain tidak hanya mencangkup integritas data, melainkan juga mencangkup autentikasi, otorisasi, privasi, dan kepemilikan data. Penelitian Saleh O. S. dkk\footcite{Saleh2020}. Mengembangkan kerangka kerja berbasis \textit{Hyperledger Fabric} yang mempunyai lima pilar utama, yaitu autentikasi, otorisasi, kerahasiaan, privasi, dan kepemilikan. Hasil penelitian menunjukan bahwa sistem yang dibangun mampu memastikan bahwa hanya pihak yang berwenang yang dapat menerbitkan dokumen, sementara pihak eksternal tetap dapat melakukan verifikasi secara transparan.
 		
-		Selain itu, Brömme dan Yavas\footcite{Bromme} mengusulkan mekanisme verifikasi integritas file dengan memanfaatkan fungsi hash kriptografi dan blockchain sebagai media penyimpanan nilai hash. Dalam penelitian tersebut, hash dari suatu berkas dihitung kembali dan dicatat pada blockchain, kemudian pada saat verifikasi akan dihitung kembali nilai hashnya dan membandingkannya dengan hash yang terimpan di blockchain
+		Selain itu, Ramya dkk.\footcite{Ramya2026} mengusulkan mekanisme verifikasi integritas file dengan memanfaatkan fungsi hash kriptografi dan blockchain sebagai media penyimpanan nilai hash. Dalam penelitian tersebut, hash dari suatu berkas dihitung kembali dan dicatat pada blockchain, kemudian pada saat verifikasi akan dihitung kembali nilai hashnya dan membandingkannya dengan hash yang terimpan di blockchain
 
 		Penelitian ini menjadi landasan dalam perancangan sistem yang tidak hanya berfokus pada integritas data, tetapi juga mempertimbangkan aspek keamanan secara menyeluruh. Dalam penelitian ini, pendekatan tersebut diadaptasi melalui penggunaan blockchain privat menggunakan \textit{Hyperledger Besu} dengan mekanisme kontrol akses dan validasi yang lebih terstruktur.
 
@@ -148,9 +148,9 @@
 				Penelitian terdahulu menggunakan Ethereum 2.0 yang memerlukan biaya gas, sedangkan penelitian ini menggunakan \textit{Hyperledger Besu} dengan mekanisme zero-gas. \\ \hline
 
 				6 &
-				Brömme, A. dan Yavas, T. &
+				Ramya &
 				2026 &
-				\textit{Snaproot: Decentralized File Integrity Verification Using Blockchain-Anchored Cryptographic Hashing} &
+				\textit{Blockchain Based Academic Certification Verification System} &
 				Melakukan verifikasi integritas melalui perhitungan ulang hash dan penyimpanan bukti hash pada blockchain. &
 				Penelitian terdahulu memverifikasi integritas file secara umum dan tidak menggunakan protokol \textit{EIP-712} untuk data terstruktur. \\
 			\end{longtable}

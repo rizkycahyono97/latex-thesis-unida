@@ -359,5 +359,9 @@
 	\section{Pembahasan}
 	Berdasarkan hasil implementasi dan pengujian yang telah dilakukan, sistem verifikasi dokumen akademik berbasis blockchain telah berhasil dikembangkan sesuai dengan tujuan penelitian. Integrasi antara aplikasi klien, \textit{API Middleware}, \textit{Smart Contract}, dan jaringan privat blockchain \textit{Hyperledger Besu} berjalan dengan baik, sehingga proses penandatanganan dan verifikasi dokumen dapat dilakukan secara terstruktrur. Hasil beberapa pengujian menunjukan bahwa seluruh fitur berfungsi dengan kebutuhan yang ditetapkan.
 
-	
+	Hasil ini sejalan dengan penelitian Ramya \textit{Blockchain Based Academic Certification Verification System} yang memanfaankan blockchain sebagai media penyimpanan hash untuk menjamin integritas data melalui perbandingan data lokal dengan data \textit{on-chain}. Penelitian ini menerapkan prinsip yang sama melalui penggunaan \textit{identityHash} dan \textit{fileHash}, namun penelitian ini juga menerapkan mekanisme penandatanganan data terstruktur \textit{EIP-712} yang bersifat \textit{human-readable}. Dengan demikian, pihak arsip dapat memverifikasi informasi dokumen sebelem memberikan tanda tangan digital.
+
+	Selain itu, penggunaan jaringan privat \textit{Hyperledger Besu} memungkinkan implementasi mekanisme \textit{zero-gas} sehingga proses pencatatan dokumen dapat dilakukan tanpa biaya \textit{gas}. Pendekatan ini berbeda dari sebagian besar penelitian terdahulu yang memanfaatkan jaringan blockchain publik dan masih tergantung pada biaya \textit{gas}. Dengan menggabungkan mekanisme penandatanganan data terstuktur \textit{EIP-712}, serta infrastruktur blockchain privat, penelitian ini memberikan solusi yang lebih sesuai dalam lingkungan akademik. Meskipun demikian, penelitian ini masih berupa prototipe dan dijalankan pada lingkungan lokal. Sehingga penelitian selanjutnnya dapat mengintegrasikan sistem dengan SIAKAD UNIDA Gontor serta menerapkan infrastruktur blockchain yang digunakan dilingkungan produksi.
+
+
 		

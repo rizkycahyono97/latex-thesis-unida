@@ -2,16 +2,16 @@
 	\section{Landasan Teori}
 		\subsection{Verifikasi Dokumen Akademik}
 		\setlength{\leftskip}{1.4cm}
-		Dokumen akademik dalam penelitian ini dipandang sebagai bentuk khusus dari informasi yang memiliki fungsi tertentu, seperti sebagai bukti, alat pembuktian, maupun sarana pendukung proses pendidikan\footcite{Stolyarov2021}. Pemanfaatan blockchain untuk verifikasi dokumen akademik telah banyak diteliti sebagai solusi untuk pemalsuan dokumen. Penelitian sebelumnya menunjukan penerapan privat blockchain mampu meningkatkan keamanan, efisiensi, dan integritas dokumen melalui penyimpanan nilai hash sebagai representasi keaslian data\footcite{KumarK2020}, sementara integrasi \textit{Decentralized Application}  (DApp), IPFS, dan \textit{QR Code} juga terbukti mendukung proses verifikasi dokumen yang lebih efisien\footcite{Gangwar2024}. Meskipun
+		Dokumen akademik dalam penelitian ini dipandang sebagai bentuk khusus dari informasi yang memiliki fungsi tertentu, seperti sebagai bukti, alat pembuktian, maupun sarana pendukung proses pendidikan\footcite{Stolyarov2021}. Pemanfaatan blockchain untuk verifikasi dokumen akademik telah banyak diteliti sebagai solusi untuk pemalsuan dokumen. Penelitian sebelumnya menunjukan penerapan privat blockchain mampu meningkatkan keamanan, efisiensi, dan integritas dokumen melalui penyimpanan nilai hash sebagai representasi keaslian data\footcite{KumarK2020}, sementara integrasi \textit{Decentralized Application}  (DApp), \textit{InterPlanetary File System} (IPFS), dan \textit{QR Code} juga terbukti mendukung proses verifikasi dokumen yang lebih efisien\footcite{Gangwar2024}. Meskipun
 		demikian, sebagian penelitian masih berfokus pada penyimpanan hash dan integrasi sistem, sehingga belum menerapkan data terstruktur seperti standar \textit{EIP-712}.
 
 
 		\subsection{Blockchain dan \textit{Hyperledger Besu}}
-		Blockchain merupakan teknologi buku besar terdistribusi (\textit{distributed ledger technology}) yang mencatat transaksi secara kronologis, permanen dan aman melalui mekanisme konsensus kriptografi\footcite{Zheng2017}. Dalam pengembangan sistem ini, yang digunakan adalah  \textit{Hyperledger Besu}\footcite{HyperledgerFoundation}, yaitu sebuah Ethereum open-source yang dirancang untuk mendukung kebutuhan pengguna pada tingkat perusahaan.  \textit{Hyperledger Besu} mendukung jaringan blockchain privat  yang memmungkinkan kendali penuh atas biaya transaksi (\textit{gas-fee}) serta penggunaan algoritma konsensus yang efisien seperti QBFT Hyperledger Foundation\footcite{HyperledgerFoundation}. Pada penelitian ini, jaringan privat dikonfigurasi dengan flag \textit{--min-gas-price=0} pada node validator. Sehingga transaksi dapat diproses tanpa membebankan biaya (\textit{gas}) kepada pengguna. 
+		Blockchain merupakan teknologi buku besar terdistribusi (\textit{distributed ledger technology}) yang mencatat transaksi secara kronologis, permanen dan aman melalui mekanisme konsensus kriptografi\footcite{Zheng2017}. Dalam pengembangan sistem ini, yang digunakan adalah  \textit{Hyperledger Besu}\footcite{HyperledgerFoundation}, yaitu sebuah \textit{Ethereum open-source} yang dirancang untuk mendukung kebutuhan pengguna pada tingkat perusahaan.  \textit{Hyperledger Besu} mendukung jaringan blockchain privat  yang memmungkinkan kendali penuh atas biaya transaksi (\textit{gas-fee}) serta penggunaan algoritma konsensus yang efisien seperti \textit{QBFT Hyperledger Foundation}\footcite{HyperledgerFoundation}. Pada penelitian ini, jaringan privat dikonfigurasi dengan flag \textit{--min-gas-price=0} pada node validator. Sehingga transaksi dapat diproses tanpa membebankan biaya (\textit{gas}) kepada pengguna. 
 
 		
 		\subsection{Protokol EIP-712}
-		EIP-712 (Ethereum Improvement Proposal) merupakan standar untuk hashing dan penandatanganan data terstruktur guna memberikan keamanan yang lebih baik untuk interaksi ke dompet kripto\footcite{Bloemen2017}. Standar ini memastikan pengguna melihat data yang bisa dibaca manusia saat memberikan tanda tangan digital, sehingga mencegah kesalahan manusia saat proses otorisasi data mentah yang tidak dapat terbaca.
+		EIP-712 (\textit{Ethereum Improvement Proposal}) merupakan standar untuk hashing dan penandatanganan data terstruktur guna memberikan keamanan yang lebih baik untuk interaksi ke dompet kripto\footcite{Bloemen2017}. Standar ini memastikan pengguna melihat data yang bisa dibaca manusia saat memberikan tanda tangan digital, sehingga mencegah kesalahan manusia saat proses otorisasi data mentah yang tidak dapat terbaca.
 
 		Prosedur penandatanganan dalam protokol ini mengikuti rumus pada Persamaan~\eqref{eq:eip712-signature}.
 		\begin{equation}
@@ -27,7 +27,7 @@
 		\end{subsecenumerate}
 
 		\newpage
-		Integritas pada level data struktur dikelola melalui fungsi hashStruct yang didefinisikan pada persamaan~\eqref{eq:eip712-hashstruct}.
+		Integritas pada level data struktur dikelola melalui fungsi \textit{hashStruct} yang didefinisikan pada persamaan~\eqref{eq:eip712-hashstruct}.
 		\begin{equation}
 			hashStruct(s) = keccak256(typeHash \parallel encodedData(s))
 			\label{eq:eip712-hashstruct}
@@ -36,7 +36,7 @@
 
 		\begin{subsecenumerate}
 			\item \textit{typeHash}: Merupakan hasil hashing dari definisi skema atau struktur data (misal: nama struct dan tipe data variabel di dalamnya). Hal ini memastikan bahwa penanda tangan menyetujui struktur data yang konsisten.
-			\item \textit{encodedData(s)}: Merupakan hasil pengkodean nilai riil dari dokumen yang dikirim menjadi format 32-byte yang terstandarisasi.
+			\item \textit{encodedData(s)}: Merupakan hasil pengkodean nilai riil dari dokumen yang dikirim menjadi format \textit{32-byte} yang terstandarisasi.
 		\end{subsecenumerate}
 
 		
@@ -48,11 +48,11 @@
 
 		
 		\subsection{Manajemen Kunci (\textit{Key Managment})}
-		Manajemen kunci pada teknologi blockchain mencangkup seluruh siklus hidup kunci, mulai dari proses pembuatan hingga penyimpanan menggunakan keystore terenkripsi\footcite{Pal2021}. Implementasi ini krusial untuk menjamin fungsionalitas sistem yang tangguh dalam melindungi aset digital pengguna melalui mekanisme distribusi otoritas terukur guna mencegah eskalasi pihak luar yang tidak sah.
+		Manajemen kunci pada teknologi blockchain mencangkup seluruh siklus hidup kunci, mulai dari proses pembuatan hingga penyimpanan menggunakan \textit{keystore} terenkripsi\footcite{Pal2021}. Implementasi ini krusial untuk menjamin fungsionalitas sistem yang tangguh dalam melindungi aset digital pengguna melalui mekanisme distribusi otoritas terukur guna mencegah eskalasi pihak luar yang tidak sah.
 
 
 		\subsection{Solidity dan Smart Contract}
-		Solidity adalah bahasa pemrograman tingkat tinggi berorientasi object yang dirancang khusus untuk pengembangan \textit{smart contract} pada platform ke blockchain yang kompatible dengan \textit{Ethereum Virtual Machine}  (EVM)\footcite{Wood2014}. Penggunaan \textit{Solidity} versi \textit{0.1.19} dalam penelitian ini menjamin stabilitas dan fungsionalitas yang luas terhadap protokol \textit{EVM} pada \textit{Hyperledger Besu}, terutama menghindari penggunaan instruksi (\textit{opcode}) yang belum didukung oleh konfigurasi jaringan privat blockchain.
+		\textit{Solidity} adalah bahasa pemrograman tingkat tinggi berorientasi object yang dirancang khusus untuk pengembangan \textit{smart contract} pada platform ke blockchain yang kompatible dengan \textit{Ethereum Virtual Machine}  (EVM)\footcite{Wood2014}. Penggunaan \textit{Solidity} versi \textit{0.1.19} dalam penelitian ini menjamin stabilitas dan fungsionalitas yang luas terhadap protokol \textit{EVM} pada \textit{Hyperledger Besu}, terutama menghindari penggunaan instruksi (\textit{opcode}) yang belum didukung oleh konfigurasi jaringan privat blockchain.
 
 
 
